@@ -228,6 +228,15 @@
    {:type :rider-info, :name "Виталий", :surname "Грачев", :patronymic "Александрович" :city "Баранчинский", :rider-id "RHJPaQ"}
    {:type :rider-info, :name "Динар", :surname "Сибагатуллин" :patronymic "Халилович" :city "Югорск", :rider-id "RuSLqnkk"}
    {:type :rider-info, :name "Денис", :surname "Стафеев" :patronymic "Михайлович" :city "Нижний Тагил", :rider-id "RfH0nfek"}
+   {:type :rider-info, :name "Алексей", :surname "Поздеев" :patronymic "Сергеевич" :city "Нижний Тагил", :rider-id "RjJP0GMs"}
+   {:type :rider-info, :name "Даниил", :surname "Патокин" :patronymic "Вадимович" :city "Нижний Тагил", :rider-id "Rtel73pY"}
+   {:type :rider-info, :name "Евгений", :surname "Беломестных" :patronymic "Сергеевич" :city "Нижний Тагил", :rider-id "RdM9iJhw"}
+   {:type :rider-info, :name "Алексей", :surname "Судариков" :patronymic "Владимирович" :city "Екатеринбург,", :rider-id "RrrxQw70"}
+   {:type :rider-info, :name "Виталий", :surname "Скульбашевский" :patronymic "Анатольевич" :city "Югорск", :rider-id "RTYj4Ol8"}
+   {:type :rider-info, :name "Андрей", :surname "Муравьёв" :patronymic "Николаевич" :city "Екатеринбург", :rider-id "RgLJMe6E"}
+   {:type :rider-info, :name "Николай", :surname "Глущенко" :patronymic "Иванович" :city "п.Светлый" :region "ХМАО" :rider-id "RckWkvUo"}
+   {:type :rider-info, :name "Михаил", :surname "Тясин" :patronymic "Алексеевич" :city "Екатеринбург", :rider-id "RTFFOhU"}
+   {:type :rider-info, :name "Анна", :surname "Шилова" :patronymic "Викторовна" :city "Екатеринбург", :rider-id "RhMlzqUY"}
    ])
 
 (defn- normalize-string
