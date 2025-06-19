@@ -432,8 +432,13 @@
 
 (defn process-data
   [row]
-  (if (vector? row)
-    (into {} (map vec (partition 2 row)))
+  (let [row (if (vector? row)
+              (into {} (map vec (partition 2 row)))
+              row)
+        row (if (and (= (:type row) :result)
+                     (nil? (:result-id row)))
+              (assoc row :result-id (enrating.data.ids/result-id))
+              row)]
     row))
 
 (defn- unique-values!

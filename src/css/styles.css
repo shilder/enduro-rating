@@ -1,3 +1,19 @@
 .event-card {
     margin-bottom: 1rem;
 }
+
+td.bronze {
+    background: #CD7F32;
+}
+
+td.silver {
+    background: silver;
+}
+
+td.gold {
+    background: gold;
+}
+
+tr.highlight {
+    background: aquamarine;
+}

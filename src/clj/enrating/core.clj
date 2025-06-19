@@ -1,5 +1,6 @@
 (ns enrating.core
   (:require [clojure.java.io :as io]
+            [clojure.string :as str]
             [rum.core :as rum]
             [rum.server-render]
             [enrating.data.2025]
@@ -56,7 +57,7 @@
      (for [result (sort-by :position (filter #(= (:classification-id %) classification-id)
                                              (:results all-data)))
            :let [rider (get-in all-data [:riders (:rider-id result)])]]
-       [:tr
+       [:tr {:id (:result-id result)}
         [:td (:surname rider)]
         [:td (:name rider)]
         [:td (:plate-number result)]
@@ -77,23 +78,14 @@
                                 (vals (:classifications all-data)))]
      (classification-card all-data classification))])
 
-(let [k 0.05]
-  ;; Exponential Decay-Based Scoring
-  (defn position-points2 [total position]
-    (* total (Math/exp (* (- k) (- position 1))))))
-
-;; Power Law Distribution
-(let [p 1.5]
-  (defn position-points3 [total position amount]
-    (* total (- 1.0 (Math/pow (/ (- position 1.0)
-                               (- amount 1.0))
-                            p)))))
-
-;; Logarithmic Rank-Based Function
+;; Логарифмическая функция оценки - снижение кол-ва очков логарифмическое
+;; и зависит от кол-ва участников
+;; \text{Points}(r) = P_{\text{max}} \cdot \frac{\log(N + 1) - \log(r)}{\log(N + 1)}
+;; Округляем до второго знака по обычным правилам
 (defn position-points4 [total position amount]
   (.setScale (bigdec
-               (* total (/ (- (Math/log (+ amount 1.0)) (Math/log position))
-                           (Math/log (+ amount 1.0)))))
+               (* total (/ (- (Math/log (inc amount)) (Math/log position))
+                           (Math/log (inc amount)))))
              2
              RoundingMode/HALF_UP))
 
@@ -110,8 +102,11 @@
 
 
 (defn inline-style [content]
-  [:style {:type "text/css"
+  [:style {:type                    "text/css"
            :dangerouslySetInnerHTML {:__html content}}])
+
+(defn inline-js [content]
+  [:script {:dangerouslySetInnerHTML {:__html content}}])
 
 (defn- collect-into-map [data id-key type-key]
   (reduce
@@ -147,9 +142,54 @@
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
     ;; TODO: favicon
     [:title "Enduro Rating"]
-    (inline-style (slurp (io/resource "styles.css")))]
+    (inline-style (slurp (io/resource "styles.css")))
+    (inline-js (slurp (io/resource "scripts.js")))]
    [:body
     [:h1 "2025 год"]
+    [:h2 "Сводная таблица по гонщикам"]
+    ;; Collect into vector
+    (let [riders-top-score
+          (for [rider (vals (:riders data2025-map))
+                :let [results (filter #(= (:rider-id %) (:rider-id rider))
+                                      (:results data2025-map))]
+                ;; только для тех у кого есть какие-то очки
+                :when (seq results)]
+            {:rider   rider
+             :total   (reduce + 0M (map :points results))
+             :results results})
+          events (sort-by #(LocalDate/parse (:date %)) (vals (:events data2025-map)))
+          riders-data (reverse (sort-by :total riders-top-score))]
+      [:table
+       [:thead
+        (-> [:tr
+             [:th "#"]
+             [:th "Гонщик"]]
+            (into (map
+                    (fn [event]
+                      [:th (:name event)]))
+                  events)
+            (into [[:th "Всего"]]))]
+
+       (into [:tbody]
+             (map (fn [[idx {:keys [total rider results]}]]
+                    (-> [:tr
+                         [:td (inc idx)]
+                         [:td (str/join " " [(:surname rider) (:name rider)])]]
+                        (into
+                          (map (fn [{:keys [event-id]}]
+                                 ;; Тут мы считаем что в одном событии гонщик может участвовать только в одном зачете
+                                 (let [result (first (filter #(= (:event-id %) event-id) results))
+                                       classification (get-in data2025-map [:classifications (:classification-id result)])]
+                                   ;; TODO: подсветить результат
+                                   [:td {:class (:equivalent classification)
+                                         :onclick (str "highlightRow('" (:result-id result) "')")}
+                                    [:a {:href (str "#" (:result-id result))}
+                                     (:points result)]])))
+                          events)
+                        (into [[:td total]]))))
+             (map vector (range) riders-data))])
+
+    [:h2 "Гонки и результаты"]
     (for [event (sort-by #(LocalDate/parse (:date %)) (vals (:events data2025-map)))]
       (event-card data2025-map event))]])
 
