@@ -339,6 +339,7 @@
       :classification-id  "CyMOX89K67hY"
       :event-id           "Eo2KmTA"
       :name               "Gold"
+      :equivalent         условный-класс
       :laps               кругов
       :lap-difficulty     сложность-круга
       :started-count      стартовало
@@ -365,6 +366,7 @@
       :classification-id  "CX0NGKT0qMZA"
       :event-id           "Eo2KmTA"
       :name               "Silver"
+      :equivalent         условный-класс
       :laps               кругов
       :lap-difficulty     сложность-круга
       :started-count      стартовало
@@ -403,6 +405,7 @@
       :classification-id  "CkE6aHK3mE5w"
       :event-id           "Eo2KmTA"
       :name               "Bronze"
+      :equivalent         условный-класс
       :laps               кругов
       :lap-difficulty     сложность-круга
       :started-count      стартовало
