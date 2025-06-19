@@ -457,10 +457,10 @@
                                       {}))))
 
     ;; TODO: position - число
+    ;; TODO: нет "дырок" в позициях
 
     )
   data)
 
-;; Should return data for 2025
 (def data
   (sanity-checks (map process-data slg1)))

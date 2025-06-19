@@ -1,12 +1,15 @@
 {:deps    {
-
-           ;; nREPL + auto hot reload
-           nrepl/nrepl {:mvn/version "1.3.1"}
-           ns-tracker/ns-tracker {:mvn/version "1.0.0"}
-
            ;; HTML
            rum/rum {:mvn/version "0.12.10"
                     :exclusions  [cljsjs/react-dom
                                   cljsjs/react]}
            }
- :paths   ["src/clj" "src/js" "src/css"]}
+ :paths   ["src/clj" "src/js" "src/css"]
+
+
+ :aliases {:cli {:extra-deps {nrepl/nrepl           {:mvn/version "1.3.1"}
+                              ns-tracker/ns-tracker {:mvn/version "1.0.0"}}
+                 :exec-fn enrating.cli/start}
+
+           ;; Just generate static data for GH Pages
+           :pages {:exec-fn enrating.core/dummy}}}

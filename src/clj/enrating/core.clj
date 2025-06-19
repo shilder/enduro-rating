@@ -3,8 +3,7 @@
             [rum.core :as rum]
             [rum.server-render]
             [enrating.data.2025]
-            [enrating.data.riders]
-            [ns-tracker.core :as nt])
+            [enrating.data.riders])
   (:import (java.math RoundingMode)
            (java.time LocalDate)))
 
@@ -167,20 +166,6 @@
 
 (render-index)
 
-;; Auto-reload for changes in data - will regenerate pages on every change
-
-(def modified-namespaces
-  (nt/ns-tracker ["src"]))
-
-(defn start-auto-reload []
-  (println "Starting auto-reload thread")
-  (let [thread (Thread. (fn []
-                          (loop []
-                            (doseq [ns-sym (modified-namespaces)]
-                              (require ns-sym :reload))
-                            (Thread/sleep 1000)
-                            (recur))))]
-    (.start thread)
-    thread))
-
-;(defonce reload-thread (start-auto-reload))
+(defn dummy [& args]
+  ;; Do nothing - loading of namespace triggers rendering
+  )
