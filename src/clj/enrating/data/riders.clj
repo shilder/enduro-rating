@@ -1,19 +1,23 @@
 (ns enrating.data.riders
-  (:require [clojure.string :as str]))
+  (:require [clojure.string :as str]
+            [enrating.data.ids :refer [rider-id]]))
 
 ;; БД гонщиков
 
 (def riders-data
   [
    {:type :rider-info :name "Никита" :surname "Поляков" :city "Челябинск" :rider-id "RZGtbq5Y"}
-   {:type :rider-info :name "Евгений" :surname "Цицимушкин" :city "Кыштым" :rider-id "R5EQjYxk"}
+   {:type :rider-info :name "Евгений" :surname "Цицимушкин" :patronymic "Александрович" :team "Южный Урал мотоспорт" :city "Кыштым" :rider-id "R5EQjYxk"}
    {:type :rider-info :name "Андрей" :surname "Мишагин" :city "Челябинск" :rider-id "RVeOE5Ps"}
-   {:type :rider-info :name "Павел" :surname "Лядецкий" :city "Челябинск" :rider-id "R4covr5U"}
+   {:type :rider-info :name "Павел" :surname "Лядецкий" :patronymic "Сергеевич" :team "TuPizza Enduro Team" :city "Челябинск" :rider-id "R4covr5U"}
+   {:type :rider-info :name "Егор" :surname "Емельянов" :city "Полевской" :rider-id "RyHLA5DQ"}
+   {:type :rider-info :name "Вахтанг" :surname "Гагуа" :patronymic "Николозович" :city "Горнозаводск" :rider-id "RJ6FR4C4"}
+   {:type :rider-info :name "Артур" :surname "Пресняков" :patronymic "Михайлович" :city "Нижний Тагил" :rider-id "R8AVeLHE"}
    {:type :rider-info :name "Константин" :surname "Майбуров" :city "-" :rider-id "R0MafCGQ"}
    {:type :rider-info :name "Эрик" :surname "Ишмаков" :city "Уфа" :rider-id "RrXTCPdg"}
    {:type :rider-info :name "Роман" :surname "Кузнецов" :city "Ижевск" :rider-id "R9c7oqWc"}
    {:type :rider-info :name "Артём" :surname "Калинин" :city "Магнитогорск" :rider-id "R9uAyYY"}
-   {:type :rider-info :name "Денис" :surname "Шилов" :city "Екатеринбург" :rider-id "Rx0m1M0g"}
+   {:type :rider-info :name "Денис" :surname "Шилов" :patronymic "Владимирович" :city "Екатеринбург" :rider-id "Rx0m1M0g"}
    {:type :rider-info :name "Денис" :surname "Медведюк" :city "Тюмень" :rider-id "RhKqKX6M"}
    {:type :rider-info :name "Михаил" :surname "Ушаков" :city "Тюмень" :rider-id "RMBw4DLE"}
    {:type :rider-info :name "Дамир" :surname "Юсупов" :city "-" :rider-id "R5mNlf2k"}
@@ -35,12 +39,12 @@
    {:type :rider-info :name "Евгений" :surname "Журавский" :city "Пермь" :rider-id "R4bBBZo"}
    {:type :rider-info :name "Константин" :surname "Романов" :city "с.Еткуль" :rider-id "RYerfEVI"}
    {:type :rider-info :name "Султан" :surname "Хабибрахманов" :city "Екатеринбург" :rider-id "Ro30lhE"}
-   {:type :rider-info :name "Виктор" :surname "Цыбулин" :city "Тюмень" :rider-id "RzpkfUNk"}
+   {:type :rider-info :name "Виктор" :surname "Цыбулин" :patronymic "Григорьевич" :city "Тюмень" :rider-id "RzpkfUNk"}
    {:type :rider-info :name "Дмитрий" :surname "Аверин" :city "Екатеринбург" :rider-id "R0pRoCY"}
    {:type :rider-info :name "Антон" :surname "Харитонов" :city "Уфа" :rider-id "RfT29QAE"}
    {:type :rider-info :name "Владимир" :surname "Бодрин" :city "Магнитогорск" :rider-id "RijKujQ"}
    {:type :rider-info :name "Алексей" :surname "Созинов" :city "-" :rider-id "RGohThp4"}
-   {:type :rider-info :name "Алексей" :surname "Кокорин" :city "Курган" :rider-id "RnrerzE"}
+   {:type :rider-info :name "Алексей" :surname "Кокорин" :patronymic "Владимирович" :city "Курган" :rider-id "RnrerzE"}
    {:type :rider-info :name "Азат" :surname "Галимов" :city "Уфа" :rider-id "R2P6kF5s"}
    {:type :rider-info :name "Александр" :surname "Выгодский" :city "Верхняя Пышма" :rider-id "RHmC177M"}
    {:type :rider-info :name "Алексей" :surname "Семилетов" :city "Курган" :rider-id "RpFI4Fxs"}
@@ -58,7 +62,7 @@
    {:type :rider-info :name "Дмитрий" :surname "Ахманаев" :city "Екатеринбург" :rider-id "RoqJwcmI"}
    {:type :rider-info :name "Александр" :surname "Некрасов" :city "Копейск" :rider-id "R4GNPpE"}
    {:type :rider-info :name "Михаил" :surname "Жилин" :city "Курган" :rider-id "Rfx9GOZI"}
-   {:type :rider-info :name "Евгений" :surname "Данилов" :city "Пермь" :rider-id "RgIVoEf0"}
+   {:type :rider-info :name "Евгений" :surname "Данилов" :patronymic "Николаевич" :city "Пермь" :rider-id "RgIVoEf0"}
    {:type :rider-info :name "Антон" :surname "Толкачев" :city "Талица" :rider-id "RERjfbfc"}
    {:type :rider-info :name "Денис" :surname "Козлов" :city "Челябинск" :rider-id "RUrUNbCg"}
    {:type :rider-info :name "Виктор" :surname "Калинин" :city "Магнитогорск" :rider-id "RQeHv4FY"}
@@ -74,7 +78,7 @@
    {:type :rider-info :name "Кирилл" :surname "Азаров" :city "Челябинск" :rider-id "RTEQ1zWs"}
    {:type :rider-info :name "Антон" :surname "Зырянов" :city "Магнитогорск" :rider-id "RIser7k"}
    {:type :rider-info :name "Владимир" :surname "Носков" :city "Магнитогорск" :rider-id "RlIWswJg"}
-   {:type :rider-info :name "Артем" :surname "Свяжин" :city "-" :rider-id "RdXmJmeA"}
+   {:type :rider-info :name "Артем" :surname "Свяжин" :patronymic "Владимирович" :city "Екатеринбург" :rider-id "RdXmJmeA"}
    {:type :rider-info :name "Дмитрий" :surname "Иванов" :city "Каменск-Уральский" :rider-id "RCVkfHTs"}
    {:type :rider-info :name "Константин" :surname "Маркелов" :city "Челябинск" :rider-id "R4wqeg3Y"}
    {:type :rider-info :name "Кирилл" :surname "Галкин" :city "-" :rider-id "RXADdFx0"}
@@ -103,7 +107,7 @@
    {:type :rider-info :name "Евгений" :surname "Ярославцев" :city "Пермь" :rider-id "RSa88uM"}
    {:type :rider-info :name "Михаил" :surname "Попов" :city "Каменск-Уральский" :rider-id "RVoN79do"}
    {:type :rider-info :name "Тимофей" :surname "Максимов" :city "Екатеринбург" :rider-id "RJ416QJs"}
-   {:type :rider-info :name "Владимир" :surname "Тясин" :city "Екатеринбург" :rider-id "Rb0ClCY"}
+   {:type :rider-info :name "Владимир" :surname "Тясин" :patronymic "Сергеевич" :city "Екатеринбург" :rider-id "Rb0ClCY"}
    {:type :rider-info :name "Алексей" :surname "Захаров" :city "Екатеринбург" :rider-id "RD9zvFlM"}
    {:type :rider-info :name "Андрей" :surname "Куцепендик" :city "-" :rider-id "RzHwJBxk"}
    {:type :rider-info :name "Амир" :surname "Сарваритдинов" :city "Кыштым" :rider-id "RRuQ3JdM"}
@@ -211,21 +215,38 @@
    {:type :rider-info, :name "Антон", :surname "Овчинников", :city "Тюмень", :rider-id "RIFt1FIo"}
    {:type :rider-info, :name "Максим", :surname "Кокшаров", :city "Пермь", :rider-id "R7rGlt9E"}
    {:type :rider-info, :name "Андрей", :surname "Маликов", :city "Нягань", :rider-id "RBrEottg"}
+   {:type :rider-info, :name "Пётр", :surname "Петанов", :city "Нижний Тагил", :rider-id "RabCB0"}
+   {:type :rider-info, :name "Дмитрий", :surname "Яруллин", :city "Екатеринбург", :rider-id "RBG1uTC4"}
+   {:type :rider-info, :name "Александр", :surname "Демьянов", :patronymic "Владиславович", :city "Нижний Тагил", :rider-id "RQ9eaYto"}
+   {:type :rider-info, :name "Илья", :surname "Кругликов", :patronymic "Андреевич", :city "Левиха", :rider-id "R24Dn4P4"}
+   {:type :rider-info, :name "Евгений", :surname "Мирзаметов", :city "Тюмень", :rider-id "RUsz2eU4"}
+   {:type :rider-info, :name "Артем", :surname "Чернецкий", :city "Екатеринбург", :rider-id "RhQwz4PY"}
+   {:type :rider-info, :name "Роман", :surname "Карнаухов", :patronymic "Евгеньевич" :city "Екатеринбург", :rider-id "ROxmDDbY"}
+   {:type :rider-info, :name "Артём", :surname "Тараненко" :city "Екатеринбург", :rider-id "Rf90xk8"}
+   {:type :rider-info, :name "Александр", :surname "Тютиков", :patronymic "Анатольевич" :city "Екатеринбург", :rider-id "RFDtCSdI"}
+   {:type :rider-info, :name "Алексей", :surname "Коротаев", :patronymic "Владимирович" :city "Екатеринбург", :rider-id "Rg5vYCtc"}
+   {:type :rider-info, :name "Виталий", :surname "Грачев", :patronymic "Александрович" :city "Баранчинский", :rider-id "RHJPaQ"}
+   {:type :rider-info, :name "Динар", :surname "Сибагатуллин" :patronymic "Халилович" :city "Югорск", :rider-id "RuSLqnkk"}
+   {:type :rider-info, :name "Денис", :surname "Стафеев" :patronymic "Михайлович" :city "Нижний Тагил", :rider-id "RfH0nfek"}
    ])
 
-(defn- normalized-string
+(defn- normalize-string
+  [s]
+  (when s
+    (if (or (nil? s)
+            (= "-" s))
+      ;; Пустые строки считаем как "nil"
+      "nil"
+      (-> s
+          (str/trim)
+          (str/lower-case)
+          ;; для проверки дубликатов будем считать ё как е
+          (str/replace "ё" "е")))))
+
+(defn- normalized-string-getter
   [kw]
   (fn [m]
-    (let [s (get m kw)]
-      (if (or (nil? s)
-              (= "-" s))
-        ;; Пустые строки считаем как "nil"
-        "nil"
-        (-> s
-            (str/trim)
-            (str/lower-case)
-            ;; для проверки дубликатов будем считать ё как е
-            (str/replace "ё" "е"))))))
+    (normalize-string (get m kw))))
 
 (defn check-duplicates! []
   (reduce
@@ -234,8 +255,8 @@
         (throw (ex-info (str "Обнаружено дублирование данных для гонщика " v) {}))
         (conj acc v)))
     #{}
-    (map (juxt (normalized-string :name)
-               (normalized-string :surname))
+    (map (juxt (normalized-string-getter :name)
+               (normalized-string-getter :surname))
          riders-data)))
 
 ;; Проверить на дублирование при загрузке
@@ -245,10 +266,9 @@
   "Возвращает `rider-id` для гонщика с указанными именем и фамилией.
   Выбрасывает ошибку если ничего не найдено или если найдено больше одного гонщика"
   [name surname]
-  (let [matches (filter #(and (= (:name %) name)
-                              (= (:surname %) surname)) riders-data)
-        cnt (count matches)
-        ]
+  (let [matches (filter #(and (= (normalize-string (:name %)) (normalize-string name))
+                              (= (normalize-string (:surname %)) (normalize-string surname))) riders-data)
+        cnt (count matches)]
     (cond
       (zero? cnt)
       (throw (ex-info (format "Не найден гонщик с такими данными: %s %s" name surname) {}))

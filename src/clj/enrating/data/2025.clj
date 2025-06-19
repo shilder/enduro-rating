@@ -9,9 +9,19 @@
 ;; TODO: алапаевск
 
 
-;; Сложность события регулиурется полем base-points
-;; Общий пул очков за эту гонку (в данном классе) - зависит от условной сложности гонки и класса
-;; параметр достаточно субъективный, но что делать
+;; Расчет точки отсечения - зависит от класса
+(defn calculate-cutoff [equivalent count]
+  (case equivalent
+    ;; +25% от стартовавших для условного голда
+    :gold
+    (long (Math/round (* count 1.25)))
+
+    ;; +10% от стартовавших для условного серебра
+    :silver
+    (long (Math/round (* count 1.1)))
+
+    ;; Для всех остальных - кол-во стартовавших
+    count))
 
 ;; Самая Легкая Гонка, первый этап - 24.05.2025
 (def slg1
@@ -19,17 +29,43 @@
    {:type     :event
     :name     "Самая Легкая Гонка"
     :date     "2025-05-24"
-    :event-id "EALkbw"}
+    :event-id "EALkbw"
+    }
 
    ;; Результаты уровень 7
-   {
-    :type              :classification
-    :classification-id "CClUxywqlX4"
-    :event-id          "EALkbw"
-    :name              "Класс 7 / Уровень 7 / ХАРД, ЗОЛОТО"
-    ;; Пул очков
-    :base-points       250
-    }
+   (let [кругов 2
+         сложность-круга 100.0
+         стартовало 26
+         штраф 1
+         условный-класс :gold]
+     {
+      :type               :classification
+      :classification-id  "CClUxywqlX4"
+      :event-id           "EALkbw"
+      :name               "Класс 7 / Уровень 7 / ХАРД, ЗОЛОТО"
+      :equivalent         условный-класс
+
+      :laps               кругов
+      :lap-difficulty     сложность-круга
+      :started-count      стартовало
+
+      ;; Очков за первое место - зависит от сложности события (трасса, уровень участников, и тд)
+      ;; Цифра конечно субъективная, но тут крайне тяжело добиться объективности
+      ;;
+      ;; Сложность гонки
+      ;; Сложность круга * кол-во кругов * штраф за малочисленность
+      ;; TODO: сделать доп баллы за уровень участников ?
+      ;;
+      ;; Штраф за малочисленность (кол-во стартовавших) - 1.0 - за кол-во больше 10, 0.5 - за кол-во меньше или равно 3
+      :first-place-points (* кругов сложность-круга штраф)
+
+      ;; точка отсечения
+      ;; для бронзы/железа - кол-во стартовавших
+      ;; для серебра - кол-во стартовавших + 10%
+      ;; для золота - кол-во стартовавших + 25%
+      :cutoff-point       (calculate-cutoff условный-класс стартовало)
+      })
+
 
    [:type :result :event-id "EALkbw" :classification-id "CClUxywqlX4" :position 1 :plate-number "23" :rider-id (find-rider-id "Никита" "Поляков")]
    [:type :result :event-id "EALkbw" :classification-id "CClUxywqlX4" :position 2 :plate-number "10" :rider-id (find-rider-id "Евгений" "Цицимушкин")]
@@ -59,21 +95,23 @@
    [:type :result :event-id "EALkbw" :classification-id "CClUxywqlX4" :position 26 :plate-number "5" :rider-id (find-rider-id "Ростислав" "Забродин")]
 
    ;; Результаты уровень 6
-   {
-    :type              :classification
-    :classification-id "CNyY6EmTHP8g"
-    :event-id          "EALkbw"
-    :name              "Класс 6 / Уровень 6 / ДВУХТАКТНЫЕ МОТОЦИКЛЫ"
-    ;; Трассы одинаковые - базовый пул тоже
-    :base-points       150
+   (let [кругов 2
+         сложность-круга 75.0
+         стартовало 153
+         штраф 1
+         условный-класс :silver]
+     {
+      :type               :classification
+      :classification-id  "CNyY6EmTHP8g"
+      :event-id           "EALkbw"
+      :name               "Класс 6 / Уровень 6 / ДВУХТАКТНЫЕ МОТОЦИКЛЫ"
+      :equivalent         условный-класс
+      :laps               кругов
+      :lap-difficulty     сложность-круга
+      :started-count      стартовало
+      :first-place-points (* кругов сложность-круга штраф)
+      :cutoff-point       (calculate-cutoff условный-класс стартовало)})
 
-    ;; Кол-во зарегистрировашихся
-    :registered-count nil
-    ;; Кол-во стартовавших
-    :started-count nil
-    ;; Кол-во финишировавших
-    :finished-count nil
-    }
    ;; Страница 1
    [:type :result :event-id "EALkbw" :classification-id "CNyY6EmTHP8g" :position 1 :plate-number "124" :rider-id (find-rider-id "Петр" "Адрианов")]
    [:type :result :event-id "EALkbw" :classification-id "CNyY6EmTHP8g" :position 2 :plate-number "208" :rider-id (find-rider-id "Евгений" "Журавский")]
@@ -208,7 +246,6 @@
    [:type :result :event-id "EALkbw" :classification-id "CNyY6EmTHP8g" :position 127 :plate-number "133" :rider-id (find-rider-id "Александр" "Жмаков")]
    [:type :result :event-id "EALkbw" :classification-id "CNyY6EmTHP8g" :position 128 :plate-number "122" :rider-id (find-rider-id "Мыкалов" "Владимир")]
    [:type :result :event-id "EALkbw" :classification-id "CNyY6EmTHP8g" :position 129 :plate-number "125" :rider-id (find-rider-id "Александр" "Чикишев")]
-   [:type :result :event-id "EALkbw" :classification-id "CNyY6EmTHP8g" :position 130 :plate-number "229" :rider-id (find-rider-id "Станислав" "Тарасов")]
    [:type :result :event-id "EALkbw" :classification-id "CNyY6EmTHP8g" :position 131 :plate-number "221" :rider-id (find-rider-id "Олег" "Сухарев")]
    [:type :result :event-id "EALkbw" :classification-id "CNyY6EmTHP8g" :position 132 :plate-number "216" :rider-id (find-rider-id "Евгений" "Каширин")]
    [:type :result :event-id "EALkbw" :classification-id "CNyY6EmTHP8g" :position 133 :plate-number "201" :rider-id (find-rider-id "Ильшат" "Нигматуллин")]
@@ -235,15 +272,24 @@
    [:type :result :event-id "EALkbw" :classification-id "CNyY6EmTHP8g" :position 153 :plate-number "333" :rider-id (find-rider-id "Максим" "Антонов")]
 
    ;; Результаты уровень 5
-   {
-    :type              :classification
-    :classification-id "CQuv6rI64Fg"
-    :event-id          "EALkbw"
-    :name              "Класс 5 / Уровень 5 / ВОДЯНОЙ"
-    ;; Трассы одинаковые, но кол-во участников разное,
-    ;; поэтому занять условное 10 место в классе 6 значительно сложнее чем в классе 5
-    :base-points       100
-    }
+   (let [кругов 2
+         ;; Такая же сложность как и для класса 6
+         сложность-круга 75.0
+         стартовало 28
+         штраф 1
+         условный-класс :silver]
+     {
+      :type               :classification
+      :classification-id  "CQuv6rI64Fg"
+      :event-id           "EALkbw"
+      :name               "Класс 5 / Уровень 5 / ВОДЯНОЙ"
+      :equivalent         условный-класс
+      :laps               кругов
+      :lap-difficulty     сложность-круга
+      :started-count      стартовало
+      :first-place-points (* кругов сложность-круга штраф)
+      :cutoff-point       (calculate-cutoff условный-класс стартовало)
+      })
    ;; Страница 1
    [:type :result :event-id "EALkbw" :classification-id "CQuv6rI64Fg" :position 1 :plate-number "320" :rider-id (enrating.data.riders/find-rider-id "Владимир" "Пономарчук")]
    [:type :result :event-id "EALkbw" :classification-id "CQuv6rI64Fg" :position 2 :plate-number "325" :rider-id (enrating.data.riders/find-rider-id "Сергей" "Кузнецов")]
@@ -275,6 +321,101 @@
    [:type :result :event-id "EALkbw" :classification-id "CQuv6rI64Fg" :position 27 :plate-number "324" :rider-id (enrating.data.riders/find-rider-id "Максим" "Кокшаров")]
    [:type :result :event-id "EALkbw" :classification-id "CQuv6rI64Fg" :position 28 :plate-number "326" :rider-id (enrating.data.riders/find-rider-id "Андрей" "Маликов")]
 
+
+   {:type :event
+    :name "The Stalker - 1 Этап"
+    :date "2025-05-17"
+    :event-id "Eo2KmTA"}
+
+   (let [кругов 3
+         ;; У Золота было посложнее - была парочка подъемов
+         сложность-круга 70.0
+         стартовало 6
+         ;; Мало участников было очень - придется штрафануть
+         штраф 0.8
+         условный-класс :gold]
+     {
+      :type               :classification
+      :classification-id  "CyMOX89K67hY"
+      :event-id           "Eo2KmTA"
+      :name               "Gold"
+      :laps               кругов
+      :lap-difficulty     сложность-круга
+      :started-count      стартовало
+
+      :first-place-points (* кругов сложность-круга штраф)
+      :cutoff-point       (calculate-cutoff условный-класс стартовало)
+      })
+
+   ;; TODO: команда и город здесь (может меняться у гонщика, но не в протоколе)
+   {:type :result :event-id "Eo2KmTA" :classification-id "CyMOX89K67hY" :position 1 :plate-number "6" :rider-id (find-rider-id "Евгений" "Цицимушкин") :team "Южный Урал мотоспорт" :motorcycle "Husqvarna TE300"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CyMOX89K67hY" :position 2 :plate-number "2" :rider-id (find-rider-id "Павел" "Лядецкий") :team "TuPizza Enduro Team" :motorcycle "Gas Gas EC300R TPI"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CyMOX89K67hY" :position 3 :plate-number "1" :rider-id (find-rider-id "Егор" "Емельянов") :team "MotikoGroup" :motorcycle "Beta"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CyMOX89K67hY" :position 4 :plate-number "5" :rider-id (find-rider-id "Вахтанг" "Гагуа") :motorcycle "KTM 300 EXC"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CyMOX89K67hY" :position 5 :plate-number "4" :rider-id (find-rider-id "Михаил" "Ушаков") :motorcycle "KTM 300 EXC"}
+   ;; DNF ??
+   {:type :result :event-id "Eo2KmTA" :classification-id "CyMOX89K67hY" :position 6 :plate-number "3" :rider-id (find-rider-id "Артур" "Пресняков") :motorcycle "KTM 300 EXC"}
+
+   (let [кругов 3
+         сложность-круга 50.0
+         стартовало 18
+         условный-класс :silver]
+     {
+      :type               :classification
+      :classification-id  "CX0NGKT0qMZA"
+      :event-id           "Eo2KmTA"
+      :name               "Silver"
+      :laps               кругов
+      :lap-difficulty     сложность-круга
+      :started-count      стартовало
+
+      :first-place-points (* кругов сложность-круга)
+      :cutoff-point       (calculate-cutoff условный-класс стартовало)
+      })
+
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 1 :plate-number "23" :rider-id (find-rider-id "Петр" "Петанов") :motorcycle "Husqvarna TE300"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 2 :plate-number "24" :rider-id (find-rider-id "Алексей" "Семилетов") :motorcycle "KTM"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 3 :plate-number "30" :rider-id (find-rider-id "Дмитрий" "Яруллин") :team "Extreme Ekb (Uktus)" :motorcycle "KTM 300 EXC"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 4 :plate-number "35" :rider-id (find-rider-id "Виктор" "Цыбулин") :team "Зацепанет" :motorcycle "Husqvarna TE300"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 5 :plate-number "26" :rider-id (find-rider-id "Евгений" "Данилов") :team "Team A-Motors" :motorcycle "Husqvarna TE300"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 6 :plate-number "25" :rider-id (find-rider-id "Алексей" "Кокорин") :motorcycle "KTM 300 EXC"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 7 :plate-number "33" :rider-id (find-rider-id "Владимир" "Тясин") :motorcycle "KTM"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 8 :plate-number "36" :rider-id (find-rider-id "Александр" "Демьянов") :motorcycle "Kews k23"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 9 :plate-number "22" :rider-id (find-rider-id "Юрий" "Бороздин") :motorcycle "KTM"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 10 :plate-number "38" :rider-id (find-rider-id "Андрей" "Склюев") :motorcycle "Husqvarna TE300"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 11 :plate-number "32" :rider-id (find-rider-id "Илья" "Кругликов") :motorcycle "Beta"}
+   ;; DNFs ? TODO: учесть не финишеров
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 12 :plate-number "21" :rider-id (find-rider-id "Евгений" "Мирзаметов") :motorcycle "КТМ"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 13 :plate-number "37" :rider-id (find-rider-id "Артем" "Чернецкий") :team "НАУКА" :motorcycle "FAIDET NC300S ULTRA"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 14 :plate-number "34" :rider-id (find-rider-id "Денис" "Шилов") :motorcycle "КТМ 300 EXC"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 15 :plate-number "29" :rider-id (find-rider-id "Роман" "Карнаухов") :motorcycle "КТМ"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 16 :plate-number "28" :rider-id (find-rider-id "Артём" "Тараненко") :motorcycle "КТМ"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 17 :plate-number "31" :rider-id (find-rider-id "Александр" "Тютиков") :motorcycle "Koshine"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 18 :plate-number "27" :rider-id (find-rider-id "Алексей" "Коротаев") :team "Арматура" :motorcycle "Husqvarna TE300 "}
+
+   (let [кругов 3
+         ;; Не такая простая бронза была на самом деле
+         сложность-круга 30.0
+         стартовало 13
+         условный-класс :bronze]
+     {
+      :type               :classification
+      :classification-id  "CkE6aHK3mE5w"
+      :event-id           "Eo2KmTA"
+      :name               "Bronze"
+      :laps               кругов
+      :lap-difficulty     сложность-круга
+      :started-count      стартовало
+
+      :first-place-points (* кругов сложность-круга)
+      :cutoff-point       (calculate-cutoff условный-класс стартовало)
+      })
+
+   {:type :result :event-id "Eo2KmTA" :classification-id "CkE6aHK3mE5w" :position 1 :plate-number "88" :rider-id (find-rider-id "Артем" "Свяжин") :team "Азимут66"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CkE6aHK3mE5w" :position 2 :plate-number "78" :rider-id (find-rider-id "Виталий" "Грачев") :team "ЭндуроБаранчинский" :motorcycle "ВОЗДУШКА"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CkE6aHK3mE5w" :position 3 :plate-number "76" :rider-id (find-rider-id "Динар" "Сибагатуллин") :motorcycle "GR8 300 2T"}
+   {:type :result :event-id "Eo2KmTA" :classification-id "CkE6aHK3mE5w" :position 4 :plate-number "81" :rider-id (find-rider-id "Денис" "Стафеев") :motorcycle "FX moto"}
+
    ]
   )
 
@@ -284,7 +425,42 @@
     (into {} (map vec (partition 2 row)))
     row))
 
+(defn- unique-values!
+  [collection key error-fn]
+  (reduce
+    (fn [a v]
+      (if (contains? a v)
+        (error-fn v)
+        (conj a v)))
+    #{}
+    (map key collection)))
+
+;; TODO: перенести в core
+(defn sanity-checks
+  [data]
+  (doseq [[id classification] (group-by :classification-id (filter #(= (:type %) :result) data))]
+    ;; Внутри зачета - каждый пилот, каждый стартовый номер и каждое место должно быть только один раз
+    (unique-values! classification :rider-id
+                    (fn [v]
+                      (throw (ex-info (format "В зачете %s уже есть гонщик %s"
+                                              id v)
+                                      {}))))
+    (unique-values! classification :plate-number
+                    (fn [v]
+                      (throw (ex-info (format "В зачете %s уже есть гонщик со стартовым номером %s"
+                                              id v)
+                                      {}))))
+    (unique-values! classification :rider-id
+                    (fn [v]
+                      (throw (ex-info (format "В зачете %s уже есть гонщик с итоговым местом %s"
+                                              id v)
+                                      {}))))
+
+    ;; TODO: position - число
+
+    )
+  data)
+
 ;; Should return data for 2025
-(defn data []
-  (concat
-    (map process-data slg1)))
+(def data
+  (sanity-checks (map process-data slg1)))

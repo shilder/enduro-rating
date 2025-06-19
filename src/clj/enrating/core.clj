@@ -5,7 +5,8 @@
             [enrating.data.2025]
             [enrating.data.riders]
             [ns-tracker.core :as nt])
-  (:import (java.time LocalDate)))
+  (:import (java.math RoundingMode)
+           (java.time LocalDate)))
 
 
 
@@ -20,7 +21,6 @@
 ;; Бонус за то что обогнал сильного спортсмена - пока не придумал как реализовать
 ;;
 
-
 ;;
 ;; Проблемы текущей модели
 ;;
@@ -29,15 +29,21 @@
 ;; - Сложность трассы сама по себе (с учетом погоды и тд)
 ;; - Конкурентность класса - зависит как от кол-ва участников так и от их уровня
 ;;
+;; По текущей модели слишком мало очков достается тому кто ниже 20 места, надо сделать более равномерное распределение
+;; Что-то вроде процентного распределения, то есть если участников много, то сильнее размазывать баллы
 
-(rum/defc classification-card [all-data {:keys [name base-points classification-id] :as classification-data}]
+
+(rum/defc classification-card [all-data {:keys [name first-place-points cutoff-point classification-id] :as classification-data}]
   [:div.event-card
    [:div.event-field
     [:label "Название класса"]
     [:div.field-value name]]
    [:div.event-field
-    [:label "Базовый пул очков для этого класса"]
-    [:div.field-value base-points]]
+    [:label "Очки за первое место"]
+    [:div.field-value first-place-points]]
+   [:div.event-field
+    [:label "Точка отсечения подсчета очков"]
+    [:div.field-value cutoff-point]]
    [:div "Результаты"]
    [:table
     [:thead
@@ -72,34 +78,36 @@
                                 (vals (:classifications all-data)))]
      (classification-card all-data classification))])
 
-(def positions-map
-  {1 0.178M
-   2 0.142M
-   3 0.114M
-   4 0.093M
-   5 0.079M
-   6 0.071M
-   7 0.064M
-   8 0.058M
-   9 0.053M
-   10 0.049M})
+(let [k 0.05]
+  ;; Exponential Decay-Based Scoring
+  (defn position-points2 [total position]
+    (* total (Math/exp (* (- k) (- position 1))))))
 
-;; Калька с сетки MotoGP, там фиксированный пул в 140 очков за событие
-;; идея в том что в топ попасть значительно сложнее, поэтому большая часть очков
-;; распределяется в рамках первой десятки, остальным достаются копейки
-(defn- position-points [total position]
-  (let [multiplier (or (get positions-map position)
-                       (max 0.001M (- 0.045M (* 0.001M (- position 6)))))]
-    (* multiplier total)))
+;; Power Law Distribution
+(let [p 1.5]
+  (defn position-points3 [total position amount]
+    (* total (- 1.0 (Math/pow (/ (- position 1.0)
+                               (- amount 1.0))
+                            p)))))
 
+;; Logarithmic Rank-Based Function
+(defn position-points4 [total position amount]
+  (.setScale (bigdec
+               (* total (/ (- (Math/log (+ amount 1.0)) (Math/log position))
+                           (Math/log (+ amount 1.0)))))
+             2
+             RoundingMode/HALF_UP))
 
 ;; Примеры начисления очков в зависимости от места и общего пула:
 (comment
   (for [pos (range 1 16)]
-    [pos (position-points 140 pos)])
+    [pos (position-points2 140 pos)])
 
   (for [pos (range 1 100)]
-    [pos (position-points 240 pos)]))
+    [pos (position-points3 240 pos 100)])
+
+  (for [pos (range 1 100)]
+    [pos (position-points4 240 pos 100)]))
 
 
 (defn inline-style [content]
@@ -120,11 +128,13 @@
             (mapv
               (fn [result]
                 (let [classification (get-in all-data [:classifications (:classification-id result)])]
-                  (assoc result :points (position-points (:base-points classification) (:position result)))))
+                  (assoc result :points (position-points4 (:first-place-points classification)
+                                                          (:position result)
+                                                          (:cutoff-point classification)))))
               results))))
 
 (def data2025-map
-  (let [raw-data2025 (enrating.data.2025/data)]
+  (let [raw-data2025 enrating.data.2025/data]
     (-> {:events          (collect-into-map raw-data2025 :event-id :event)
          :classifications (collect-into-map raw-data2025 :classification-id :classification)
          :results         (filter #(= (:type %) :result) raw-data2025)
@@ -173,4 +183,4 @@
     (.start thread)
     thread))
 
-(defonce reload-thread (start-auto-reload))
+;(defonce reload-thread (start-auto-reload))
