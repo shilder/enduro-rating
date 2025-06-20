@@ -17,3 +17,60 @@ td.gold {
 tr.highlight {
     background: aquamarine;
 }
+
+a {
+    color:#4183C4;
+ }
+a:hover {
+    color:#156cc2;
+}
+
+body {
+    background-color: #fefefe;
+    color: #0a0a0a;
+}
+
+section.summary-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    width: 80%;
+    min-width: 500px;
+    margin: 0 auto;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-bottom: 1rem;
+    border-radius: 0;
+    width: 100%;
+}
+
+tbody {
+    border: 1px solid rgb(241, 241, 241);
+}
+
+thead th, thead td, tfoot th, tfoot td, tbody td, tbody th {
+    padding: 0.5rem 0.7rem 0.7rem;
+}
+
+thead, tfoot {
+    border: 1px solid rgb(241, 241, 241);
+    background-color: rgb(248, 248, 248);
+    text-align: center;
+}
+
+thead th, thead td, tfoot th, tfoot td {
+    padding: 0.5rem 0.7rem 0.7rem;
+    font-weight: bold;
+}
+
+tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+td.rider-position, td.rider-points, th.rider-points {
+    text-align: center;
+}

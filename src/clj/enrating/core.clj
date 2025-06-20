@@ -13,8 +13,13 @@
 ;; TODO:
 ;;
 ;; Бонус за финишеров - чем меньше финишеров (относительно числа стартовавших) - тем сложнее была гонка
+;;   - решилось само собой с помощью нормированного логарифмического распределения -
+;;     чем меньше финишеров относительно стартовавших тем больше очков насыпает
 ;; Бонус за кол-во участников - чем больше народу тем как правило сложнее (но не всегда и несильно)
+;;   - аналогично работает через логарифмическое распределение
+;;
 ;; Бонус за длительность прохождения трассы - чем дольше ехать тем сложнее (как правило)
+;;   - просто включаем в базовую сложность круга
 ;;
 ;; В теории все что выше можно просто включать в базовый пул очков и регулировать им
 ;;
@@ -26,12 +31,12 @@
 ;;
 ;; Сложность гонки (и кол-во очков) должна определяться следующими факторами
 ;;
-;; - Сложность трассы сама по себе (с учетом погоды и тд)
-;; - Конкурентность класса - зависит как от кол-ва участников так и от их уровня
+;; - Сложность трассы сама по себе (с учетом погоды и тд) - это более менее работает
+;; - Конкурентность класса - зависит как от кол-ва участников так и от их уровня - этого пока нет, неясно
+;;   как реализовать
 ;;
-;; По текущей модели слишком мало очков достается тому кто ниже 20 места, надо сделать более равномерное распределение
-;; Что-то вроде процентного распределения, то есть если участников много, то сильнее размазывать баллы
-
+;; TODO: начислять ли очки за DNF ?
+;;
 
 (rum/defc classification-card [all-data {:keys [name first-place-points cutoff-point classification-id] :as classification-data}]
   [:div.event-card
@@ -84,8 +89,8 @@
 ;; Округляем до второго знака по обычным правилам
 (defn position-points4 [total position amount]
   (.setScale (bigdec
-               (* total (/ (- (Math/log (inc amount)) (Math/log position))
-                           (Math/log (inc amount)))))
+               (let [norm (Math/log (+ amount 1.0))]
+                 (* total (/ (- norm (Math/log position)) norm))))
              2
              RoundingMode/HALF_UP))
 
@@ -135,6 +140,54 @@
          :riders          enrating.data.riders/riders-map}
         (add-points-data))))
 
+(rum/defc github-logo []
+  [:svg.octicon
+   {:viewBox "0 0 24 24" :width "32" :height "32" :fill "currentColor"}
+   [:path {:d "M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"}]])
+
+(rum/defc riders-table
+  [all-data]
+  (let [riders-top-score
+        (for [rider (vals (:riders all-data))
+              :let [results (filter #(= (:rider-id %) (:rider-id rider))
+                                    (:results all-data))]
+              ;; только для тех у кого есть какие-то очки
+              :when (seq results)]
+          {:rider   rider
+           :total   (reduce + 0M (map :points results))
+           :results results})
+        events (sort-by #(LocalDate/parse (:date %)) (vals (:events all-data)))
+        riders-data (reverse (sort-by :total riders-top-score))]
+    [:table
+     [:thead
+      (-> [:tr
+           [:th {:width "50px"} "#"]
+           [:th {:width "150px"} "Гонщик"]]
+          (into (map
+                  (fn [event]
+                    [:th {:width "80px"} (:name event)]))
+                events)
+          (into [[:th {:width "80px"} "Всего"]]))]
+
+     (into [:tbody]
+           (map (fn [[idx {:keys [total rider results]}]]
+                  (-> [:tr
+                       [:td.rider-position (inc idx)]
+                       [:td (str/join " " [(:surname rider) (:name rider)])]]
+                      (into
+                        (map (fn [{:keys [event-id]}]
+                               ;; Тут мы считаем что в одном событии гонщик может участвовать только в одном зачете
+                               (let [result (first (filter #(= (:event-id %) event-id) results))
+                                     classification (get-in all-data [:classifications (:classification-id result)])]
+                                 [:td.rider-points
+                                  {:class   (:equivalent classification)
+                                   :onclick (str "highlightRow('" (:result-id result) "')")}
+                                  [:a {:href (str "#" (:result-id result))}
+                                   (:points result)]])))
+                        events)
+                      (into [[:th.rider-points total]]))))
+           (map vector (range) riders-data))]))
+
 (rum/defc index-page []
   [:html
    [:head
@@ -142,56 +195,20 @@
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
     ;; TODO: favicon
     [:title "Enduro Rating"]
+    (inline-style (slurp (io/resource "modern-normalize.css")))
     (inline-style (slurp (io/resource "styles.css")))
     (inline-js (slurp (io/resource "scripts.js")))]
    [:body
-    [:h1 "2025 год"]
-    [:h2 "Сводная таблица по гонщикам"]
-    ;; Collect into vector
-    (let [riders-top-score
-          (for [rider (vals (:riders data2025-map))
-                :let [results (filter #(= (:rider-id %) (:rider-id rider))
-                                      (:results data2025-map))]
-                ;; только для тех у кого есть какие-то очки
-                :when (seq results)]
-            {:rider   rider
-             :total   (reduce + 0M (map :points results))
-             :results results})
-          events (sort-by #(LocalDate/parse (:date %)) (vals (:events data2025-map)))
-          riders-data (reverse (sort-by :total riders-top-score))]
-      [:table
-       [:thead
-        (-> [:tr
-             [:th "#"]
-             [:th "Гонщик"]]
-            (into (map
-                    (fn [event]
-                      [:th (:name event)]))
-                  events)
-            (into [[:th "Всего"]]))]
-
-       (into [:tbody]
-             (map (fn [[idx {:keys [total rider results]}]]
-                    (-> [:tr
-                         [:td (inc idx)]
-                         [:td (str/join " " [(:surname rider) (:name rider)])]]
-                        (into
-                          (map (fn [{:keys [event-id]}]
-                                 ;; Тут мы считаем что в одном событии гонщик может участвовать только в одном зачете
-                                 (let [result (first (filter #(= (:event-id %) event-id) results))
-                                       classification (get-in data2025-map [:classifications (:classification-id result)])]
-                                   ;; TODO: подсветить результат
-                                   [:td {:class (:equivalent classification)
-                                         :onclick (str "highlightRow('" (:result-id result) "')")}
-                                    [:a {:href (str "#" (:result-id result))}
-                                     (:points result)]])))
-                          events)
-                        (into [[:td total]]))))
-             (map vector (range) riders-data))])
-
-    [:h2 "Гонки и результаты"]
-    (for [event (sort-by #(LocalDate/parse (:date %)) (vals (:events data2025-map)))]
-      (event-card data2025-map event))]])
+    [:header
+     [:h1 "2025 год"]]
+    [:section.summary-table
+     [:h2 "Сводная таблица по гонщикам"]
+     (riders-table data2025-map)]
+    [:section.results-info
+     [:h2 "Гонки и результаты"]
+     (for [event (sort-by #(LocalDate/parse (:date %)) (vals (:events data2025-map)))]
+       (event-card data2025-map event))]
+    [:footer]]])
 
 (defn render-index []
   (println "Generating data")

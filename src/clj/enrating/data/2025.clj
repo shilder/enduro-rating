@@ -579,10 +579,12 @@
 (defn process-data
   [row]
   (let [row (if (vector? row)
+              ;; Разворачиваем вектор в мапу попарно
               (into {} (map vec (partition 2 row)))
               row)
         row (if (and (= (:type row) :result)
                      (nil? (:result-id row)))
+              ;; Проставляем случайный result-id (для работы навигации в UI)
               (assoc row :result-id (enrating.data.ids/result-id))
               row)]
     row))
