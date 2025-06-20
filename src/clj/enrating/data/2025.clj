@@ -6,9 +6,6 @@
 
 ;; Данные за 2025 год
 
-;; TODO: богданович
-;; TODO: алапаевск
-
 (def slg1
   [
    {:type         :event
@@ -784,6 +781,7 @@
         :lap-difficulty    сложность-круга
         :started-count     стартовало
         })
+
      {:type :result :event-id event-id :classification-id "C64otektrHqg" :position 1 :plate-number "190" :rider-id (find-rider-id "Савелий" "Кунакбаев") :motorcycle ""}
      {:type :result :event-id event-id :classification-id "C64otektrHqg" :position 2 :plate-number "179" :rider-id (find-rider-id "Андрей" "Богомолов") :motorcycle "КТМ 85"}
      {:type :result :event-id event-id :classification-id "C64otektrHqg" :position 3 :plate-number "191" :rider-id (find-rider-id "Денис" "Кунакбаев") :motorcycle ""}
@@ -819,6 +817,259 @@
 
      ]))
 
+(def bogdanovich1
+  (let [event-id "E1rV2kA"]
+    [
+     {:type     :event
+      :name     "Взятие Кашинского городища 2025"
+      :date     "2025-04-26"
+      :event-id event-id}
+
+     ;; Надо поправить, я хз что у них было
+     (let [кругов 3
+           сложность-круга 70.0
+           стартовало 18
+           условный-класс :gold]
+       {
+        :type              :classification
+        :classification-id "C5H3OYYSHDnc"
+        :event-id          event-id
+        :name              "Gold"
+        :equivalent        условный-класс
+        :laps              кругов
+        :lap-difficulty    сложность-круга
+        :started-count     стартовало
+        })
+
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 1 :plate-number "8" :rider-id (find-rider-id "Сергей" "Тронин")}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 2 :plate-number "15" :rider-id (find-rider-id "Евгений" "Цицимушкин") :team "Южный Урал мотоспорт"}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 3 :plate-number "20" :rider-id (find-rider-id "Андрей" "Журавлев") :team "Avantis Racing Team"}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 4 :plate-number "11" :rider-id (find-rider-id "Павел" "Лядецкий") :team "TuPizza Enduro Team"}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 5 :plate-number "13" :rider-id (find-rider-id "Дамир" "Юсупов")}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 6 :plate-number "12" :rider-id (find-rider-id "Вахтанг" "Гагуа")}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 7 :plate-number "4" :rider-id (find-rider-id "Константин" "Захаров")}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 8 :plate-number "16" :rider-id (find-rider-id "Сергей" "Мезенцев")}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 9 :plate-number "19" :rider-id (find-rider-id "Константин" "Калмыков") :team "Южный Урал мотоспорт"}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 10 :plate-number "18" :rider-id (find-rider-id "Олег" "Габбасов") :team "УСМК"}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 11 :plate-number "2" :rider-id (find-rider-id "Семён" "Костяев")}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 12 :plate-number "14" :rider-id (find-rider-id "Вадим" "Черевко") :team "EnduroPerm"}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 13 :plate-number "3" :rider-id (find-rider-id "Артем" "Копытов") :team "Enduro Clinic"}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 14 :plate-number "1" :rider-id (find-rider-id "Егор" "Емельянов") :team "MotikoGroup"}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 15 :plate-number "17" :rider-id (find-rider-id "Константин" "Бортничук") :team "эндуро урал"}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 16 :plate-number "10" :rider-id (find-rider-id "Кирилл" "Пешков") :team "ENDURO KRK"}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 17 :plate-number "7" :rider-id (find-rider-id "Василий" "Тараторин") :team "Моховичковские псы"}
+     {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 18 :plate-number "6" :rider-id (find-rider-id "Александр" "Храмцов")}
+
+     ;; Надо поправить, я хз что у них было
+     (let [кругов 2
+           сложность-круга 70.0
+           стартовало 46
+           условный-класс :silver]
+       {
+        :type              :classification
+        :classification-id "ChnSllmc6Y0"
+        :event-id          event-id
+        :name              "Silver"
+        :equivalent        условный-класс
+        :laps              кругов
+        :lap-difficulty    сложность-круга
+        :started-count     стартовало
+        })
+
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 1 :plate-number "54" :rider-id (find-rider-id "Владимир" "Иванов")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 2 :plate-number "31" :rider-id (find-rider-id "Дмитрий" "Аверин")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 3 :plate-number "23" :rider-id (find-rider-id "Владимир" "Мусихин") :team "Горназ эндуро"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 4 :plate-number "74" :rider-id (find-rider-id "Алексей" "Санаров")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 5 :plate-number "25" :rider-id (find-rider-id "Антон" "Толкачев")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 6 :plate-number "61" :rider-id (find-rider-id "Илья" "Кругликов")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 7 :plate-number "45" :rider-id (find-rider-id "Илья" "Кузнецов") :team "ДрынДуро"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 8 :plate-number "28" :rider-id (find-rider-id "Владимир" "Богомолов") :team "enduro ural"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 9 :plate-number "44" :rider-id (find-rider-id "Леонид" "Леонтьев") :team "Эндуро Тюмень"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 10 :plate-number "57" :rider-id (find-rider-id "Александр" "Удачин") :team "KATAYENDURO"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 11 :plate-number "60" :rider-id (find-rider-id "Александр" "Выгодский")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 12 :plate-number "35" :rider-id (find-rider-id "Евгений" "Шигабеев")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 13 :plate-number "21" :rider-id (find-rider-id "Кирилл" "Казанцев") :team "ENDURO KAMYSHLOV"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 14 :plate-number "70" :rider-id (find-rider-id "Андрей" "Склюев")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 15 :plate-number "38" :rider-id (find-rider-id "Алексей" "Мамашев")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 16 :plate-number "37" :rider-id (find-rider-id "Андрей" "Полномочнов") :team "Enduro86"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 17 :plate-number "50" :rider-id (find-rider-id "Кирилл" "Егоров")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 18 :plate-number "56" :rider-id (find-rider-id "Антон" "Ершов")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 19 :plate-number "22" :rider-id (find-rider-id "Иван" "Замиралов")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 20 :plate-number "47" :rider-id (find-rider-id "Евгений" "Белькевич") :team "Осинки Мото"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 21 :plate-number "40" :rider-id (find-rider-id "Алексей" "Семилетов")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 22 :plate-number "32" :rider-id (find-rider-id "Геронтий" "Гогиберидзе")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 23 :plate-number "55" :rider-id (find-rider-id "Иван" "Попов")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 24 :plate-number "51" :rider-id (find-rider-id "Иван" "Филиппов")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 25 :plate-number "59" :rider-id (find-rider-id "Иван" "Швейкерт") :team "Моховичковские псы"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 26 :plate-number "34" :rider-id (find-rider-id "Дмитрий" "Чистяков") :team "Вектор"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 27 :plate-number "65" :rider-id (find-rider-id "Михаил" "Харламенков")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 28 :plate-number "41" :rider-id (find-rider-id "Антон" "Чикин")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 29 :plate-number "36" :rider-id (find-rider-id "Максим" "Антонов") :team "Enduro86"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 30 :plate-number "58" :rider-id (find-rider-id "Александр" "Белых") :team "EnduroPVK"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 31 :plate-number "73" :rider-id (find-rider-id "Никита" "Баранов")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 32 :plate-number "72" :rider-id (find-rider-id "Руслан" "Салыев")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 33 :plate-number "49" :rider-id (find-rider-id "Матвей" "Филимонов")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 34 :plate-number "42" :rider-id (find-rider-id "Александр" "Беспалов")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 35 :plate-number "46" :rider-id (find-rider-id "Юрий" "Хицов")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 36 :plate-number "27" :rider-id (find-rider-id "Евгений" "Захаров")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 37 :plate-number "26" :rider-id (find-rider-id "Султан" "Хабибрахманов") :team "CoronaMechanics"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 38 :plate-number "68" :rider-id (find-rider-id "Антон" "Стелюк") :team "Зацепанет"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 39 :plate-number "30" :rider-id (find-rider-id "Кирилл" "Терентьев") :team "Вектор"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 40 :plate-number "66" :rider-id (find-rider-id "Юрий" "Бороздин")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 41 :plate-number "33" :rider-id (find-rider-id "Алексей" "Петров") :team "EnduroUral"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 42 :plate-number "48" :rider-id (find-rider-id "Дмитрий" "Тимошевский")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 43 :plate-number "64" :rider-id (find-rider-id "Кирилл" "Галкин") :team "Вектор"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 44 :plate-number "24" :rider-id (find-rider-id "Александр" "Громов") :team "Вектор"}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 45 :plate-number "43" :rider-id (find-rider-id "Евгений" "Каширин")}
+     {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 46 :plate-number "53" :rider-id (find-rider-id "Александр" "Мугулов")}
+
+     ;; Надо поправить, я хз что у них было
+     (let [кругов 2
+           сложность-круга 70.0
+           стартовало 84
+           условный-класс :bronze]
+       {
+        :type              :classification
+        :classification-id "C5UrF3fk4g9g"
+        :event-id          event-id
+        :name              "Bronze"
+        :equivalent        условный-класс
+        :laps              кругов
+        :lap-difficulty    сложность-круга
+        :started-count     стартовало
+        })
+
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 1 :plate-number "175" :rider-id (find-rider-id "Денис" "Меньшиков") :team "KATAYENDURO"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 2 :plate-number "118" :rider-id (find-rider-id "Александр" "Новопашин") :team "Прохват72"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 3 :plate-number "147" :rider-id (find-rider-id "Михаил" "Ялунин")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 4 :plate-number "140" :rider-id (find-rider-id "Александр" "Ковелин")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 5 :plate-number "119" :rider-id (find-rider-id "Сергей" "Тимофеев")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 6 :plate-number "172" :rider-id (find-rider-id "Константин" "Табанин")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 7 :plate-number "173" :rider-id (find-rider-id "Константин" "Вилисов") :team "ENDURO REVDA"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 8 :plate-number "122" :rider-id (find-rider-id "Евгений" "Мирзаметов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 9 :plate-number "180" :rider-id (find-rider-id "Артем" "Чернецкий") :team "НАУКА"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 10 :plate-number "132" :rider-id (find-rider-id "Роман" "Белоногов") :team "Enduro MOTO LIFE"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 11 :plate-number "196" :rider-id (find-rider-id "Евгений" "Камаев")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 12 :plate-number "190" :rider-id (find-rider-id "Андрей" "Кокшаров")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 13 :plate-number "164" :rider-id (find-rider-id "Иван" "Черемисов") :team "Вектор"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 14 :plate-number "125" :rider-id (find-rider-id "Виталий" "Горбачев") :team "Группа эндуро произвола"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 15 :plate-number "148" :rider-id (find-rider-id "Артём" "Белых")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 16 :plate-number "117" :rider-id (find-rider-id "Максим" "Кабаненко")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 17 :plate-number "193" :rider-id (find-rider-id "Иван" "Бояркин")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 18 :plate-number "178" :rider-id (find-rider-id "Денис" "Козлов") :team "Моховичковские псы"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 19 :plate-number "141" :rider-id (find-rider-id "Станислав" "Тарасов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 20 :plate-number "177" :rider-id (find-rider-id "Арсен" "Байрамуков") :team "Эндуро Златоуст"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 21 :plate-number "166" :rider-id (find-rider-id "Алексей" "Кузнецов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 22 :plate-number "121" :rider-id (find-rider-id "Анатолий" "Ванчинов") :team "Corona"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 23 :plate-number "120" :rider-id (find-rider-id "Сергей" "Попов") :team "Прохват72"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 24 :plate-number "182" :rider-id (find-rider-id "Виталий" "Стаценков") :team "SEVERKA ENDURO GARAGE"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 25 :plate-number "162" :rider-id (find-rider-id "Владислав" "Хонькин") :team "АНО Мотоспорт74"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 26 :plate-number "154" :rider-id (find-rider-id "Алексей" "Залесов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 27 :plate-number "115" :rider-id (find-rider-id "Михаил" "Унесихин") :team "Enduro Uktus"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 28 :plate-number "199" :rider-id (find-rider-id "Егор" "Камалов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 29 :plate-number "130" :rider-id (find-rider-id "Иван" "Чирков")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 30 :plate-number "123" :rider-id (find-rider-id "Иван" "Адам")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 31 :plate-number "145" :rider-id (find-rider-id "Дмитрий" "Холкин")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 32 :plate-number "176" :rider-id (find-rider-id "Андрей" "Коковин")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 33 :plate-number "192" :rider-id (find-rider-id "Евгений" "Горин")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 34 :plate-number "184" :rider-id (find-rider-id "Алексей" "Любимов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 35 :plate-number "129" :rider-id (find-rider-id "Евгений" "Бекетов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 36 :plate-number "170" :rider-id (find-rider-id "Денис" "Токмин") :team "Enduro Bgd"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 37 :plate-number "135" :rider-id (find-rider-id "Матвей" "Иванов") :team "Gravity team"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 38 :plate-number "168" :rider-id (find-rider-id "Станислав" "Сысков")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 39 :plate-number "112" :rider-id (find-rider-id "Андрей" "Степанов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 40 :plate-number "198" :rider-id (find-rider-id "Дмитрий" "Бурыкин")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 41 :plate-number "150" :rider-id (find-rider-id "Денис" "Пастухов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 42 :plate-number "181" :rider-id (find-rider-id "Александр" "Тютиков")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 43 :plate-number "131" :rider-id (find-rider-id "Евгений" "Константинов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 44 :plate-number "195" :rider-id (find-rider-id "Владимир" "Гусев")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 45 :plate-number "158" :rider-id (find-rider-id "Денис" "Ефимов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 46 :plate-number "155" :rider-id (find-rider-id "Иван" "Тихонов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 47 :plate-number "156" :rider-id (find-rider-id "Максим" "Логинов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 48 :plate-number "161" :rider-id (find-rider-id "Евгений" "Шубин") :team "Enduro MOTO LIFE"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 49 :plate-number "138" :rider-id (find-rider-id "Владимир" "Филимончук")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 50 :plate-number "186" :rider-id (find-rider-id "Никита" "Лебедев")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 51 :plate-number "146" :rider-id (find-rider-id "Артём" "Потапов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 52 :plate-number "137" :rider-id (find-rider-id "Антон" "Овчинников")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 53 :plate-number "188" :rider-id (find-rider-id "Андрей" "Садыков") :team "Enduro Сухой Лог"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 54 :plate-number "149" :rider-id (find-rider-id "Руслан" "Кунакбаев")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 55 :plate-number "127" :rider-id (find-rider-id "Дмитрий" "Тренин")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 56 :plate-number "187" :rider-id (find-rider-id "Андре" "Долматов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 57 :plate-number "153" :rider-id (find-rider-id "Михаил" "Романенко")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 58 :plate-number "163" :rider-id (find-rider-id "Роман" "Коковин")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 59 :plate-number "185" :rider-id (find-rider-id "Евгений" "Каргапольцев") :team "Enduro MOTO LIFE"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 60 :plate-number "165" :rider-id (find-rider-id "Евгений" "Максимов") :team "URALFOX TEAM"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 61 :plate-number "183" :rider-id (find-rider-id "Иван" "Киприн")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 62 :plate-number "126" :rider-id (find-rider-id "Артём" "Щукин") :team "Вектор"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 63 :plate-number "114" :rider-id (find-rider-id "Антон" "Боровских")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 64 :plate-number "116" :rider-id (find-rider-id "Денис" "Дзюбин")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 65 :plate-number "160" :rider-id (find-rider-id "Александр" "Зайцев")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 66 :plate-number "151" :rider-id (find-rider-id "Сергей" "Нелюбин") :team "Прохват72"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 67 :plate-number "142" :rider-id (find-rider-id "Антон" "Болныгин")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 68 :plate-number "133" :rider-id (find-rider-id "Дамир" "Хабибрахманов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 69 :plate-number "136" :rider-id (find-rider-id "Александр" "Анисимов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 70 :plate-number "197" :rider-id (find-rider-id "Василий" "Дудников")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 71 :plate-number "169" :rider-id (find-rider-id "Александр" "Чикишев") :team "МОТОЕБОТА"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 72 :plate-number "113" :rider-id (find-rider-id "Сергей" "Баранов") :team "Нягань"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 73 :plate-number "111" :rider-id (find-rider-id "Роман" "Панов")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 74 :plate-number "139" :rider-id (find-rider-id "Николай" "Половников")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 75 :plate-number "124" :rider-id (find-rider-id "Сергей" "Уткин") :team "Диванные Эндуристы"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 76 :plate-number "157" :rider-id (find-rider-id "Сергей" "Беличев")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 77 :plate-number "152" :rider-id (find-rider-id "Станислав" "Макуха")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 78 :plate-number "179" :rider-id (find-rider-id "Максим" "Солин") :team "НАУКА"}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 79 :plate-number "189" :rider-id (find-rider-id "Борис" "Коваленко")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 80 :plate-number "143" :rider-id (find-rider-id "Дмитрий" "Бахарев")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 81 :plate-number "171" :rider-id (find-rider-id "Павел" "Байдала")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 82 :plate-number "144" :rider-id (find-rider-id "Павел" "Федоровых")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 83 :plate-number "167" :rider-id (find-rider-id "Кирилл" "Ауэрбах")}
+     {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 84 :plate-number "159" :rider-id (find-rider-id "Тимофей" "Максимов")}
+
+     ;; Надо поправить, я хз что у них было
+     (let [кругов 1
+           сложность-круга 70.0
+           стартовало 2
+           условный-класс :iron]
+       {
+        :type              :classification
+        :classification-id "CxVwzZvXYo64"
+        :event-id          event-id
+        :name              "Леди"
+        :equivalent        условный-класс
+        :laps              кругов
+        :lap-difficulty    сложность-круга
+        :started-count     стартовало
+        })
+
+     {:type :result :event-id event-id :classification-id "CxVwzZvXYo64" :position 1 :plate-number "242" :rider-id (find-rider-id "Марина" "Аверина")}
+     {:type :result :event-id event-id :classification-id "CxVwzZvXYo64" :position 2 :plate-number "241" :rider-id (find-rider-id "Юлия" "Березинских")}
+
+     ;; Надо поправить, я хз что у них было
+     (let [кругов 1
+           сложность-круга 70.0
+           стартовало 9
+           условный-класс :iron]
+       {
+        :type              :classification
+        :classification-id "C1gLPX9AUjc"
+        :event-id          event-id
+        :name              "Ветераны"
+        :equivalent        условный-класс
+        :laps              кругов
+        :lap-difficulty    сложность-круга
+        :started-count     стартовало
+        })
+
+     {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 1 :plate-number "235" :rider-id (find-rider-id "Александр" "Некрасов")}
+     {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 2 :plate-number "237" :rider-id (find-rider-id "Сергей" "Кузнецов") :team "KATAYENDURO"}
+     {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 3 :plate-number "236" :rider-id (find-rider-id "Андрей" "Щипунов")}
+     {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 4 :plate-number "234" :rider-id (find-rider-id "Константин" "Одиноков")}
+     {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 5 :plate-number "231" :rider-id (find-rider-id "Владимир" "Боровских") :team "Камышлов"}
+     {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 6 :plate-number "239" :rider-id (find-rider-id "Дмитрий" "Григоренко")}
+     {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 7 :plate-number "238" :rider-id (find-rider-id "Александр" "Капустин")}
+     {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 8 :plate-number "233" :rider-id (find-rider-id "Андрей" "Тужилов")}
+     {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 9 :plate-number "232" :rider-id (find-rider-id "Андрей" "Кудин")}
+     ]))
+
 ;; TODO: перенести
 (defn process-data
   [row]
@@ -845,4 +1096,5 @@
   (checks/sanity-checks! (map process-data
                               (concat slg1
                                       stalker1
-                                      lesnik1))))
+                                      lesnik1
+                                      bogdanovich1))))
