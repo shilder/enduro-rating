@@ -9,14 +9,14 @@
 ;; TODO: богданович
 ;; TODO: алапаевск
 
-(def data1
+(def slg1
   [
-   {:type     :event
-    :name     "Самая Легкая Гонка"
-    :date     "2025-05-24"
-    :event-url "https://dolina.su/race-2025"
+   {:type         :event
+    :name         "Самая Легкая Гонка"
+    :date         "2025-05-24"
+    :event-url    "https://dolina.su/race-2025"
     :telegram-url "https://t.me/easyrace"
-    :event-id "EALkbw"
+    :event-id     "EALkbw"
     }
 
    ;; Результаты уровень 7
@@ -25,15 +25,15 @@
          стартовало 26
          условный-класс :gold]
      {
-      :type               :classification
-      :classification-id  "CClUxywqlX4"
-      :event-id           "EALkbw"
-      :name               "Класс 7 / Уровень 7 / ХАРД, ЗОЛОТО"
-      :equivalent         условный-класс
-      :laps               кругов
-      :lap-difficulty     сложность-круга
-      :started-count      стартовало
-      :order              1
+      :type              :classification
+      :classification-id "CClUxywqlX4"
+      :event-id          "EALkbw"
+      :name              "Класс 7 / Уровень 7 / ХАРД, ЗОЛОТО"
+      :equivalent        условный-класс
+      :laps              кругов
+      :lap-difficulty    сложность-круга
+      :started-count     стартовало
+      :order             1
       })
 
 
@@ -70,15 +70,15 @@
          стартовало 153
          условный-класс :silver]
      {
-      :type               :classification
-      :classification-id  "CNyY6EmTHP8g"
-      :event-id           "EALkbw"
-      :name               "Класс 6 / Уровень 6 / ДВУХТАКТНЫЕ МОТОЦИКЛЫ"
-      :order              2
-      :equivalent         условный-класс
-      :laps               кругов
-      :lap-difficulty     сложность-круга
-      :started-count      стартовало})
+      :type              :classification
+      :classification-id "CNyY6EmTHP8g"
+      :event-id          "EALkbw"
+      :name              "Класс 6 / Уровень 6 / ДВУХТАКТНЫЕ МОТОЦИКЛЫ"
+      :order             2
+      :equivalent        условный-класс
+      :laps              кругов
+      :lap-difficulty    сложность-круга
+      :started-count     стартовало})
 
    ;; Страница 1
    [:type :result :event-id "EALkbw" :classification-id "CNyY6EmTHP8g" :position 1 :plate-number "124" :rider-id (find-rider-id "Петр" "Адрианов")]
@@ -246,15 +246,15 @@
          стартовало 28
          условный-класс :silver]
      {
-      :type               :classification
-      :classification-id  "CQuv6rI64Fg"
-      :event-id           "EALkbw"
-      :name               "Класс 5 / Уровень 5 / ВОДЯНОЙ"
-      :order              3
-      :equivalent         условный-класс
-      :laps               кругов
-      :lap-difficulty     сложность-круга
-      :started-count      стартовало
+      :type              :classification
+      :classification-id "CQuv6rI64Fg"
+      :event-id          "EALkbw"
+      :name              "Класс 5 / Уровень 5 / ВОДЯНОЙ"
+      :order             3
+      :equivalent        условный-класс
+      :laps              кругов
+      :lap-difficulty    сложность-круга
+      :started-count     стартовало
       })
    ;; Страница 1
    [:type :result :event-id "EALkbw" :classification-id "CQuv6rI64Fg" :position 1 :plate-number "320" :rider-id (enrating.data.riders/find-rider-id "Владимир" "Пономарчук")]
@@ -294,15 +294,15 @@
          стартовало 17
          условный-класс :silver]
      {
-      :type               :classification
-      :classification-id  "CeY5ORDnv0j4"
-      :event-id           "EALkbw"
-      :order              4
-      :name               "Класс 4 / Уровень 4 / ВОЗДУШКА"
-      :equivalent         условный-класс
-      :laps               кругов
-      :lap-difficulty     сложность-круга
-      :started-count      стартовало
+      :type              :classification
+      :classification-id "CeY5ORDnv0j4"
+      :event-id          "EALkbw"
+      :order             4
+      :name              "Класс 4 / Уровень 4 / ВОЗДУШКА"
+      :equivalent        условный-класс
+      :laps              кругов
+      :lap-difficulty    сложность-круга
+      :started-count     стартовало
       })
 
    ;; Страница 1
@@ -330,15 +330,15 @@
          стартовало 56
          условный-класс :bronze]
      {
-      :type               :classification
-      :classification-id  "CtOb9wIT2lI"
-      :event-id           "EALkbw"
-      :order              5
-      :name               "Класс 3 / Уровень 3 / КАНТРИ КРОСС"
-      :equivalent         условный-класс
-      :laps               кругов
-      :lap-difficulty     сложность-круга
-      :started-count      стартовало
+      :type              :classification
+      :classification-id "CtOb9wIT2lI"
+      :event-id          "EALkbw"
+      :order             5
+      :name              "Класс 3 / Уровень 3 / КАНТРИ КРОСС"
+      :equivalent        условный-класс
+      :laps              кругов
+      :lap-difficulty    сложность-круга
+      :started-count     стартовало
       })
 
    ;; TODO: добавить время из протоколов
@@ -405,15 +405,15 @@
          стартовало 10
          условный-класс :iron]
      {
-      :type               :classification
-      :classification-id  "CbnNqePYIllI"
-      :event-id           "EALkbw"
-      :name               "Класс 2 / Уровень 2 / ЛЕДИ"
-      :order              6
-      :equivalent         условный-класс
-      :laps               кругов
-      :lap-difficulty     сложность-круга
-      :started-count      стартовало
+      :type              :classification
+      :classification-id "CbnNqePYIllI"
+      :event-id          "EALkbw"
+      :name              "Класс 2 / Уровень 2 / ЛЕДИ"
+      :order             6
+      :equivalent        условный-класс
+      :laps              кругов
+      :lap-difficulty    сложность-круга
+      :started-count     стартовало
       })
 
    ;; Страница 1
@@ -427,11 +427,14 @@
    [:type :result :event-id "EALkbw" :classification-id "CbnNqePYIllI" :position 8 :plate-number "601" :rider-id (find-rider-id "Маргарита" "Гришина")]
    [:type :result :event-id "EALkbw" :classification-id "CbnNqePYIllI" :position 9 :plate-number "610" :rider-id (find-rider-id "Анна" "Евграфова")]
    [:type :result :event-id "EALkbw" :classification-id "CbnNqePYIllI" :position 10 :plate-number "937" :rider-id (find-rider-id "Наталья" "Макеева")]
+   ])
 
 
-   {:type :event
-    :name "The Stalker - 1 Этап"
-    :date "2025-05-17"
+(def stalker1
+  [
+   {:type     :event
+    :name     "The Stalker - 1 Этап"
+    :date     "2025-05-17"
     :event-id "Eo2KmTA"}
 
    (let [кругов 3
@@ -442,16 +445,16 @@
          штраф 0.8
          условный-класс :gold]
      {
-      :type               :classification
-      :classification-id  "CyMOX89K67hY"
-      :event-id           "Eo2KmTA"
-      :name               "Gold"
-      :order              1
-      :equivalent         условный-класс
-      :laps               кругов
-      :lap-difficulty     сложность-круга
-      :started-count      стартовало
-      :points-multiplier  штраф
+      :type                   :classification
+      :classification-id      "CyMOX89K67hY"
+      :event-id               "Eo2KmTA"
+      :name                   "Gold"
+      :order                  1
+      :equivalent             условный-класс
+      :laps                   кругов
+      :lap-difficulty         сложность-круга
+      :started-count          стартовало
+      :points-multiplier      штраф
       :multiplier-description "Мало участников"
       })
 
@@ -469,15 +472,15 @@
          стартовало 18
          условный-класс :silver]
      {
-      :type               :classification
-      :classification-id  "CX0NGKT0qMZA"
-      :event-id           "Eo2KmTA"
-      :name               "Silver"
-      :order              2
-      :equivalent         условный-класс
-      :laps               кругов
-      :lap-difficulty     сложность-круга
-      :started-count      стартовало
+      :type              :classification
+      :classification-id "CX0NGKT0qMZA"
+      :event-id          "Eo2KmTA"
+      :name              "Silver"
+      :order             2
+      :equivalent        условный-класс
+      :laps              кругов
+      :lap-difficulty    сложность-круга
+      :started-count     стартовало
       })
 
    {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 1 :plate-number "23" :rider-id (find-rider-id "Петр" "Петанов") :motorcycle "Husqvarna TE300"}
@@ -506,15 +509,15 @@
          стартовало 13
          условный-класс :bronze]
      {
-      :type               :classification
-      :classification-id  "CkE6aHK3mE5w"
-      :event-id           "Eo2KmTA"
-      :name               "Bronze"
-      :order              3
-      :equivalent         условный-класс
-      :laps               кругов
-      :lap-difficulty     сложность-круга
-      :started-count      стартовало
+      :type              :classification
+      :classification-id "CkE6aHK3mE5w"
+      :event-id          "Eo2KmTA"
+      :name              "Bronze"
+      :order             3
+      :equivalent        условный-класс
+      :laps              кругов
+      :lap-difficulty    сложность-круга
+      :started-count     стартовало
       })
 
    {:type :result :event-id "Eo2KmTA" :classification-id "CkE6aHK3mE5w" :position 1 :plate-number "88" :rider-id (find-rider-id "Артем" "Свяжин") :team "Азимут66"}
@@ -530,8 +533,7 @@
    {:type :result :event-id "Eo2KmTA" :classification-id "CkE6aHK3mE5w" :position 11 :plate-number "77" :rider-id (find-rider-id "Николай" "Глущенко") :team "Dirty Style Team" :motorcycle "Yamaha wr250f"}
    {:type :result :event-id "Eo2KmTA" :classification-id "CkE6aHK3mE5w" :position 12 :plate-number "80" :rider-id (find-rider-id "Михаил" "Тясин") :team "Азимут 66"}
    {:type :result :event-id "Eo2KmTA" :classification-id "CkE6aHK3mE5w" :position 13 :plate-number "86" :rider-id (find-rider-id "Анна" "Шилова") :motorcycle "Husqvarna ТЕ150"}
-   ]
-  )
+   ])
 
 ;; TODO: перенести
 (defn process-data
@@ -556,4 +558,6 @@
     row))
 
 (def data
-  (checks/sanity-checks! (map process-data data1)))
+  (checks/sanity-checks! (map process-data
+                              (concat slg1
+                                      stalker1))))
