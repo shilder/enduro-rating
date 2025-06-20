@@ -588,7 +588,6 @@
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 29 :plate-number "172" :rider-id (find-rider-id "Алексей" "Родионов") :team "МОЕМОТО_ЕКВ" :motorcycle "Rockot r300"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 30 :plate-number "204" :rider-id (find-rider-id "Сергей" "Гулонян") :team "Богданович-BSL" :motorcycle "Kayo k2"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 31 :plate-number "202" :rider-id (find-rider-id "Дмитрий" "Холкин") :team "Богданович-BSL" :motorcycle "Regulmoto "}
-     {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 32 :plate-number "148" :rider-id (find-rider-id "Марина" "Аверина") :motorcycle "Artic Leopard Snow"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 33 :plate-number "167" :rider-id (find-rider-id "Михаил" "Пудов") :motorcycle "Yamaha yz 450f"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 34 :plate-number "189" :rider-id (find-rider-id "Илья" "Саргин") :motorcycle "Kayo T2"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 35 :plate-number "135" :rider-id (find-rider-id "Александр" "Локшин") :motorcycle "КТМ"}
@@ -597,10 +596,7 @@
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 38 :plate-number "110" :rider-id (find-rider-id "Егор" "Павлов") :motorcycle "GR 8 МТ250"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 39 :plate-number "139" :rider-id (find-rider-id "Александр" "Матвеев") :team "MintForсe team" :motorcycle "Hengiian z300"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 40 :plate-number "131" :rider-id (find-rider-id "Кирилл" "Новопашин") :motorcycle "GR 8"}
-     {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 41 :plate-number "107" :rider-id (find-rider-id "Иван" "Моисеевских") :motorcycle "Motoland XT250HS"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 42 :plate-number "119" :rider-id (find-rider-id "Петр" "Антонов") :motorcycle "Kayo K4"}
-     {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 43 :plate-number "122" :rider-id (find-rider-id "Михаил" "Чесноков") :motorcycle "Regulmoto atlet"}
-     {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 44 :plate-number "166" :rider-id (find-rider-id "Дмитрий" "Пудов") :motorcycle "КТМ"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 45 :plate-number "154" :rider-id (find-rider-id "Рашид" "Ибрагимов") :team "Прохват72 team" :motorcycle "Beta"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 46 :plate-number "171" :rider-id (find-rider-id "Павел" "Пудов") :motorcycle "Yamaha WR 450"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 47 :plate-number "111" :rider-id (find-rider-id "Юрий" "Дьячков") :motorcycle "Kews k16"}
@@ -611,14 +607,12 @@
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 52 :plate-number "103" :rider-id (find-rider-id "Спартак" "Шангареев") :team "Enduro VP" :motorcycle "GR8"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 53 :plate-number "183" :rider-id (find-rider-id "Андрей" "Антонов") :motorcycle "GR8 300 2t"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 54 :plate-number "175" :rider-id (find-rider-id "Михаил" "Сычев") :team "МОЕМОТО_ЕКВ" :motorcycle "GR7 250"}
-     {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 55 :plate-number "176" :rider-id (find-rider-id "Роман" "Лукин") :motorcycle "Motoland 140"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 57 :plate-number "164" :rider-id (find-rider-id "Владислав" "Светлаков") :motorcycle "Kews k23"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 58 :plate-number "170" :rider-id (find-rider-id "Иван" "Коркин") :motorcycle "Kayo t4"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 59 :plate-number "173" :rider-id (find-rider-id "Олег" "Гоголев") :team "МОЕМОТО_ЕКВ" :motorcycle "Kayo K5"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 60 :plate-number "184" :rider-id (find-rider-id "Виталий" "Фуртаев") :motorcycle "Kews k16"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 61 :plate-number "174" :rider-id (find-rider-id "Константин" "Яковлев") :team "МОЕМОТО_ЕКВ" :motorcycle "Racer 300"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 62 :plate-number "162" :rider-id (find-rider-id "Александр" "Кайнов") :motorcycle "Kayo T2 300"}
-     {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 63 :plate-number "181" :rider-id (find-rider-id "Андрей" "Ляшенко") :motorcycle "kayo evo 140"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 64 :plate-number "113" :rider-id (find-rider-id "Антон" "Кадников") :motorcycle "Сурон"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 65 :plate-number "129" :rider-id (find-rider-id "Равиль" "Сарваров") :motorcycle "JHL Z4"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 66 :plate-number "115" :rider-id (find-rider-id "Леонид" "Чепиль") :team "Enduro VP" :motorcycle "Progasi 450"}
@@ -630,8 +624,6 @@
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 72 :plate-number "104" :rider-id (find-rider-id "Матвей" "Донских") :motorcycle "Kews k16 cb250r"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 73 :plate-number "105" :rider-id (find-rider-id "Никита" "Зырянов") :motorcycle "BSE Z1"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 74 :plate-number "112" :rider-id (find-rider-id "Антон" "Бородин") :motorcycle "GR7"}
-     {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 75 :plate-number "114" :rider-id (find-rider-id "Илья" "Болотов") :motorcycle "Kayo T2"}
-     {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 76 :plate-number "117" :rider-id (find-rider-id "Станислав" "Карелин") :motorcycle "Racer 125"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 77 :plate-number "118" :rider-id (find-rider-id "Александр" "Орбан") :motorcycle "GR8"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 78 :plate-number "120" :rider-id (find-rider-id "Антон" "Юнусов") :motorcycle "GR8"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 79 :plate-number "121" :rider-id (find-rider-id "Дмитрий" "Канюков") :motorcycle "Kayo T2"}
@@ -641,7 +633,6 @@
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 83 :plate-number "127" :rider-id (find-rider-id "Иван" "Кенчин") :motorcycle "Ataki"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 84 :plate-number "136" :rider-id (find-rider-id "Артем" "Максимов") :team "Only Top team" :motorcycle ""}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 85 :plate-number "137" :rider-id (find-rider-id "Сергей" "Максимов") :team "Only Top team" :motorcycle "Kews К16 Lanza"}
-     {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 86 :plate-number "138" :rider-id (find-rider-id "Дмитрий" "Максимов") :team "URALFOX TEAM" :motorcycle "Kayo evolution 125"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 87 :plate-number "140" :rider-id (find-rider-id "Евгений" "Перевощиков") :team "MintForсe team" :motorcycle "Kews k16 CB250R"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 88 :plate-number "142" :rider-id (find-rider-id "Даниил" "Доронин") :motorcycle "SYCMCC 300cc"}
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 89 :plate-number "143" :rider-id (find-rider-id "Сергей" "Клевцов") :motorcycle "KAYO T4"}
@@ -746,9 +737,7 @@
      {:type :result :event-id event-id :classification-id "CCHpFTiWmQks" :position 74 :plate-number "73" :rider-id (find-rider-id "Леонид" "Асташов") :team "EnduroXXL team" :motorcycle "Avantis 250"}
      {:type :result :event-id event-id :classification-id "CCHpFTiWmQks" :position 75 :plate-number "74" :rider-id (find-rider-id "Николай" "Авдюшев") :motorcycle "Kews 4t"}
      {:type :result :event-id event-id :classification-id "CCHpFTiWmQks" :position 76 :plate-number "75" :rider-id (find-rider-id "Максим" "Кабаненко") :motorcycle "КТМ"}
-     {:type :result :event-id event-id :classification-id "CCHpFTiWmQks" :position 77 :plate-number "76" :rider-id (find-rider-id "Михаил" "Попов") :motorcycle "Husqvarna te300"}
      {:type :result :event-id event-id :classification-id "CCHpFTiWmQks" :position 78 :plate-number "79" :rider-id (find-rider-id "Алексей" "Мамашев") :motorcycle "Koshine 302t"}
-     {:type :result :event-id event-id :classification-id "CCHpFTiWmQks" :position 79 :plate-number "80" :rider-id (find-rider-id "Дмитрий" "Холкин") :motorcycle ""}
      {:type :result :event-id event-id :classification-id "CCHpFTiWmQks" :position 80 :plate-number "82" :rider-id (find-rider-id "Денис" "Румянцев") :motorcycle ""}
      {:type :result :event-id event-id :classification-id "CCHpFTiWmQks" :position 81 :plate-number "83" :rider-id (find-rider-id "Сергей" "Блохин") :motorcycle ""}
      {:type :result :event-id event-id :classification-id "CCHpFTiWmQks" :position 82 :plate-number "84" :rider-id (find-rider-id "Сергей" "Андраманов") :motorcycle ""}
@@ -787,7 +776,6 @@
      {:type :result :event-id event-id :classification-id "C64otektrHqg" :position 3 :plate-number "191" :rider-id (find-rider-id "Денис" "Кунакбаев") :motorcycle ""}
      {:type :result :event-id event-id :classification-id "C64otektrHqg" :position 4 :plate-number "132" :rider-id (find-rider-id "Артем" "Новопашин") :motorcycle "Kews k16"}
      {:type :result :event-id event-id :classification-id "C64otektrHqg" :position 5 :plate-number "106" :rider-id (find-rider-id "Егор" "Султангалеев") :motorcycle "GR7"}
-     {:type :result :event-id event-id :classification-id "C64otektrHqg" :position 6 :plate-number "148" :rider-id (find-rider-id "Марина" "Аверина") :motorcycle "Artic Leopard Snow"}
      {:type :result :event-id event-id :classification-id "C64otektrHqg" :position 7 :plate-number "107" :rider-id (find-rider-id "Иван" "Моисеевских") :motorcycle "Motoland XT250HS"}
      {:type :result :event-id event-id :classification-id "C64otektrHqg" :position 8 :plate-number "122" :rider-id (find-rider-id "Михаил" "Чесноков") :motorcycle "Regulmoto atlet"}
      {:type :result :event-id event-id :classification-id "C64otektrHqg" :position 10 :plate-number "181" :rider-id (find-rider-id "Андрей" "Ляшенко") :motorcycle "kayo evo 140"}
