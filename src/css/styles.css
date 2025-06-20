@@ -52,6 +52,10 @@ tbody {
     border: 1px solid rgb(241, 241, 241);
 }
 
+tbody tr {
+    border: 1px solid rgb(241, 241, 241);
+}
+
 thead th, thead td, tfoot th, tfoot td, tbody td, tbody th {
     padding: 0.5rem 0.7rem 0.7rem;
 }
@@ -71,6 +75,12 @@ tbody tr:hover {
     background-color: rgba(0, 0, 0, 0.04);
 }
 
-td.rider-position, td.rider-points, th.rider-points {
+td.number, th.number {
     text-align: center;
+}
+
+section.results-info {
+    max-width: 600px;
+    padding: 1rem;
+    min-width: 500px;
 }

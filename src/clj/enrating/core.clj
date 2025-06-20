@@ -1,6 +1,7 @@
 (ns enrating.core
   (:require [clojure.java.io :as io]
             [clojure.string :as str]
+            [enrating.points :as points]
             [rum.core :as rum]
             [rum.server-render]
             [enrating.data.2025]
@@ -38,73 +39,69 @@
 ;; TODO: начислять ли очки за DNF ?
 ;;
 
-(rum/defc classification-card [all-data {:keys [name first-place-points cutoff-point classification-id] :as classification-data}]
-  [:div.event-card
-   [:div.event-field
-    [:label "Название класса"]
-    [:div.field-value name]]
-   [:div.event-field
-    [:label "Очки за первое место"]
-    [:div.field-value first-place-points]]
-   [:div.event-field
-    [:label "Точка отсечения подсчета очков"]
-    [:div.field-value cutoff-point]]
-   [:div "Результаты"]
-   [:table
-    [:thead
-     [:tr
-      [:th "Фамилия"]
-      [:th "Имя"]
-      [:th "Стартовый номер"]
-      [:th "Итоговый результат"]
-      [:th "Очков начислено"]]]
-    [:tbody
-     (for [result (sort-by :position (filter #(= (:classification-id %) classification-id)
-                                             (:results all-data)))
-           :let [rider (get-in all-data [:riders (:rider-id result)])]]
-       [:tr {:id (:result-id result)}
-        [:td (:surname rider)]
-        [:td (:name rider)]
-        [:td (:plate-number result)]
-        [:td (:position result)]
-        [:td (:points result)]])]]])
+(rum/defc event-field
+  [label value]
+  [:div.event-field
+   [:label label]
+   [:div.field-value value]])
+
+(rum/defc classification-card [all-data {:keys [name first-place-points cutoff-point classification-id
+                                                started-count laps lap-difficulty equivalent points-multiplier] :as classification-data}]
+  (let [results (sort-by :position (filter #(= (:classification-id %) classification-id)
+                                           (:results all-data)))
+        finished-count (count (filter #(some? (:position %)) results))]
+    [:div.event-card {:id classification-id}
+     (event-field "Название класса" name)
+     (when started-count
+       (event-field "Количество стартовавших" started-count))
+     (when finished-count
+       (event-field "Количество финишировавших" finished-count))
+     (when (and started-count finished-count)
+       (event-field "Процент финишировавших"
+                    (str (Math/round (double (* 100.0 (/ (double finished-count) (double started-count))))) "%")))
+     (event-field "Кол-во кругов" laps)
+     (event-field "Сложность круга (условная)" lap-difficulty)
+     (event-field "Условная сложность" (get-in points/difficulties-map [equivalent :name]))
+     (when points-multiplier
+       (event-field "Дополнительный коэффициент" points-multiplier))
+     (when points-multiplier
+       (event-field "Пояснение к коэффициенту" (:multiplier-description classification-data)))
+     (event-field "Очки за первое место (Кол-во кругов * сложность круга * коэффициент условной сложности * коэффициент)" first-place-points)
+     (event-field "Точка отсечения подсчета очков" cutoff-point)
+     [:table.results-table
+      [:thead
+       [:tr
+        [:th "Фамилия"]
+        [:th "Имя"]
+        [:th "Стартовый номер"]
+        [:th "Итоговый результат"]
+        [:th "Очков начислено"]]]
+      [:tbody
+       (for [result results
+             :let [rider (get-in all-data [:riders (:rider-id result)])]]
+         [:tr {:id (:result-id result)}
+          [:td (:surname rider)]
+          [:td (:name rider)]
+          [:td.number (:plate-number result)]
+          [:td.number (:position result)]
+          [:td.number (:points result)]])]]]))
 
 (rum/defc event-card
   [all-data {:keys [event-id name date] :as event-data}]
-  [:div.event-card
-   [:div.event-field
-    [:label "Название события"]
-    [:div.field-value name]]
-   [:div.event-field
-    [:label "Дата"]
-    [:div.field-value date]]
-   [:div "Классификация"]
-   (for [classification (filter #(= (:event-id %) event-id)
-                                (vals (:classifications all-data)))]
-     (classification-card all-data classification))])
-
-;; Логарифмическая функция оценки - снижение кол-ва очков логарифмическое
-;; и зависит от кол-ва участников
-;; \text{Points}(r) = P_{\text{max}} \cdot \frac{\log(N + 1) - \log(r)}{\log(N + 1)}
-;; Округляем до второго знака по обычным правилам
-(defn position-points4 [total position amount]
-  (.setScale (bigdec
-               (let [norm (Math/log (+ amount 1.0))]
-                 (* total (/ (- norm (Math/log position)) norm))))
-             2
-             RoundingMode/HALF_UP))
-
-;; Примеры начисления очков в зависимости от места и общего пула:
-(comment
-  (for [pos (range 1 16)]
-    [pos (position-points2 140 pos)])
-
-  (for [pos (range 1 100)]
-    [pos (position-points3 240 pos 100)])
-
-  (for [pos (range 1 100)]
-    [pos (position-points4 240 pos 100)]))
-
+  (let [classifications (sort-by :order
+                                 (filter #(= (:event-id %) event-id)
+                                         (vals (:classifications all-data))))]
+    [:div.event-card {:id event-id}
+     (event-field "Название события" name)
+     (event-field "Дата" date)
+     [:div.classifications-list
+      [:p "Список зачетных групп"]
+      [:ul
+       (for [c classifications]
+         [:li [:a {:href (str "#" (:classification-id c))} (:name c)]])]]
+     [:h4 "Зачетные группы"]
+     (for [classification classifications]
+       (classification-card all-data classification))]))
 
 (defn inline-style [content]
   [:style {:type                    "text/css"
@@ -127,9 +124,10 @@
             (mapv
               (fn [result]
                 (let [classification (get-in all-data [:classifications (:classification-id result)])]
-                  (assoc result :points (position-points4 (:first-place-points classification)
-                                                          (:position result)
-                                                          (:cutoff-point classification)))))
+                  (assoc result :points (points/position-points-log
+                                          (:first-place-points classification)
+                                          (:position result)
+                                          (:cutoff-point classification)))))
               results))))
 
 (def data2025-map
@@ -165,27 +163,29 @@
            [:th {:width "150px"} "Гонщик"]]
           (into (map
                   (fn [event]
-                    [:th {:width "80px"} (:name event)]))
+                    [:th {:width "80px"}
+                     [:a {:href (str "#" (:event-id event))}
+                      (:name event)]]))
                 events)
           (into [[:th {:width "80px"} "Всего"]]))]
 
      (into [:tbody]
            (map (fn [[idx {:keys [total rider results]}]]
                   (-> [:tr
-                       [:td.rider-position (inc idx)]
+                       [:td.number (inc idx)]
                        [:td (str/join " " [(:surname rider) (:name rider)])]]
                       (into
                         (map (fn [{:keys [event-id]}]
                                ;; Тут мы считаем что в одном событии гонщик может участвовать только в одном зачете
                                (let [result (first (filter #(= (:event-id %) event-id) results))
                                      classification (get-in all-data [:classifications (:classification-id result)])]
-                                 [:td.rider-points
+                                 [:td.number
                                   {:class   (:equivalent classification)
                                    :onclick (str "highlightRow('" (:result-id result) "')")}
                                   [:a {:href (str "#" (:result-id result))}
                                    (:points result)]])))
                         events)
-                      (into [[:th.rider-points total]]))))
+                      (into [[:th.number total]]))))
            (map vector (range) riders-data))]))
 
 (rum/defc index-page []
@@ -206,7 +206,10 @@
      (riders-table data2025-map)]
     [:section.results-info
      [:h2 "Гонки и результаты"]
-     (for [event (sort-by #(LocalDate/parse (:date %)) (vals (:events data2025-map)))]
+     (for [event (sort-by (fn [event]
+                            ;; Сортировка по дате и имени
+                            [(LocalDate/parse (:date event)) (:name event)])
+                          (vals (:events data2025-map)))]
        (event-card data2025-map event))]
     [:footer]]])
 

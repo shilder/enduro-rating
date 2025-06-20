@@ -1,34 +1,21 @@
 (ns enrating.data.2025
-  (:require [clojure.string :as str]
-            [enrating.data.riders :refer [find-rider-id]]
-            [enrating.data.ids :refer [result-id classification-id]]))
+  (:require [enrating.data.riders :refer [find-rider-id]]
+            [enrating.data.ids :refer [result-id classification-id]]
+            [enrating.data.checks :as checks]
+            [enrating.points :as points]))
 
 ;; Данные за 2025 год
 
 ;; TODO: богданович
 ;; TODO: алапаевск
 
-
-;; Расчет точки отсечения - зависит от класса
-(defn calculate-cutoff [equivalent count]
-  (case equivalent
-    ;; +25% от стартовавших для условного голда
-    :gold
-    (long (Math/round (* count 1.25)))
-
-    ;; +10% от стартовавших для условного серебра
-    :silver
-    (long (Math/round (* count 1.1)))
-
-    ;; Для всех остальных - кол-во стартовавших
-    count))
-
-;; Самая Легкая Гонка, первый этап - 24.05.2025
-(def slg1
+(def data1
   [
    {:type     :event
     :name     "Самая Легкая Гонка"
     :date     "2025-05-24"
+    :event-url "https://dolina.su/race-2025"
+    :telegram-url "https://t.me/easyrace"
     :event-id "EALkbw"
     }
 
@@ -36,7 +23,6 @@
    (let [кругов 2
          сложность-круга 100.0
          стартовало 26
-         штраф 1
          условный-класс :gold]
      {
       :type               :classification
@@ -44,26 +30,10 @@
       :event-id           "EALkbw"
       :name               "Класс 7 / Уровень 7 / ХАРД, ЗОЛОТО"
       :equivalent         условный-класс
-
       :laps               кругов
       :lap-difficulty     сложность-круга
       :started-count      стартовало
-
-      ;; Очков за первое место - зависит от сложности события (трасса, уровень участников, и тд)
-      ;; Цифра конечно субъективная, но тут крайне тяжело добиться объективности
-      ;;
-      ;; Сложность гонки
-      ;; Сложность круга * кол-во кругов * штраф за малочисленность
-      ;; TODO: сделать доп баллы за уровень участников ?
-      ;;
-      ;; Штраф за малочисленность (кол-во стартовавших) - 1.0 - за кол-во больше 10, 0.5 - за кол-во меньше или равно 3
-      :first-place-points (* кругов сложность-круга штраф)
-
-      ;; точка отсечения
-      ;; для бронзы/железа - кол-во стартовавших
-      ;; для серебра - кол-во стартовавших + 10%
-      ;; для золота - кол-во стартовавших + 25%
-      :cutoff-point       (calculate-cutoff условный-класс стартовало)
+      :order              1
       })
 
 
@@ -98,19 +68,17 @@
    (let [кругов 2
          сложность-круга 75.0
          стартовало 153
-         штраф 1
          условный-класс :silver]
      {
       :type               :classification
       :classification-id  "CNyY6EmTHP8g"
       :event-id           "EALkbw"
       :name               "Класс 6 / Уровень 6 / ДВУХТАКТНЫЕ МОТОЦИКЛЫ"
+      :order              2
       :equivalent         условный-класс
       :laps               кругов
       :lap-difficulty     сложность-круга
-      :started-count      стартовало
-      :first-place-points (* кругов сложность-круга штраф)
-      :cutoff-point       (calculate-cutoff условный-класс стартовало)})
+      :started-count      стартовало})
 
    ;; Страница 1
    [:type :result :event-id "EALkbw" :classification-id "CNyY6EmTHP8g" :position 1 :plate-number "124" :rider-id (find-rider-id "Петр" "Адрианов")]
@@ -276,19 +244,17 @@
          ;; Такая же сложность как и для класса 6
          сложность-круга 75.0
          стартовало 28
-         штраф 1
          условный-класс :silver]
      {
       :type               :classification
       :classification-id  "CQuv6rI64Fg"
       :event-id           "EALkbw"
       :name               "Класс 5 / Уровень 5 / ВОДЯНОЙ"
+      :order              3
       :equivalent         условный-класс
       :laps               кругов
       :lap-difficulty     сложность-круга
       :started-count      стартовало
-      :first-place-points (* кругов сложность-круга штраф)
-      :cutoff-point       (calculate-cutoff условный-класс стартовало)
       })
    ;; Страница 1
    [:type :result :event-id "EALkbw" :classification-id "CQuv6rI64Fg" :position 1 :plate-number "320" :rider-id (enrating.data.riders/find-rider-id "Владимир" "Пономарчук")]
@@ -326,19 +292,17 @@
          ;; Такая же сложность как и для класса 5/6
          сложность-круга 75.0
          стартовало 17
-         штраф 1
          условный-класс :silver]
      {
       :type               :classification
       :classification-id  "CeY5ORDnv0j4"
       :event-id           "EALkbw"
+      :order              4
       :name               "Класс 4 / Уровень 4 / ВОЗДУШКА"
       :equivalent         условный-класс
       :laps               кругов
       :lap-difficulty     сложность-круга
       :started-count      стартовало
-      :first-place-points (* кругов сложность-круга штраф)
-      :cutoff-point       (calculate-cutoff условный-класс стартовало)
       })
 
    ;; Страница 1
@@ -363,22 +327,21 @@
    ;; Результаты уровень 3
    (let [кругов 4
          сложность-круга 25.0
-         стартовало 55
-         штраф 1
+         стартовало 56
          условный-класс :bronze]
      {
       :type               :classification
       :classification-id  "CtOb9wIT2lI"
       :event-id           "EALkbw"
+      :order              5
       :name               "Класс 3 / Уровень 3 / КАНТРИ КРОСС"
       :equivalent         условный-класс
       :laps               кругов
       :lap-difficulty     сложность-круга
       :started-count      стартовало
-      :first-place-points (* кругов сложность-круга штраф)
-      :cutoff-point       (calculate-cutoff условный-класс стартовало)
       })
 
+   ;; TODO: добавить время из протоколов
    [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 1 :plate-number "507" :rider-id (find-rider-id "Александр" "Новопашин")]
    [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 2 :plate-number "554" :rider-id (find-rider-id "Александр" "Бескровный")]
    [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 3 :plate-number "511" :rider-id (find-rider-id "Сергей" "Борисов")]
@@ -440,19 +403,17 @@
          ;; Такая же сложность как и для класса 3
          сложность-круга 25.0
          стартовало 10
-         штраф 1
-         условный-класс :bronze]
+         условный-класс :iron]
      {
       :type               :classification
       :classification-id  "CbnNqePYIllI"
       :event-id           "EALkbw"
       :name               "Класс 2 / Уровень 2 / ЛЕДИ"
+      :order              6
       :equivalent         условный-класс
       :laps               кругов
       :lap-difficulty     сложность-круга
       :started-count      стартовало
-      :first-place-points (* кругов сложность-круга штраф)
-      :cutoff-point       (calculate-cutoff условный-класс стартовало)
       })
 
    ;; Страница 1
@@ -485,13 +446,13 @@
       :classification-id  "CyMOX89K67hY"
       :event-id           "Eo2KmTA"
       :name               "Gold"
+      :order              1
       :equivalent         условный-класс
       :laps               кругов
       :lap-difficulty     сложность-круга
       :started-count      стартовало
-
-      :first-place-points (* кругов сложность-круга штраф)
-      :cutoff-point       (calculate-cutoff условный-класс стартовало)
+      :points-multiplier  штраф
+      :multiplier-description "Мало участников"
       })
 
    ;; TODO: команда и город здесь (может меняться у гонщика, но не в протоколе)
@@ -512,13 +473,11 @@
       :classification-id  "CX0NGKT0qMZA"
       :event-id           "Eo2KmTA"
       :name               "Silver"
+      :order              2
       :equivalent         условный-класс
       :laps               кругов
       :lap-difficulty     сложность-круга
       :started-count      стартовало
-
-      :first-place-points (* кругов сложность-круга)
-      :cutoff-point       (calculate-cutoff условный-класс стартовало)
       })
 
    {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 1 :plate-number "23" :rider-id (find-rider-id "Петр" "Петанов") :motorcycle "Husqvarna TE300"}
@@ -551,13 +510,11 @@
       :classification-id  "CkE6aHK3mE5w"
       :event-id           "Eo2KmTA"
       :name               "Bronze"
+      :order              3
       :equivalent         условный-класс
       :laps               кругов
       :lap-difficulty     сложность-круга
       :started-count      стартовало
-
-      :first-place-points (* кругов сложность-круга)
-      :cutoff-point       (calculate-cutoff условный-класс стартовало)
       })
 
    {:type :result :event-id "Eo2KmTA" :classification-id "CkE6aHK3mE5w" :position 1 :plate-number "88" :rider-id (find-rider-id "Артем" "Свяжин") :team "Азимут66"}
@@ -576,11 +533,20 @@
    ]
   )
 
+;; TODO: перенести
 (defn process-data
   [row]
   (let [row (if (vector? row)
               ;; Разворачиваем вектор в мапу попарно
               (into {} (map vec (partition 2 row)))
+              row)
+        row (if (= (:type row) :classification)
+              ;; Подсчитываем сложность гонки исходя из параметров
+              (assoc row :cutoff-point (points/calculate-cutoff (:equivalent row) (:started-count row))
+                         :first-place-points (points/first-place-points (:laps row)
+                                                                        (:lap-difficulty row)
+                                                                        (:equivalent row)
+                                                                        (:points-multiplier row)))
               row)
         row (if (and (= (:type row) :result)
                      (nil? (:result-id row)))
@@ -589,42 +555,5 @@
               row)]
     row))
 
-(defn- unique-values!
-  [collection key error-fn]
-  (reduce
-    (fn [a v]
-      (if (contains? a v)
-        (error-fn v)
-        (conj a v)))
-    #{}
-    (map key collection)))
-
-;; TODO: перенести в core
-(defn sanity-checks
-  [data]
-  (doseq [[id classification] (group-by :classification-id (filter #(= (:type %) :result) data))]
-    ;; Внутри зачета - каждый пилот, каждый стартовый номер и каждое место должно быть только один раз
-    (unique-values! classification :rider-id
-                    (fn [v]
-                      (throw (ex-info (format "В зачете %s уже есть гонщик %s"
-                                              id v)
-                                      {}))))
-    (unique-values! classification :plate-number
-                    (fn [v]
-                      (throw (ex-info (format "В зачете %s уже есть гонщик со стартовым номером %s"
-                                              id v)
-                                      {}))))
-    (unique-values! classification :rider-id
-                    (fn [v]
-                      (throw (ex-info (format "В зачете %s уже есть гонщик с итоговым местом %s"
-                                              id v)
-                                      {}))))
-
-    ;; TODO: position - число
-    ;; TODO: нет "дырок" в позициях
-
-    )
-  data)
-
 (def data
-  (sanity-checks (map process-data slg1)))
+  (checks/sanity-checks! (map process-data data1)))
