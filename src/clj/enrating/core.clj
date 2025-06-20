@@ -50,24 +50,28 @@
   (let [results (sort-by :position (filter #(= (:classification-id %) classification-id)
                                            (:results all-data)))
         finished-count (count (filter #(some? (:position %)) results))]
-    [:div.event-card {:id classification-id}
-     (event-field "Название класса" name)
-     (when started-count
-       (event-field "Количество стартовавших" started-count))
-     (when finished-count
-       (event-field "Количество финишировавших" finished-count))
-     (when (and started-count finished-count)
-       (event-field "Процент финишировавших"
-                    (str (Math/round (double (* 100.0 (/ (double finished-count) (double started-count))))) "%")))
-     (event-field "Кол-во кругов" laps)
-     (event-field "Сложность круга (условная)" lap-difficulty)
-     (event-field "Условная сложность" (get-in points/difficulties-map [equivalent :name]))
-     (when points-multiplier
-       (event-field "Дополнительный коэффициент" points-multiplier))
-     (when points-multiplier
-       (event-field "Пояснение к коэффициенту" (:multiplier-description classification-data)))
-     (event-field "Очки за первое место (Кол-во кругов * сложность круга * коэффициент условной сложности * коэффициент)" first-place-points)
-     (event-field "Точка отсечения подсчета очков" cutoff-point)
+    [:div.classification-card {:id classification-id}
+     [:div.fields-section
+      (event-field "Название класса" name)
+      [:div.fields-row
+       (when started-count
+         (event-field "Количество стартовавших" started-count))
+       (when finished-count
+         (event-field "Количество финишировавших" finished-count))
+       (when (and started-count finished-count)
+         (event-field "Процент финишировавших"
+                      (str (Math/round (double (* 100.0 (/ (double finished-count) (double started-count))))) "%")))]
+      [:div.fields-row
+       (event-field "Кол-во кругов" laps)
+       (event-field "Сложность круга (условная)" lap-difficulty)]
+      (event-field "Условная сложность" (str (get-in points/difficulties-map [equivalent :name])
+                                             " (коэффициент " (get-in points/difficulties-map [equivalent :points-multiplier]) ")"))
+      (when points-multiplier
+        (event-field "Дополнительный коэффициент" points-multiplier))
+      (when points-multiplier
+        (event-field "Пояснение к коэффициенту" (:multiplier-description classification-data)))
+      (event-field "Очки за первое место (Кол-во кругов * сложность круга * коэффициент условной сложности * коэффициент)" first-place-points)
+      (event-field "Точка отсечения подсчета очков" cutoff-point)]
      [:table.results-table
       [:thead
        [:tr
@@ -87,15 +91,23 @@
           [:td.number (:points result)]])]]]))
 
 (rum/defc event-card
-  [all-data {:keys [event-id name date] :as event-data}]
+  [all-data {:keys [event-id name date event-url telegram-url] :as event-data}]
   (let [classifications (sort-by :order
                                  (filter #(= (:event-id %) event-id)
                                          (vals (:classifications all-data))))]
     [:div.event-card {:id event-id}
-     (event-field "Название события" name)
-     (event-field "Дата" date)
+     [:h3 name]
+     [:div.fields-section
+      (event-field "Дата" date)
+      (when event-url
+        (event-field "Ссылка" [:a {:href event-url}
+                               event-url]))
+      (when telegram-url
+        (event-field "Телеграм" [:a {:href telegram-url}
+                                 telegram-url]))
+      ]
      [:div.classifications-list
-      [:p "Список зачетных групп"]
+      [:h4 "Список зачетных групп"]
       [:ul
        (for [c classifications]
          [:li [:a {:href (str "#" (:classification-id c))} (:name c)]])]]
@@ -176,12 +188,15 @@
                        [:td (str/join " " [(:surname rider) (:name rider)])]]
                       (into
                         (map (fn [{:keys [event-id]}]
-                               ;; Тут мы считаем что в одном событии гонщик может участвовать только в одном зачете
-                               (let [result (first (filter #(= (:event-id %) event-id) results))
+                               (let [results (filter #(= (:event-id %) event-id) results)
+                                     ;; Тут мы считаем что в одном событии гонщик может участвовать только в одном зачете
+                                     result (first results)
                                      classification (get-in all-data [:classifications (:classification-id result)])]
                                  [:td.number
                                   {:class   (:equivalent classification)
                                    :onclick (str "highlightRow('" (:result-id result) "')")}
+                                  (when (> (count results) 1)
+                                    "!")
                                   [:a {:href (str "#" (:result-id result))}
                                    (:points result)]])))
                         events)
@@ -200,7 +215,8 @@
     (inline-js (slurp (io/resource "scripts.js")))]
    [:body
     [:header
-     [:h1 "2025 год"]]
+     [:section.header-section
+      [:h1 "2025 год"]]]
     [:section.summary-table
      [:h2 "Сводная таблица по гонщикам"]
      (riders-table data2025-map)]

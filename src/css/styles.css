@@ -1,17 +1,48 @@
-.event-card {
+.event-card, .classification-card {
+    border: 1px solid rgb(241, 241, 241);
+    border-radius: 5px;
+    padding: 1rem;
     margin-bottom: 1rem;
 }
 
+.event-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.event-field label {
+    font-weight: bold;
+}
+
+.event-field label::after {
+    content: ': '
+}
+
+.fields-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
 td.bronze {
-    background: #CD7F32;
+    background: #CD7F3250;
 }
 
 td.silver {
-    background: silver;
+    background: #C0C0C050;
 }
 
 td.gold {
-    background: gold;
+    background: #FFD70050;
+}
+
+td.iron {
+    background: #0505054F;
 }
 
 tr.highlight {
@@ -20,7 +51,8 @@ tr.highlight {
 
 a {
     color:#4183C4;
- }
+}
+
 a:hover {
     color:#156cc2;
 }
@@ -30,7 +62,7 @@ body {
     color: #0a0a0a;
 }
 
-section.summary-table {
+section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,7 +74,6 @@ section.summary-table {
 
 table {
     border-collapse: collapse;
-    table-layout: fixed;
     margin-bottom: 1rem;
     border-radius: 0;
     width: 100%;
@@ -79,8 +110,3 @@ td.number, th.number {
     text-align: center;
 }
 
-section.results-info {
-    max-width: 600px;
-    padding: 1rem;
-    min-width: 500px;
-}
