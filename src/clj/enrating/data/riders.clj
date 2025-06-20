@@ -321,6 +321,248 @@
    {:type :rider-info :name "Наталья" :surname "Макеева" :city "-", :rider-id "RM8P8IZA"}
    {:type :rider-info :name "Дарья" :surname "Шабловская" :city "Екатеринбург", :rider-id "R0UPhTyg"}
 
+   {:type :rider-info :name "Артем" :surname "Дурницын" :city "Нижний Тагил" :rider-id "RaK406oo"}
+   {:type :rider-info :name "Александр" :surname "Огорелышев" :city "Нижний Тагил" :rider-id "R9Gw6exE"}
+   {:type :rider-info :name "Станислав" :surname "Максимов" :city "Кыштым" :rider-id "R1lC0FD4"}
+   {:type :rider-info :name "Данил" :surname "Старцев" :city "Алапаевск" :rider-id "RVQ07Amc"}
+   {:type :rider-info :name "Григорий" :surname "Подкорытов" :city "Алапаевск" :rider-id "RHfCudI"}
+   {:type :rider-info :name "Антон" :surname "Коробейников" :city "Кунгур" :rider-id "R0rMwU4"}
+   {:type :rider-info :name "Виталий" :surname "Горбачев" :city "Екатеринбург" :rider-id "R1qNSSBM"}
+   {:type :rider-info :name "Евгений" :surname "Константинов" :city "Екатеринбург" :rider-id "RfFRWsvM"}
+   {:type :rider-info :name "Сергей" :surname "Шайбаков" :city "Екатеринбург" :rider-id "R9hVPxc"}
+   {:type :rider-info :name "Евгений" :surname "Габдулханов" :city "Верхняя Салда" :rider-id "R6UCEGOM"}
+   {:type :rider-info :name "Сергей" :surname "Чигвинцев" :city "Екатеринбург" :rider-id "R0jYdMrU"}
+   {:type :rider-info :name "Алексей" :surname "Донских" :city "Березовский" :rider-id "RoxRkUZw"}
+   {:type :rider-info :name "Олег" :surname "Карелин" :city "п. Растущий" :rider-id "Rv8IpNjc"}
+   {:type :rider-info :name "Игорь" :surname "Чечулин" :city "Екатеринбург/Алапаевск" :rider-id "RwurohWA"}
+   {:type :rider-info :name "Александр" :surname "Волков" :city "Алапаевск" :rider-id "RshouR04"}
+   {:type :rider-info :name "Константин" :surname "Захаров" :city "Екатеринбург" :rider-id "R10PqxEw"}
+   {:type :rider-info :name "Андрей" :surname "Кондовин" :city "Екатеринбург" :rider-id "RmBjZyEY"}
+   {:type :rider-info :name "Александр" :surname "Храмцов" :city "Екатеринбург" :rider-id "RCz8kS6k"}
+   {:type :rider-info :name "Иван" :surname "Заполоцкий" :city "Екатеринбург" :rider-id "RIKqozno"}
+   {:type :rider-info :name "Андрей" :surname "Ковалев" :city "Екатеринбург" :rider-id "RiMGf7oI"}
+   {:type :rider-info :name "Дмитрий" :surname "Кандышев" :city "Алапаевск" :rider-id "RxeCrUAk"}
+   {:type :rider-info :name "Дамир" :surname "Резванов" :city "Верхняя Пышма" :rider-id "RFzBrKHY"}
+   {:type :rider-info :name "Александр" :surname "Федяев" :city "Екатеринбург" :rider-id "RDH4HTck"}
+   {:type :rider-info :name "Борис" :surname "Гладышев" :city "Верхняя Пышма" :rider-id "RCZyas8"}
+   {:type :rider-info :name "Степан" :surname "Алексеев" :city "Екатеринбург" :rider-id "RCoCA6Xs"}
+   {:type :rider-info :name "Роман" :surname "Важенин" :city "Екатеринбург" :rider-id "RW5zQztI"}
+   {:type :rider-info :name "Владимир" :surname "Лазеев" :city "Екатеринбург" :rider-id "RKXKEmkA"}
+   {:type :rider-info :name "Владислав" :surname "Шорохов" :city "Нейво-Рудянка" :rider-id "RFPjegVg"}
+   {:type :rider-info :name "Владимир" :surname "Килунин" :city "с. Кировское" :rider-id "RKoZfzks"}
+   {:type :rider-info :name "Владислав" :surname "Фатеев" :city "Верхняя Пышма" :rider-id "R8i7hTp0"}
+   {:type :rider-info :name "Павел" :surname "Митрофанов" :city "п. Растущий" :rider-id "RbbnMh9g"}
+   {:type :rider-info :name "Никита" :surname "Полозников" :city "Нейво-Рудянка" :rider-id "RRVuYbVc"}
+   {:type :rider-info :name "Вячеслав" :surname "Алферьев" :city "Реж" :rider-id "RcIoMI10"}
+   {:type :rider-info :name "Дмитрий" :surname "Аленьковский" :city "Екатеринбург" :rider-id "RGdCqHQo"}
+   {:type :rider-info :name "Константин" :surname "Сыров" :city "Екатеринбург" :rider-id "RlQJzaP4"}
+   {:type :rider-info :name "Семен" :surname "Волков" :city "Екатеринбург" :rider-id "RO4OQFE"}
+   {:type :rider-info :name "Дмитрий" :surname "Бахарев" :city "Арамиль" :rider-id "RuwaqKHI"}
+   {:type :rider-info :name "Евгений" :surname "Захаров" :city "Березовский" :rider-id "RiipdHG4"}
+   {:type :rider-info :name "Иван" :surname "Ведерников" :city "Кунгур" :rider-id "R4amJcM"}
+   {:type :rider-info :name "Константин" :surname "Табанин" :city "Екатеринбург" :rider-id "RB3WiZSU"}
+   {:type :rider-info :name "Андрей" :surname "Кожемяков" :city "Артемовский" :rider-id "RTGWNTkI"}
+   {:type :rider-info :name "Владислав" :surname "Чибаков" :city "Сысерь" :rider-id "Ra4cOCKE"}
+   {:type :rider-info :name "Геронтий" :surname "Гогиберидзе" :city "Екатеринбург" :rider-id "RUvIZr2U"}
+   {:type :rider-info :name "Александр" :surname "Рахмеев" :city "Екатеринбург" :rider-id "RXbZSoP8"}
+   {:type :rider-info :name "Павел" :surname "Хисамутдинов" :city "Лосиный" :rider-id "RhBlsahU"}
+   {:type :rider-info :name "Руслан" :surname "Кунакбаев" :city "п. Октябрьский" :rider-id "RFugjCM"}
+   {:type :rider-info :name "Денис" :surname "Пастухов" :city "п. Октябрьский" :rider-id "R7udvraU"}
+   {:type :rider-info :name "Артем" :surname "Сердитых" :city "п. Северка" :rider-id "RR4Z2d8k"}
+   {:type :rider-info :name "Сергей" :surname "Солодянкин" :city "Екатеринбург" :rider-id "RnHhhav8"}
+   {:type :rider-info :name "Андрей" :surname "Озорнин" :city "Первоуральск" :rider-id "ROZFKhdo"}
+   {:type :rider-info :name "Лев" :surname "Буторин" :city "Ишим" :rider-id "RYOzKqCA"}
+   {:type :rider-info :name "Павел" :surname "Андреев" :city "Челябинск" :rider-id "RNi1mywA"}
+   {:type :rider-info :name "Тимофей" :surname "Доросинский" :city "Екатеринбург" :rider-id "R0pkDxsU"}
+   {:type :rider-info :name "Алексей" :surname "Власов" :city "Ишим" :rider-id "RJ1kvjHw"}
+   {:type :rider-info :name "Николай" :surname "Авдюшев" :city "Верхняя Тура" :rider-id "RmLkjDWY"}
+   {:type :rider-info :name "Константин" :surname "Вилисов" :city "Ревда" :rider-id "RfkWVeDY"}
+   {:type :rider-info :name "Петр" :surname "Хардин" :city "Тюмень" :rider-id "R5xLQcmM"}
+   {:type :rider-info :name "Алексей" :surname "Мамашев" :city "Среднеуральск" :rider-id "RVT7XLBU"}
+   {:type :rider-info :name "Денис" :surname "Румянцев" :city "Нижняя Тура" :rider-id "RSWx1pX0"}
+   {:type :rider-info :name "Сергей" :surname "Блохин" :city "Качканар" :rider-id "R15PNRJE"}
+   {:type :rider-info :name "Сергей" :surname "Андраманов" :city "Качканар" :rider-id "RoMTDrYc"}
+   {:type :rider-info :name "Андрей" :surname "Корелин" :city "Качканар" :rider-id "R3iQuMIU"}
+   {:type :rider-info :name "Михаил" :surname "Пашов" :city "Качканар" :rider-id "Rapi1Vw"}
+   {:type :rider-info :name "Александр" :surname "Беляков" :city "Ревда" :rider-id "R3m8ykk"}
+   {:type :rider-info :name "Евгений" :surname "Морозов" :city "Тюмень" :rider-id "RRrdvThM"}
+   {:type :rider-info :name "Владимир" :surname "Мыкалов" :city "Челябинск" :rider-id "RAE7vMAA"}
+   {:type :rider-info :name "Павел" :surname "Гостюхин" :city "Тюмень" :rider-id "Rtm0K93E"}
+   {:type :rider-info :name "Артем" :surname "Савичев" :city "Екатеринбург" :rider-id "RkbyURS0"}
+   {:type :rider-info :name "Алексей" :surname "Васильев" :city "Екатеринбург" :rider-id "RJQcd0J4"}
+   {:type :rider-info :name "Дмитрий" :surname "Никитин" :city "Пермь" :rider-id "RnViecow"}
+   {:type :rider-info :name "Сергей" :surname "Авдюков" :city "-" :rider-id "RLOzwBRw"}
+   {:type :rider-info :name "Алексей" :surname "Санаров" :city "Березовский" :rider-id "R13DH1B8"}
+   {:type :rider-info :name "Игорь" :surname "Хайруллов" :city "Екатеринбург" :rider-id "REOHRffQ"}
+   {:type :rider-info :name "Максим" :surname "Морозов" :city "Екатеринбург" :rider-id "Ru9Fv0YY"}
+   {:type :rider-info :name "Роман" :surname "Максимов" :city "Кыштым" :rider-id "RjyhFtjE"}
+   {:type :rider-info :name "Макар" :surname "Шангареев" :city "Верхняя Пышма" :rider-id "R9q8UDpM"}
+   {:type :rider-info :name "Спартак" :surname "Шангареев" :city "Верхняя Пышма" :rider-id "R245JNpI"}
+   {:type :rider-info :name "Матвей" :surname "Донских" :city "Березовский" :rider-id "RBVWDgx0"}
+   {:type :rider-info :name "Никита" :surname "Зырянов" :city "Березовский" :rider-id "R5qBedXo"}
+   {:type :rider-info :name "Егор" :surname "Султангалеев" :city "Березовский" :rider-id "RG3J3ehQ"}
+   {:type :rider-info :name "Иван" :surname "Моисеевских" :city "Березовский" :rider-id "R4JMxDSs"}
+   {:type :rider-info :name "Антон" :surname "Юрин" :city "Тюмень" :rider-id "RRz0RTtY"}
+   {:type :rider-info :name "Артем" :surname "Баранов" :city "Екатеринбург" :rider-id "RaCyVjM"}
+   {:type :rider-info :name "Егор" :surname "Павлов" :city "Екатеринбург" :rider-id "R1ryt6MA"}
+   {:type :rider-info :name "Юрий" :surname "Дьячков" :city "Нижняя Салда" :rider-id "Re9k9pyU"}
+   {:type :rider-info :name "Антон" :surname "Бородин" :city "Верхняя Салда" :rider-id "R9eRtwwY"}
+   {:type :rider-info :name "Антон" :surname "Кадников" :city "Екатеринбург" :rider-id "R47au04w"}
+   {:type :rider-info :name "Илья" :surname "Болотов" :city "Алапаевск" :rider-id "Rm2tfVsc"}
+   {:type :rider-info :name "Леонид" :surname "Чепиль" :city "Верхняя Пышма" :rider-id "Rjuvljh0"}
+   {:type :rider-info :name "Владимир" :surname "Кадырин" :city "Верхняя Пышма" :rider-id "RpXYEGVs"}
+   {:type :rider-info :name "Станислав" :surname "Карелин" :city "п. Растущий" :rider-id "Raje9iys"}
+   {:type :rider-info :name "Петр" :surname "Антонов" :city "Верхняя Салда" :rider-id "RQYglj8"}
+   {:type :rider-info :name "Антон" :surname "Юнусов" :city "Екатеринбург" :rider-id "RkTd518"}
+   {:type :rider-info :name "Дмитрий" :surname "Канюков" :city "Тюмень" :rider-id "RkE2rJlQ"}
+   {:type :rider-info :name "Михаил" :surname "Чесноков" :city "Нижний Тагил" :rider-id "Rq9Kleac"}
+   {:type :rider-info :name "Никита" :surname "Насонов" :city "Екатеринбург" :rider-id "RhzP0hhM"}
+   {:type :rider-info :name "Алексей" :surname "Ширяев" :city "Екатеринбург" :rider-id "RNKyY124"}
+   {:type :rider-info :name "Иван" :surname "Баранков" :city "Екатеринбург" :rider-id "RFebzKsQ"}
+   {:type :rider-info :name "Владислав" :surname "Куклин" :city "Алапаевск" :rider-id "Rfzi8xw4"}
+   {:type :rider-info :name "Иван" :surname "Кенчин" :city "Верхняя Салда" :rider-id "Rih2p458"}
+   {:type :rider-info :name "Павел" :surname "Татаринов" :city "Верхняя Салда" :rider-id "RnJ9ysYI"}
+   {:type :rider-info :name "Равиль" :surname "Сарваров" :city "Верхняя Салда" :rider-id "RN15YAlM"}
+   {:type :rider-info :name "Егор" :surname "Новопашин" :city "Верхняя Салда" :rider-id "RBs2OaGA"}
+   {:type :rider-info :name "Кирилл" :surname "Новопашин" :city "Верхняя Салда" :rider-id "RUY7AHxY"}
+   {:type :rider-info :name "Артем" :surname "Новопашин" :city "Верхняя Салда" :rider-id "RKdJAdQU"}
+   {:type :rider-info :name "Федор" :surname "Колпаков" :city "Нейво-Рудянка" :rider-id "RGoZomf0"}
+   {:type :rider-info :name "Андрей" :surname "Русинов" :city "Нейво-Рудянка" :rider-id "RJG0H3hE"}
+   {:type :rider-info :name "Александр" :surname "Локшин" :city "Екатеринбург" :rider-id "RQv5yLo0"}
+   {:type :rider-info :name "Артем" :surname "Максимов" :city "Верхняя Салда" :rider-id "Rz7dsdxU"}
+   {:type :rider-info :name "Дмитрий" :surname "Максимов" :city "Челябинк" :rider-id "RiYBYhJE"}
+   {:type :rider-info :name "Александр" :surname "Матвеев" :city "Верхняя Пышма" :rider-id "R0IwJYs"}
+   {:type :rider-info :name "Евгений" :surname "Перевощиков" :city "Верхняя Пышма" :rider-id "RqT69jy0"}
+   {:type :rider-info :name "Алексей" :surname "Шестаков" :city "Алапаевск" :rider-id "RCCLhGQY"}
+   {:type :rider-info :name "Даниил" :surname "Доронин" :city "пгт. В. Синячиха" :rider-id "RcOS0DM"}
+   {:type :rider-info :name "Сергей" :surname "Клевцов" :city "пгт. В. Синячиха" :rider-id "Rg6oOkao"}
+   {:type :rider-info :name "Михаил" :surname "Бобыкин" :city "Алапаевск" :rider-id "RODIVUbQ"}
+   {:type :rider-info :name "Сергей" :surname "Кузьмин" :city "Каменск-Уральский" :rider-id "RUOxeVd0"}
+   {:type :rider-info :name "Константин" :surname "Никитин" :city "Верхняя Салда" :rider-id "RasgwV9o"}
+   {:type :rider-info :name "Никита" :surname "Глухов" :city "Алапаевск" :rider-id "R3iVGez4"}
+   {:type :rider-info :name "Александр" :surname "Перов" :city "Екатеринбург" :rider-id "RgRXNjfU"}
+   {:type :rider-info :name "Владимир" :surname "Архипов" :city "Тюмень" :rider-id "RqbgKc9U"}
+   {:type :rider-info :name "Алексей" :surname "Опаков" :city "Екатеринбург" :rider-id "RI314EdI"}
+   {:type :rider-info :name "Станислав" :surname "Карнаухов" :city "Екатеринбург" :rider-id "RBGJ1FYw"}
+   {:type :rider-info :name "Александр" :surname "Полехин" :city "Нижний Тагил" :rider-id "RfldnoFM"}
+   {:type :rider-info :name "Рашид" :surname "Ибрагимов" :city "Тюмень" :rider-id "RGLxFvt4"}
+   {:type :rider-info :name "Дмитрий" :surname "Бобков" :city "Верхняя Пышма" :rider-id "RAPHMjw"}
+   {:type :rider-info :name "Вячеслав" :surname "Лопатин" :city "Березовский" :rider-id "RLEtUs0"}
+   {:type :rider-info :name "Сергей" :surname "Сивинских" :city "Березовский" :rider-id "RCgJdXEo"}
+   {:type :rider-info :name "Денис" :surname "Борисов" :city "Екатеринбург" :rider-id "RJpsjJxk"}
+   {:type :rider-info :name "Евгений" :surname "Сухотин" :city "Екатеринбург" :rider-id "RaTSEFYk"}
+   {:type :rider-info :name "Александр" :surname "Кайнов" :city "пгт. В. Синячиха" :rider-id "RUDEy064"}
+   {:type :rider-info :name "Анатолий" :surname "Середкин" :city "пгт. В. Синячиха" :rider-id "RZrIYVuc"}
+   {:type :rider-info :name "Владислав" :surname "Светлаков" :city "Ревда" :rider-id "RX1YPxl0"}
+   {:type :rider-info :name "Матвей" :surname "Мангилев" :city "Екатеринбург" :rider-id "RlssEWwM"}
+   {:type :rider-info :name "Дмитрий" :surname "Пудов" :city "Екатеринбург" :rider-id "Rsfzc8"}
+   {:type :rider-info :name "Михаил" :surname "Пудов" :city "Екатеринбург" :rider-id "RtSEodUo"}
+   {:type :rider-info :name "Вячеслав" :surname "Волков" :city "Алапаевск" :rider-id "R1kZx8bY"}
+   {:type :rider-info :name "Леонид" :surname "Старков" :city "Екатеринбург" :rider-id "Rxx7EU"}
+   {:type :rider-info :name "Иван" :surname "Коркин" :city "Екатеринбург" :rider-id "RUnKy7UQ"}
+   {:type :rider-info :name "Павел" :surname "Пудов" :city "Екатеринбург" :rider-id "Rfz3myis"}
+   {:type :rider-info :name "Алексей" :surname "Родионов" :city "Екатеринбург" :rider-id "RoCpoHuA"}
+   {:type :rider-info :name "Олег" :surname "Гоголев" :city "Екатеринбург" :rider-id "R5ZFeTb0"}
+   {:type :rider-info :name "Константин" :surname "Яковлев" :city "Екатеринбург" :rider-id "ReIhirxc"}
+   {:type :rider-info :name "Михаил" :surname "Сычев" :city "Екатеринбург" :rider-id "RMtAf7lM"}
+   {:type :rider-info :name "Роман" :surname "Лукин" :city "Екатеринбург" :rider-id "RVEHnFdA"}
+   {:type :rider-info :name "Олег" :surname "Садыков" :city "Верхняя Пышма" :rider-id "RpvZyTE"}
+   {:type :rider-info :name "Константин" :surname "Бачев" :city "Первоуральск" :rider-id "RMMsBXMM"}
+   {:type :rider-info :name "Андрей" :surname "Богомолов" :city "Екатеринбург" :rider-id "RnLl06h4"}
+   {:type :rider-info :name "Павел" :surname "Федоровых" :city "Богданович" :rider-id "RknjLHyw"}
+   {:type :rider-info :name "Андрей" :surname "Ляшенко" :city "Екатеринбург" :rider-id "RxLMHjc"}
+   {:type :rider-info :name "Андрей" :surname "Антонов" :city "Первоуральск" :rider-id "RydBK9rs"}
+   {:type :rider-info :name "Виталий" :surname "Фуртаев" :city "Первоуральск" :rider-id "Rc7d3KAA"}
+   {:type :rider-info :name "Тимофей" :surname "Тихонов" :city "Верхняя Салда" :rider-id "ReKi5pc4"}
+   {:type :rider-info :name "Евгений" :surname "Подъезжих" :city "Асбест" :rider-id "RDsqHZrs"}
+   {:type :rider-info :name "Егор" :surname "Борняков" :city "Екатеринбург" :rider-id "RVr71meE"}
+   {:type :rider-info :name "Андрей" :surname "Крюков" :city "Арамиль" :rider-id "Rzb3Okfw"}
+   {:type :rider-info :name "Илья" :surname "Саргин" :city "Н. Шайтанский" :rider-id "RLuDXd0Q"}
+   {:type :rider-info :name "Савелий" :surname "Кунакбаев" :city "Полевской" :rider-id "RVohUR30"}
+   {:type :rider-info :name "Денис" :surname "Кунакбаев" :city "Полевской" :rider-id "RLdxpdQ8"}
+   {:type :rider-info :name "Андрей" :surname "Каратаев" :city "-" :rider-id "RqNVmi4"}
+   {:type :rider-info :name "Алексей" :surname "Пилипчук" :city "Екатеринбург" :rider-id "RXMKzTVM"}
+   {:type :rider-info :name "Александр" :surname "Доросинский" :city "Екатеринбург" :rider-id "ROkEDfJA"}
+   {:type :rider-info :name "Николай" :surname "Карпенко" :city "Верхняя Салда" :rider-id "RajpdO5I"}
+   {:type :rider-info :name "Матвей" :surname "Иванов" :city "Тюмень" :rider-id "RY8eGyUM"}
+   {:type :rider-info :name "Игорь" :surname "Куценко" :city "Тюмень" :rider-id "RrHnVXA"}
+   {:type :rider-info :name "Денис" :surname "Булатов" :city "Нейво-Рудянка" :rider-id "RHDH590"}
+   {:type :rider-info :name "Федор" :surname "Щвецов" :city "Верхняя Синячиха" :rider-id "RbWUUNqk"}
+   {:type :rider-info :name "Евгений" :surname "Камаев" :city "Сухой лог" :rider-id "RQ7mxw"}
+   {:type :rider-info :name "Сергей" :surname "Гулонян" :city "Сухой лог" :rider-id "RWI1Sp0U"}
+   {:type :rider-info :name "Алексей" :surname "Кузнецов" :city "Сухой лог" :rider-id "RAs7f1Z4"}
+   {:type :rider-info :name "Евгений" :surname "Жилин" :city "Екатеринбург" :rider-id "RVyo06go"}
+   {:type :rider-info :name "Аркадий" :surname "Баландин" :city "Пермь" :rider-id "R8El9DK8"}
+   {:type :rider-info :name "Дмитрий" :surname "Брызгалов" :city "Екатеринбург" :rider-id "RjL3uLjI"}
+   {:type :rider-info :name "Максим" :surname "Бормотов" :city "Екатеринбург" :rider-id "RVulNtM"}
+   {:type :rider-info :name "Сергей" :surname "Тронин" :patronymic "Александрович" :city "Тюмень" :rider-id "RkmtXQ14"}
+   {:type :rider-info :name "Андрей" :surname "Журавлев" :patronymic "Александрович" :city "Екатеринбург" :rider-id "R9UqVsMY"}
+   {:type :rider-info :name "Сергей" :surname "Мезенцев" :patronymic "Дмитриевич" :city "Пермь" :rider-id "RBVCjRco"}
+   {:type :rider-info :name "Семён" :surname "Костяев" :patronymic "Сергеевич" :city "Екатеринбург" :rider-id "RJlxVhA"}
+   {:type :rider-info :name "Вадим" :surname "Черевко" :patronymic "Владимирович" :city "Пермь" :rider-id "RRgXbmME"}
+   {:type :rider-info :name "Артем" :surname "Копытов" :patronymic "-" :city "Тюмень" :rider-id "RQ79KDD0"}
+   {:type :rider-info :name "Константин" :surname "Бортничук" :patronymic "Сергеевич" :city "Каменск-Уральский" :rider-id "Rf2SYcVI"}
+   {:type :rider-info :name "Кирилл" :surname "Пешков" :patronymic "Геннадьевич" :city "Краснокамск" :rider-id "RRZcoLV0"}
+   {:type :rider-info :name "Владимир" :surname "Мусихин" :patronymic "Алексеевич" :city "Горнозаводск" :rider-id "R5MGRdUM"}
+   {:type :rider-info :name "Владимир" :surname "Богомолов" :patronymic "Леонидович" :city "Екатеринбург" :rider-id "RrgUnWCg"}
+   {:type :rider-info :name "Леонид" :surname "Леонтьев" :patronymic "Сергеевич" :city "Тюмень" :rider-id "RPCnm9kU"}
+   {:type :rider-info :name "Александр" :surname "Удачин" :patronymic "Леонидович" :city "Катайск" :rider-id "RqRVZPVU"}
+   {:type :rider-info :name "Антон" :surname "Ершов" :patronymic "-" :city "Камышлов" :rider-id "Rn15S8Wk"}
+   {:type :rider-info :name "Иван" :surname "Замиралов" :patronymic "Михайлович" :city "Талица" :rider-id "RbrdNpCs"}
+   {:type :rider-info :name "Иван" :surname "Швейкерт" :patronymic "Валерьевич" :city "Челябинск" :rider-id "Rgaeuw9I"}
+   {:type :rider-info :name "Дмитрий" :surname "Чистяков" :patronymic "Александрович" :city "Полевской" :rider-id "R61oBnFc"}
+   {:type :rider-info :name "Михаил" :surname "Харламенков" :patronymic "Владимирович" :city "Ирбит" :rider-id "R7pRl6w"}
+   {:type :rider-info :name "Матвей" :surname "Филимонов" :patronymic "-" :city "Полевской" :rider-id "RoBB8IgA"}
+   {:type :rider-info :name "Кирилл" :surname "Терентьев" :patronymic "-" :city "Полевской" :rider-id "RF6D081w"}
+   {:type :rider-info :name "Алексей" :surname "Петров" :patronymic "Алексеевич" :city "Екатеринбург" :rider-id "RylS2lxg"}
+   {:type :rider-info :name "Александр" :surname "Громов" :patronymic "Николаевич" :city "Полевской" :rider-id "RDHZ6Svg"}
+   {:type :rider-info :name "Денис" :surname "Меньшиков" :patronymic "Сергеевич" :city "Катайск" :rider-id "Rwhc7PU"}
+   {:type :rider-info :name "Михаил" :surname "Ялунин" :patronymic "-" :city "Богданович" :rider-id "RynfBofk"}
+   {:type :rider-info :name "Александр" :surname "Ковелин" :patronymic "Алексеевич" :city "Камышлов" :rider-id "RqF6uQx8"}
+   {:type :rider-info :name "Сергей" :surname "Тимофеев" :patronymic "Владимирович" :city "Тюмень" :rider-id "ReDE2Ti8"}
+   {:type :rider-info :name "Андрей" :surname "Кокшаров" :patronymic "Анатольевич" :city "Екатеринбург" :rider-id "RPDszJms"}
+   {:type :rider-info :name "Иван" :surname "Черемисов" :patronymic "Полевской," :city "Свердловская" :rider-id "R7TNs9vQ"}
+   {:type :rider-info :name "Артём" :surname "Белых" :patronymic "Юрьевич" :city "Косулино" :rider-id "RC9K7A0g"}
+   {:type :rider-info :name "Иван" :surname "Бояркин" :patronymic "Витальевич" :city "Ирбит" :rider-id "RdsdWrKQ"}
+   {:type :rider-info :name "Арсен" :surname "Байрамуков" :patronymic "Парисбиевич" :city "Златоуст" :rider-id "R0j8dnFg"}
+   {:type :rider-info :name "Сергей" :surname "Попов" :patronymic "Дмитриевич" :city "Тюмень" :rider-id "R1YYTekw"}
+   {:type :rider-info :name "Андрей" :surname "Коковин" :patronymic "Валерьевич" :city "Сухой Лог" :rider-id "RHSfZmUI"}
+   {:type :rider-info :name "Евгений" :surname "Горин" :patronymic "Юрьевич" :city "Богданович" :rider-id "RiyaVa6E"}
+   {:type :rider-info :name "Алексей" :surname "Любимов" :patronymic "Иванович" :city "Екатеринбург" :rider-id "RMhNyvsY"}
+   {:type :rider-info :name "Евгений" :surname "Бекетов" :patronymic "Викторович" :city "Богданович" :rider-id "RWeycbjI"}
+   {:type :rider-info :name "Денис" :surname "Токмин" :patronymic "Александрович" :city "Богданович" :rider-id "RLaXoHxE"}
+   {:type :rider-info :name "Станислав" :surname "Сысков" :patronymic "Валерьевич" :city "Екатеринбург" :rider-id "RBJtVrOE"}
+   {:type :rider-info :name "Андрей" :surname "Степанов" :patronymic "Владимирович" :city "Тюмень" :rider-id "RbO7L1I"}
+   {:type :rider-info :name "Дмитрий" :surname "Бурыкин" :patronymic "Николаевич" :city "Екатеринбург" :rider-id "RWdbKm48"}
+   {:type :rider-info :name "Денис" :surname "Ефимов" :patronymic "-" :city "Талица" :rider-id "RLKOJSow"}
+   {:type :rider-info :name "Максим" :surname "Логинов" :patronymic "Игоревич" :city "Екатеринбург" :rider-id "RcEOklhY"}
+   {:type :rider-info :name "Евгений" :surname "Шубин" :patronymic "Александрович" :city "Каменск-Уральский" :rider-id "RdPQQ760"}
+   {:type :rider-info :name "Никита" :surname "Лебедев" :patronymic "Владимирович" :city "Екатеринбург" :rider-id "RNOk7Unw"}
+   {:type :rider-info :name "Артём" :surname "Потапов" :patronymic "Николаевич" :city "Сухой Лог" :rider-id "RMVglTOA"}
+   {:type :rider-info :name "Андрей" :surname "Садыков" :patronymic "Юрьевич" :city "Сухой Лог" :rider-id "RIpWbKmQ"}
+   {:type :rider-info :name "Дмитрий" :surname "Тренин" :patronymic "Игоревич" :city "Мартюш" :rider-id "RooDMgB8"}
+   {:type :rider-info :name "Андре" :surname "Долматов" :patronymic "Юрьевит" :city "Ирбит" :rider-id "RUEhlk8c"}
+   {:type :rider-info :name "Михаил" :surname "Романенко" :patronymic "Александрович" :city "Екатеринбург" :rider-id "R9juVsQs"}
+   {:type :rider-info :name "Роман" :surname "Коковин" :patronymic "Валерьевич" :city "Сухой Лог" :rider-id "RsPBmcOQ"}
+   {:type :rider-info :name "Евгений" :surname "Каргапольцев" :patronymic "Александрович" :city "Екатеринбург" :rider-id "RMhnra8"}
+   {:type :rider-info :name "Иван" :surname "Киприн" :patronymic "Валерьевич" :city "Ирбит" :rider-id "RlfLZPHU"}
+   {:type :rider-info :name "Артём" :surname "Щукин" :patronymic "Александрович" :city "Полевской" :rider-id "RWPcEnGI"}
+   {:type :rider-info :name "Антон" :surname "Боровских" :patronymic "Михайлович" :city "Асбест" :rider-id "RdkZTOSI"}
+   {:type :rider-info :name "Денис" :surname "Дзюбин" :patronymic "Александрович" :city "Тюмень" :rider-id "RxeIKvzw"}
+   {:type :rider-info :name "Александр" :surname "Зайцев" :patronymic "Алексеевич" :city "Екатеринбург" :rider-id "R8i5xzTo"}
+   {:type :rider-info :name "Антон" :surname "Болныгин" :patronymic "Александрович" :city "Тюмень" :rider-id "R2uTxzQs"}
+   {:type :rider-info :name "Роман" :surname "Панов" :patronymic "Николаевич" :city "Троицкий" :rider-id "RFMufn6A"}
+   {:type :rider-info :name "Николай" :surname "Половников" :patronymic "Евгеньевич" :city "Камышлов" :rider-id "R3qlSVNc"}
+   {:type :rider-info :name "Станислав" :surname "Макуха" :patronymic "Андреевич" :city "Тюмень" :rider-id "R1wge2wM"}
+   {:type :rider-info :name "Максим" :surname "Солин" :patronymic "Александрович" :city "Екатеринбург" :rider-id "RIyFqG4Q"}
+   {:type :rider-info :name "Борис" :surname "Коваленко" :patronymic "Игоревич" :city "Екатеринбург" :rider-id "R7LsAt1E"}
+   {:type :rider-info :name "Кирилл" :surname "Ауэрбах" :patronymic "Дмитриевич" :city "Екатеринбург" :rider-id "RZnvBAmY"}
+   {:type :rider-info :name "Андрей" :surname "Щипунов" :patronymic "Николаевич" :city "Копейск" :rider-id "RutyJmGw"}
+   {:type :rider-info :name "Владимир" :surname "Боровских" :patronymic "Александрович" :city "Камышлов" :rider-id "Reyvt7xo"}
+   {:type :rider-info :name "Дмитрий" :surname "Григоренко" :patronymic "Александрович" :city "Курган" :rider-id "RpTMGbB4"}
+   {:type :rider-info :name "Александр" :surname "Капустин" :patronymic "Владимирович" :city "Богданович" :rider-id "RKc2o85M"}
+   {:type :rider-info :name "Андрей" :surname "Тужилов" :patronymic "Анатольевич" :city "Екатеринбург" :rider-id "RkvTD2Uo"}
+   {:type :rider-info :name "Андрей" :surname "Кудин" :patronymic "Анатольевич" :city "Талица" :rider-id "RUhaQxnM"}
    ])
 
 (defn- normalize-string
