@@ -2,7 +2,6 @@
     border: 1px solid rgb(241, 241, 241);
     border-radius: 5px;
     padding: 1rem;
-    margin-bottom: 1rem;
 }
 
 .event-field {
@@ -110,3 +109,18 @@ td.number, th.number {
     text-align: center;
 }
 
+a.repo-icon {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color: black;
+}
+
+.version-info {
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+footer {
+    display: flex;
+}

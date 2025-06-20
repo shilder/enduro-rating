@@ -5,9 +5,11 @@
             [rum.core :as rum]
             [rum.server-render]
             [enrating.data.2025]
-            [enrating.data.riders])
-  (:import (java.math RoundingMode)
-           (java.time LocalDate)))
+            [enrating.data.riders]
+            [enrating.buildinfo :as buildinfo])
+  (:import (java.time Instant LocalDate ZonedDateTime)
+           (java.time.format DateTimeFormatter)
+           (java.util Locale TimeZone)))
 
 
 
@@ -203,6 +205,12 @@
                       (into [[:th.number total]]))))
            (map vector (range) riders-data))]))
 
+(defn- format-instant-ekb-time [^Instant instant]
+  (let [tz (TimeZone/getTimeZone "Asia/Yekaterinburg")
+        zoned (ZonedDateTime/ofInstant instant (.toZoneId tz))
+        formatter (DateTimeFormatter/ofPattern "dd.MM.yyyy HH:mm:ss O" (Locale/of "ru_RU"))]
+    (.format formatter zoned)))
+
 (rum/defc index-page []
   [:html
    [:head
@@ -215,9 +223,11 @@
     (inline-js (slurp (io/resource "scripts.js")))]
    [:body
     [:header
-     [:section.header-section
-      [:h1 "2025 год"]]]
+     [:div.header-row
+      [:a.repo-icon {:href buildinfo/git-repo-url}
+       (github-logo)]]]
     [:section.summary-table
+     [:h1 "2025 год"]
      [:h2 "Сводная таблица по гонщикам"]
      (riders-table data2025-map)]
     [:section.results-info
@@ -227,7 +237,22 @@
                             [(LocalDate/parse (:date event)) (:name event)])
                           (vals (:events data2025-map)))]
        (event-card data2025-map event))]
-    [:footer]]])
+    (let [{:keys [long-sha short-sha dirty? instant]} (buildinfo/get-current-build-info)]
+      [:footer
+       [:div.version-info
+        [:strong "Версия страницы: "]
+        (cond
+          (nil? long-sha)
+          "НЕИЗВЕСТНАЯ ВЕРСИЯ !"
+
+          dirty?
+          [:span short-sha " с изменениями"]
+
+          :else
+          [:span
+           [:a {:href (buildinfo/format-commit-url long-sha)} short-sha]
+           " "
+           (format-instant-ekb-time instant)])]])]])
 
 (defn render-index []
   (println "Generating data")
