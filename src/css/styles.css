@@ -124,3 +124,13 @@ a.repo-icon {
 footer {
     display: flex;
 }
+
+.multiple-results {
+    background-color: #FF000080;
+    margin: 0;
+    padding: 0;
+}
+
+ul.multiple-results li {
+    list-style: none;
+}

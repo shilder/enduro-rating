@@ -197,10 +197,16 @@
                                  [:td.number
                                   {:class   (:equivalent classification)
                                    :onclick (str "highlightRow('" (:result-id result) "')")}
-                                  (when (> (count results) 1)
-                                    "!")
-                                  [:a {:href (str "#" (:result-id result))}
-                                   (:points result)]])))
+                                  ;; Бывает такой бардак в протоколах
+                                  (if (> (count results) 1)
+                                    [:ul.multiple-results
+                                     [:span "!!!"]
+                                     (for [res results]
+                                       [:li
+                                        {:onclick (str "highlightRow('" (:result-id res) "')")}
+                                        [:a {:href (str "#" (:result-id res))} (:points res)]])]
+                                    [:a {:href (str "#" (:result-id result))}
+                                     (:points result)])])))
                         events)
                       (into [[:th.number total]]))))
            (map vector (range) riders-data))]))
