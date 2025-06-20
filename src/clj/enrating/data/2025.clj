@@ -321,6 +321,152 @@
    [:type :result :event-id "EALkbw" :classification-id "CQuv6rI64Fg" :position 27 :plate-number "324" :rider-id (enrating.data.riders/find-rider-id "Максим" "Кокшаров")]
    [:type :result :event-id "EALkbw" :classification-id "CQuv6rI64Fg" :position 28 :plate-number "326" :rider-id (enrating.data.riders/find-rider-id "Андрей" "Маликов")]
 
+   ;; Результаты уровень 4
+   (let [кругов 2
+         ;; Такая же сложность как и для класса 5/6
+         сложность-круга 75.0
+         стартовало 17
+         штраф 1
+         условный-класс :silver]
+     {
+      :type               :classification
+      :classification-id  "CeY5ORDnv0j4"
+      :event-id           "EALkbw"
+      :name               "Класс 4 / Уровень 4 / ВОЗДУШКА"
+      :equivalent         условный-класс
+      :laps               кругов
+      :lap-difficulty     сложность-круга
+      :started-count      стартовало
+      :first-place-points (* кругов сложность-круга штраф)
+      :cutoff-point       (calculate-cutoff условный-класс стартовало)
+      })
+
+   ;; Страница 1
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 1 :plate-number "921" :rider-id (find-rider-id "Семён" "Скулкин")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 4 :plate-number "407" :rider-id (find-rider-id "Леонид" "Асташов")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 2 :plate-number "404" :rider-id (find-rider-id "Павел" "Стаин")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 5 :plate-number "405" :rider-id (find-rider-id "Ринат" "Нохов")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 3 :plate-number "922" :rider-id (find-rider-id "Евгений" "Мирзаметов")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 11 :plate-number "406" :rider-id (find-rider-id "Василий" "Тараторин")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 15 :plate-number "412" :rider-id (find-rider-id "Александр" "Талыгин")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 6 :plate-number "415" :rider-id (find-rider-id "Егор" "Коноплев")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 12 :plate-number "411" :rider-id (find-rider-id "Роман" "Белоногов")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 7 :plate-number "419" :rider-id (find-rider-id "Виктор" "Медведев")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 8 :plate-number "402" :rider-id (find-rider-id "Максим" "Пестов")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 9 :plate-number "416" :rider-id (find-rider-id "Илья" "Ефимов")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 10 :plate-number "418" :rider-id (find-rider-id "Александр" "Ишонин")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 16 :plate-number "408" :rider-id (find-rider-id "Дмитрий" "Сажин")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 14 :plate-number "904" :rider-id (find-rider-id "Сергей" "Ужегов")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 13 :plate-number "413" :rider-id (find-rider-id "Александр" "Зверев")]
+   [:type :result :event-id "EALkbw" :classification-id "CeY5ORDnv0j4" :position 17 :plate-number "417" :rider-id (find-rider-id "Максим" "Паршаков")]
+
+   ;; Результаты уровень 3
+   (let [кругов 4
+         сложность-круга 25.0
+         стартовало 55
+         штраф 1
+         условный-класс :bronze]
+     {
+      :type               :classification
+      :classification-id  "CtOb9wIT2lI"
+      :event-id           "EALkbw"
+      :name               "Класс 3 / Уровень 3 / КАНТРИ КРОСС"
+      :equivalent         условный-класс
+      :laps               кругов
+      :lap-difficulty     сложность-круга
+      :started-count      стартовало
+      :first-place-points (* кругов сложность-круга штраф)
+      :cutoff-point       (calculate-cutoff условный-класс стартовало)
+      })
+
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 1 :plate-number "507" :rider-id (find-rider-id "Александр" "Новопашин")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 2 :plate-number "554" :rider-id (find-rider-id "Александр" "Бескровный")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 3 :plate-number "511" :rider-id (find-rider-id "Сергей" "Борисов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 4 :plate-number "548" :rider-id (find-rider-id "Дмитрий" "Тимошевский")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 5 :plate-number "539" :rider-id (find-rider-id "Александр" "Кабаев")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 6 :plate-number "528" :rider-id (find-rider-id "Алексей" "Слабочков")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 7 :plate-number "938" :rider-id (find-rider-id "Василий" "Дудников")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 8 :plate-number "541" :rider-id (find-rider-id "Евгений" "Исупов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 9 :plate-number "517" :rider-id (find-rider-id "Валера" "Варгасов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 10 :plate-number "502" :rider-id (find-rider-id "Артём" "Котельников")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 11 :plate-number "542" :rider-id (find-rider-id "Алексей" "Фадеев")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 12 :plate-number "534" :rider-id (find-rider-id "Константин" "Тынкасов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 13 :plate-number "537" :rider-id (find-rider-id "Владислав" "Хонькин")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 14 :plate-number "925" :rider-id (find-rider-id "Антон" "Аристахов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 15 :plate-number "547" :rider-id (find-rider-id "Денис" "Воробьев")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 16 :plate-number "552" :rider-id (find-rider-id "Александр" "Исаев")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 17 :plate-number "510" :rider-id (find-rider-id "Василий" "Жук")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 18 :plate-number "501" :rider-id (find-rider-id "Сергей" "Анисимов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 19 :plate-number "513" :rider-id (find-rider-id "Евгений" "Василькин")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 20 :plate-number "941" :rider-id (find-rider-id "Дмитрий" "Прядко")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 21 :plate-number "949" :rider-id (find-rider-id "Алексей" "Полыгалов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 22 :plate-number "505" :rider-id (find-rider-id "Алексей" "Ищук")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 23 :plate-number "516" :rider-id (find-rider-id "Александр" "Сумин")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 24 :plate-number "545" :rider-id (find-rider-id "Максим" "Тимошевский")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 25 :plate-number "531" :rider-id (find-rider-id "Владислав" "Мочалов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 26 :plate-number "509" :rider-id (find-rider-id "Александр" "Храмов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 27 :plate-number "557" :rider-id (find-rider-id "Василий" "Кармацких")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 28 :plate-number "503" :rider-id (find-rider-id "Андрей" "Созыкин")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 29 :plate-number "540" :rider-id (find-rider-id "Алексей" "Самойлов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 30 :plate-number "556" :rider-id (find-rider-id "Сергей" "Лазукин")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 31 :plate-number "525" :rider-id (find-rider-id "Роман" "Ахмадиев")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 32 :plate-number "538" :rider-id (find-rider-id "Александр" "Михалев")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 33 :plate-number "929" :rider-id (find-rider-id "Евгений" "Симаков")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 34 :plate-number "518" :rider-id (find-rider-id "Александр" "Курчев")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 35 :plate-number "543" :rider-id (find-rider-id "Станислав" "Евдокимов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 36 :plate-number "918" :rider-id (find-rider-id "Владимир" "Жданов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 37 :plate-number "909" :rider-id (find-rider-id "Денис" "Деревенченко")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 38 :plate-number "512" :rider-id (find-rider-id "Алексей" "Матвеев")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 39 :plate-number "536" :rider-id (find-rider-id "Антон" "Кийко")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 40 :plate-number "526" :rider-id (find-rider-id "Евгений" "Максимов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 41 :plate-number "546" :rider-id (find-rider-id "Вячеслав" "Салмин")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 42 :plate-number "520" :rider-id (find-rider-id "Константин" "Одиноков")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 43 :plate-number "515" :rider-id (find-rider-id "Юрий" "Лобко")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 44 :plate-number "550" :rider-id (find-rider-id "Сергей" "Потлов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 45 :plate-number "555" :rider-id (find-rider-id "Никита" "Мохнин")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 46 :plate-number "535" :rider-id (find-rider-id "Иван" "Мохнин")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 47 :plate-number "524" :rider-id (find-rider-id "Алексей" "Сазанов")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 48 :plate-number "945" :rider-id (find-rider-id "Михаил" "Дегтярёв")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 49 :plate-number "946" :rider-id (find-rider-id "Андрей" "Дегтярёв")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 50 :plate-number "529" :rider-id (find-rider-id "Иван" "Моисеев")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 51 :plate-number "508" :rider-id (find-rider-id "Константин" "Розенбаум")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 52 :plate-number "504" :rider-id (find-rider-id "Дмитрий" "Чирков")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 54 :plate-number "527" :rider-id (find-rider-id "Сергей" "Уткин")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 55 :plate-number "532" :rider-id (find-rider-id "Александр" "Орешко")]
+   [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 56 :plate-number "544" :rider-id (find-rider-id "Сергей" "Ягудин")]
+
+   ;; Результаты уровень 2 - девушки
+   (let [кругов 4
+         ;; Такая же сложность как и для класса 3
+         сложность-круга 25.0
+         стартовало 10
+         штраф 1
+         условный-класс :bronze]
+     {
+      :type               :classification
+      :classification-id  "CbnNqePYIllI"
+      :event-id           "EALkbw"
+      :name               "Класс 2 / Уровень 2 / ЛЕДИ"
+      :equivalent         условный-класс
+      :laps               кругов
+      :lap-difficulty     сложность-круга
+      :started-count      стартовало
+      :first-place-points (* кругов сложность-круга штраф)
+      :cutoff-point       (calculate-cutoff условный-класс стартовало)
+      })
+
+   ;; Страница 1
+   [:type :result :event-id "EALkbw" :classification-id "CbnNqePYIllI" :position 1 :plate-number "606" :rider-id (find-rider-id "Дарья" "Шабловская")]
+   [:type :result :event-id "EALkbw" :classification-id "CbnNqePYIllI" :position 2 :plate-number "604" :rider-id (find-rider-id "Ксения" "Потапович")]
+   [:type :result :event-id "EALkbw" :classification-id "CbnNqePYIllI" :position 3 :plate-number "602" :rider-id (find-rider-id "Анна" "Медведева")]
+   [:type :result :event-id "EALkbw" :classification-id "CbnNqePYIllI" :position 4 :plate-number "605" :rider-id (find-rider-id "Марина" "Аверина")]
+   [:type :result :event-id "EALkbw" :classification-id "CbnNqePYIllI" :position 5 :plate-number "603" :rider-id (find-rider-id "Ульяна" "Храмцова")]
+   [:type :result :event-id "EALkbw" :classification-id "CbnNqePYIllI" :position 6 :plate-number "607" :rider-id (find-rider-id "Юлия" "Березинских")]
+   [:type :result :event-id "EALkbw" :classification-id "CbnNqePYIllI" :position 7 :plate-number "609" :rider-id (find-rider-id "Анастасия" "Шилова")]
+   [:type :result :event-id "EALkbw" :classification-id "CbnNqePYIllI" :position 8 :plate-number "601" :rider-id (find-rider-id "Маргарита" "Гришина")]
+   [:type :result :event-id "EALkbw" :classification-id "CbnNqePYIllI" :position 9 :plate-number "610" :rider-id (find-rider-id "Анна" "Евграфова")]
+   [:type :result :event-id "EALkbw" :classification-id "CbnNqePYIllI" :position 10 :plate-number "937" :rider-id (find-rider-id "Наталья" "Макеева")]
+
 
    {:type :event
     :name "The Stalker - 1 Этап"
