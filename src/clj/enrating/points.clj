@@ -6,20 +6,20 @@
 (def difficulties-map
   {:gold   {:name              "Уровень Золото / Gold / Профессионалы"
             ;; У голда мультипликатор очков, так как считается что класс сложнее
-            :points-multiplier 1.5
+            :points-multiplier 1.5M
             ;; И сдвинутая точка отсечения - последнее место в голде по логике
             ;; должно получать хотя бы немного больше очков чем в бронзе
-            :cutoff-multiplier 1.25}
+            :cutoff-multiplier 1.25M}
    :silver {:name              "Уровень Серебро / Silver / Эксперты"
             ;; Аналогично голду, но коэффициенты пониже
-            :points-multiplier 1.2
-            :cutoff-multiplier 1.1}
+            :points-multiplier 1.2M
+            :cutoff-multiplier 1.1M}
    :bronze {:name              "Уровень Бронза / Bronze / Хобби"
-            :points-multiplier 1.1
-            :cutoff-multiplier 1.0}
+            :points-multiplier 1M
+            :cutoff-multiplier 1M}
    :iron   {:name              "Уровень Железо / Iron / Новички"
-            :points-multiplier 1.0
-            :cutoff-multiplier 1.0}})
+            :points-multiplier 0.8M
+            :cutoff-multiplier 1M}})
 
 ;; Логарифмическая функция оценки - снижение кол-ва очков логарифмическое
 ;; и зависит от кол-ва участников (мы используем т.н. точку отсечения)
@@ -46,9 +46,9 @@
 (defn first-place-points [laps-count lap-difficulty equivalent points-multiplier]
   (check-equivalent! equivalent)
   (* laps-count
-     lap-difficulty
+     (bigdec lap-difficulty)
      (get-in difficulties-map [equivalent :points-multiplier])
-     (or points-multiplier 1)))
+     (bigdec (or points-multiplier 1))))
 
 ;; Расчет точки отсечения - зависит от класса
 (defn calculate-cutoff [equivalent count]
