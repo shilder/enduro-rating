@@ -11,5 +11,9 @@
                               ns-tracker/ns-tracker {:mvn/version "1.0.0"}}
                  :exec-fn enrating.cli/start}
 
+           ;; To serve pages for mobile app
+           :mobile {:extra-deps {http-kit/http-kit {:mvn/version "2.8.0"}}
+                    :exec-fn enrating.serve/start}
+
            ;; Just generate static data for GH Pages
            :pages {:exec-fn enrating.core/dummy}}}
