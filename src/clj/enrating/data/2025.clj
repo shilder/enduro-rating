@@ -6,6 +6,9 @@
 
 ;; Данные за 2025 год
 
+;; TODO: добавить время из протоколов
+;; TODO: добавить информацию о кол-ве кругов/факта финиша
+
 (def slg1
   [
    {:type         :event
@@ -338,7 +341,6 @@
       :started-count     стартовало
       })
 
-   ;; TODO: добавить время из протоколов
    [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 1 :plate-number "507" :rider-id (find-rider-id "Александр" "Новопашин")]
    [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 2 :plate-number "554" :rider-id (find-rider-id "Александр" "Бескровный")]
    [:type :result :event-id "EALkbw" :classification-id "CtOb9wIT2lI" :position 3 :plate-number "511" :rider-id (find-rider-id "Сергей" "Борисов")]
@@ -400,7 +402,7 @@
          ;; Такая же сложность как и для класса 3
          сложность-круга 25.0
          стартовало 10
-         условный-класс :iron]
+         условный-класс :lady]
      {
       :type              :classification
       :classification-id "CbnNqePYIllI"
@@ -430,12 +432,12 @@
 (def stalker1
   [
    {:type     :event
-    :name     "The Stalker - 1 Этап"
+    :name     "The Stalker League - 1 Этап"
     :date     "2025-05-17"
     :event-id "Eo2KmTA"}
 
    (let [кругов 3
-         ;; У Золота было посложнее - была парочка подъемов
+         ;; У Золота было немного посложнее - была парочка подъемов
          сложность-круга 70.0
          стартовало 6
          ;; Мало участников было очень - придется штрафануть
@@ -455,7 +457,6 @@
       :multiplier-description "Мало участников"
       })
 
-   ;; TODO: команда и город здесь (может меняться у гонщика, но не в протоколе)
    {:type :result :event-id "Eo2KmTA" :classification-id "CyMOX89K67hY" :position 1 :plate-number "6" :rider-id (find-rider-id "Евгений" "Цицимушкин") :team "Южный Урал мотоспорт" :motorcycle "Husqvarna TE300"}
    {:type :result :event-id "Eo2KmTA" :classification-id "CyMOX89K67hY" :position 2 :plate-number "2" :rider-id (find-rider-id "Павел" "Лядецкий") :team "TuPizza Enduro Team" :motorcycle "Gas Gas EC300R TPI"}
    {:type :result :event-id "Eo2KmTA" :classification-id "CyMOX89K67hY" :position 3 :plate-number "1" :rider-id (find-rider-id "Егор" "Емельянов") :team "MotikoGroup" :motorcycle "Beta"}
@@ -491,7 +492,6 @@
    {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 9 :plate-number "22" :rider-id (find-rider-id "Юрий" "Бороздин") :motorcycle "KTM"}
    {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 10 :plate-number "38" :rider-id (find-rider-id "Андрей" "Склюев") :motorcycle "Husqvarna TE300"}
    {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 11 :plate-number "32" :rider-id (find-rider-id "Илья" "Кругликов") :motorcycle "Beta"}
-   ;; DNFs ? TODO: учесть не финишеров
    {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 12 :plate-number "21" :rider-id (find-rider-id "Евгений" "Мирзаметов") :motorcycle "КТМ"}
    {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 13 :plate-number "37" :rider-id (find-rider-id "Артем" "Чернецкий") :team "НАУКА" :motorcycle "FAIDET NC300S ULTRA"}
    {:type :result :event-id "Eo2KmTA" :classification-id "CX0NGKT0qMZA" :position 14 :plate-number "34" :rider-id (find-rider-id "Денис" "Шилов") :motorcycle "КТМ 300 EXC"}
@@ -502,7 +502,7 @@
 
    (let [кругов 3
          ;; Не такая простая бронза была на самом деле
-         сложность-круга 30.0
+         сложность-круга 35.0
          стартовало 13
          условный-класс :bronze]
      {
@@ -541,9 +541,9 @@
       :date     "2025-05-17"
       :event-id event-id}
 
-     ;; Надо поправить, я хз что у них было
-     (let [кругов 3
-           сложность-круга 70.0
+     (let [кругов 2
+           ;; Считаем примерно как кантри-кросс солнечной долины
+           сложность-круга 25.0
            стартовало 100
            условный-класс :bronze]
        {
@@ -551,6 +551,7 @@
         :classification-id "CL5ILfQIBrCw"
         :event-id          event-id
         :name              "На расслабоне"
+        :order             2
         :equivalent        условный-класс
         :laps              кругов
         :lap-difficulty    сложность-круга
@@ -649,13 +650,15 @@
      {:type :result :event-id event-id :classification-id "CL5ILfQIBrCw" :position 100 :plate-number "199" :rider-id (find-rider-id "Федор" "Щвецов") :motorcycle "Garo Q8"}
 
      (let [кругов 3
-           сложность-круга 70.0
+           ;; Считаем примерно как серебро Сталкера
+           сложность-круга 50.0
            стартовало 96
            условный-класс :silver]
        {:type              :classification
         :classification-id "CCHpFTiWmQks"
         :event-id          event-id
         :name              "На опыте"
+        :order             1
         :equivalent        условный-класс
         :laps              кругов
         :lap-difficulty    сложность-круга
@@ -756,8 +759,9 @@
      {:type :result :event-id event-id :classification-id "CCHpFTiWmQks" :position 95 :plate-number "301" :rider-id (find-rider-id "Аркадий" "Баландин") :team "AGUSHA team" :motorcycle "Хускварна 300"}
      {:type :result :event-id event-id :classification-id "CCHpFTiWmQks" :position 96 :plate-number "303" :rider-id (find-rider-id "Дмитрий" "Брызгалов") :motorcycle "КТМ"}
 
-     (let [кругов 3
-           сложность-круга 70.0
+     (let [кругов 2
+           ;; Я так понял что трек тот же что и на расслабоне
+           сложность-круга 25.0
            стартовало 15
            условный-класс :iron]
        {
@@ -765,6 +769,7 @@
         :classification-id "C64otektrHqg"
         :event-id          event-id
         :name              "На каникулах"
+        :order             3
         :equivalent        условный-класс
         :laps              кругов
         :lap-difficulty    сложность-круга
@@ -785,16 +790,20 @@
      {:type :result :event-id event-id :classification-id "C64otektrHqg" :position 14 :plate-number "166" :rider-id (find-rider-id "Дмитрий" "Пудов") :motorcycle "КТМ"}
      {:type :result :event-id event-id :classification-id "C64otektrHqg" :position 15 :plate-number "176" :rider-id (find-rider-id "Роман" "Лукин") :motorcycle "Motoland 140"}
 
-     (let [кругов 3
-           сложность-круга 70.0
+     (let [кругов 2
+           ;; Я так понял что трек тот же что и на расслабоне
+           сложность-круга 25.0
            стартовало 2
-           условный-класс :iron]
+           условный-класс :lady]
        {
         :type              :classification
         :classification-id "CX6xDHXjag"
         :event-id          event-id
         :name              "На каблуках"
+        :order             4
         :equivalent        условный-класс
+        :points-multiplier 0.8
+        :multiplier-description "Мало участников"
         :laps              кругов
         :lap-difficulty    сложность-круга
         :started-count     стартовало
@@ -806,16 +815,19 @@
      ]))
 
 (def bogdanovich1
-  (let [event-id "E1rV2kA"]
+  (let [event-id "E1rV2kA"
+        points-multiplier 1.3
+        multiplier-description "Плохая погода сильно усложнила трек"]
     [
      {:type     :event
       :name     "Взятие Кашинского городища 2025"
       :date     "2025-04-26"
+      :event-url "https://marshalone.ru/card/e37e471b-beab-43c3-be8d-c497d760d85c"
+      :telegram-url "https://t.me/EnduroBGD"
       :event-id event-id}
 
-     ;; Надо поправить, я хз что у них было
      (let [кругов 3
-           сложность-круга 70.0
+           сложность-круга 40.0
            стартовало 18
            условный-класс :gold]
        {
@@ -823,6 +835,9 @@
         :classification-id "C5H3OYYSHDnc"
         :event-id          event-id
         :name              "Gold"
+        :order             1
+        :points-multiplier points-multiplier
+        :multiplier-description multiplier-description
         :equivalent        условный-класс
         :laps              кругов
         :lap-difficulty    сложность-круга
@@ -848,9 +863,8 @@
      {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 17 :plate-number "7" :rider-id (find-rider-id "Василий" "Тараторин") :team "Моховичковские псы"}
      {:type :result :event-id event-id :classification-id "C5H3OYYSHDnc" :position 18 :plate-number "6" :rider-id (find-rider-id "Александр" "Храмцов")}
 
-     ;; Надо поправить, я хз что у них было
      (let [кругов 2
-           сложность-круга 70.0
+           сложность-круга 40.0
            стартовало 46
            условный-класс :silver]
        {
@@ -858,9 +872,12 @@
         :classification-id "ChnSllmc6Y0"
         :event-id          event-id
         :name              "Silver"
+        :order             2
         :equivalent        условный-класс
         :laps              кругов
         :lap-difficulty    сложность-круга
+        :points-multiplier points-multiplier
+        :multiplier-description multiplier-description
         :started-count     стартовало
         })
 
@@ -911,9 +928,8 @@
      {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 45 :plate-number "43" :rider-id (find-rider-id "Евгений" "Каширин")}
      {:type :result :event-id event-id :classification-id "ChnSllmc6Y0" :position 46 :plate-number "53" :rider-id (find-rider-id "Александр" "Мугулов")}
 
-     ;; Надо поправить, я хз что у них было
      (let [кругов 2
-           сложность-круга 70.0
+           сложность-круга 30.0
            стартовало 84
            условный-класс :bronze]
        {
@@ -921,6 +937,9 @@
         :classification-id "C5UrF3fk4g9g"
         :event-id          event-id
         :name              "Bronze"
+        :order             3
+        :points-multiplier points-multiplier
+        :multiplier-description multiplier-description
         :equivalent        условный-класс
         :laps              кругов
         :lap-difficulty    сложность-круга
@@ -1012,16 +1031,16 @@
      {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 83 :plate-number "167" :rider-id (find-rider-id "Кирилл" "Ауэрбах")}
      {:type :result :event-id event-id :classification-id "C5UrF3fk4g9g" :position 84 :plate-number "159" :rider-id (find-rider-id "Тимофей" "Максимов")}
 
-     ;; Надо поправить, я хз что у них было
      (let [кругов 1
-           сложность-круга 70.0
+           сложность-круга 25.0
            стартовало 2
-           условный-класс :iron]
+           условный-класс :lady]
        {
         :type              :classification
         :classification-id "CxVwzZvXYo64"
         :event-id          event-id
         :name              "Леди"
+        :order             5
         :equivalent        условный-класс
         :laps              кругов
         :lap-difficulty    сложность-круга
@@ -1031,15 +1050,17 @@
      {:type :result :event-id event-id :classification-id "CxVwzZvXYo64" :position 1 :plate-number "242" :rider-id (find-rider-id "Марина" "Аверина")}
      {:type :result :event-id event-id :classification-id "CxVwzZvXYo64" :position 2 :plate-number "241" :rider-id (find-rider-id "Юлия" "Березинских")}
 
-     ;; Надо поправить, я хз что у них было
      (let [кругов 1
-           сложность-круга 70.0
+           сложность-круга 25.0
            стартовало 9
            условный-класс :iron]
        {
         :type              :classification
         :classification-id "C1gLPX9AUjc"
         :event-id          event-id
+        :order             4
+        :points-multiplier points-multiplier
+        :multiplier-description multiplier-description
         :name              "Ветераны"
         :equivalent        условный-класс
         :laps              кругов

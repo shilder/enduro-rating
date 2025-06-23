@@ -19,6 +19,11 @@
             :cutoff-multiplier 1M}
    :iron   {:name              "Уровень Железо / Iron / Новички"
             :points-multiplier 0.8M
+            :cutoff-multiplier 1M}
+   ;; Тут конечно несколько дискриминируем, но как правило в зачете
+   ;; леди участники слабее чем в бронзе/железе
+   :lady   {:name              "Уровень Леди / Lady"
+            :points-multiplier 0.5M
             :cutoff-multiplier 1M}})
 
 ;; Логарифмическая функция оценки - снижение кол-ва очков логарифмическое
