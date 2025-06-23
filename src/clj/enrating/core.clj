@@ -60,7 +60,7 @@
          (event-field "Количество стартовавших" started-count))
        (when finished-count
          (event-field "Количество финишировавших" finished-count))
-       (when (and started-count finished-count)
+       #_(when (and started-count finished-count)
          (event-field "Процент финишировавших"
                       (str (Math/round (double (* 100.0 (/ (double finished-count) (double started-count))))) "%")))]
       [:div.fields-row
@@ -77,20 +77,26 @@
      [:table.results-table
       [:thead
        [:tr
+        [:th "Итоговый результат"]
         [:th "Фамилия"]
         [:th "Имя"]
         [:th "Стартовый номер"]
-        [:th "Итоговый результат"]
-        [:th "Очков начислено"]]]
+        [:th "Очков начислено"]
+        [:th "Город"]
+        [:th "Команда"]
+        [:th "Мотоцикл"]]]
       [:tbody
        (for [result results
              :let [rider (get-in all-data [:riders (:rider-id result)])]]
          [:tr {:id (:result-id result)}
+          [:td.number (:position result)]
           [:td (:surname rider)]
           [:td (:name rider)]
           [:td.number (:plate-number result)]
-          [:td.number (:position result)]
-          [:td.number (:points result)]])]]]))
+          [:td.number (:points result)]
+          [:td (:city rider)]
+          [:td (:team result)]
+          [:td (:motorcycle result)]])]]]))
 
 (rum/defc event-card
   [all-data {:keys [event-id name date event-url telegram-url] :as event-data}]
@@ -195,15 +201,13 @@
                                      result (first results)
                                      classification (get-in all-data [:classifications (:classification-id result)])]
                                  [:td.number
-                                  {:class   (:equivalent classification)
-                                   :onclick (str "highlightRow('" (:result-id result) "')")}
+                                  {:class   (:equivalent classification)}
                                   ;; Бывает такой бардак в протоколах
                                   (if (> (count results) 1)
                                     [:ul.multiple-results
                                      [:span "!!!"]
                                      (for [res results]
                                        [:li
-                                        {:onclick (str "highlightRow('" (:result-id res) "')")}
                                         [:a {:href (str "#" (:result-id res))} (:points res)]])]
                                     [:a {:href (str "#" (:result-id result))}
                                      (:points result)])])))

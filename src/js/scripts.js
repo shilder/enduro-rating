@@ -1,9 +1,18 @@
+function isBlank(str) {
+    return str === undefined || str === null || str.trim() === "";
+}
 
-function highlightRow(resultId) {
-    // Remove highlighting
-    document.querySelectorAll("tr.highlight").forEach((el) => {
+function onNavigateHandler(event) {
+    document.querySelectorAll(".highlight").forEach((el) => {
+        console.log("Removing HL for", el);
         el.classList.remove("highlight");
     })
 
-    document.getElementById(resultId)?.classList.add("highlight");
+    const fragment = document.location.hash;
+    if (!isBlank(fragment)) {
+        resultId = fragment.substring(1);
+        document.getElementById(resultId)?.classList.add("highlight");
+    }
 }
+
+window.addEventListener("popstate", onNavigateHandler);

@@ -2,6 +2,11 @@
     border: 1px solid rgb(241, 241, 241);
     border-radius: 5px;
     padding: 1rem;
+    min-width: fit-content;
+}
+
+.event-card.highlight {
+    background-color: #C0C0C010;
 }
 
 .event-field {
@@ -41,7 +46,11 @@ td.gold {
 }
 
 td.iron {
-    background: #0505054F;
+    background: #05050550;
+}
+
+td.lady {
+    background: #FF00FF50;
 }
 
 tr.highlight {
@@ -64,12 +73,18 @@ body {
 section {
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 1rem;
     width: 80%;
     min-width: 500px;
     margin: 0 auto;
 }
+
+@media (width <= 1200px) {
+    section {
+        width: unset;
+    }
+}
+
 
 table {
     border-collapse: collapse;
