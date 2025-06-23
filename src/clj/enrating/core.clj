@@ -227,7 +227,7 @@
     [:meta {:http-equiv "Content-Type" :content "text/html; charset=UTF-8"}]
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
     ;; TODO: favicon
-    [:title "Enduro Rating"]
+    [:title "Рейтинг Эндуро-гонщиков Урал"]
     (inline-style (slurp (io/resource "modern-normalize.css")))
     (inline-style (slurp (io/resource "styles.css")))
     (inline-js (slurp (io/resource "scripts.js")))]
