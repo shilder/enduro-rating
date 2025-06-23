@@ -221,13 +221,18 @@
         formatter (DateTimeFormatter/ofPattern "dd.MM.yyyy HH:mm:ss O" (Locale/of "ru_RU"))]
     (.format formatter zoned)))
 
+(def title "Рейтинг эндуро-гонщиков Урал")
+
 (rum/defc index-page []
   [:html
    [:head
     [:meta {:http-equiv "Content-Type" :content "text/html; charset=UTF-8"}]
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
+    [:meta {:property "og:title" :content title}]
+    [:meta {:property "og:type" :content "website"}]
+    [:meta {:property "og:description" :content "Попытка оценить гонщиков исходя из результатов различных гонок на Урале"}]
     ;; TODO: favicon
-    [:title "Рейтинг Эндуро-гонщиков Урал"]
+    [:title title]
     (inline-style (slurp (io/resource "modern-normalize.css")))
     (inline-style (slurp (io/resource "styles.css")))
     (inline-js (slurp (io/resource "scripts.js")))]
@@ -238,6 +243,10 @@
        (github-logo)]]]
     [:section.summary-table
      [:h1 "2025 год"]
+     [:p "\"Рейтинг\" - термин достаточно условный, данная таблица - это просто попытка подсчитать
+    кол-во баллов, которые заработал пилот по результатам нескольких гонок в течение сезона, с учётом сложности
+    конкретной гонки, разницы в классах и так далее."]
+     [:p [:strong "Не является показателем мастерства конкретного гонщика !"]]
      [:h2 "Сводная таблица по гонщикам"]
      (riders-table data2025-map)]
     [:section.results-info
