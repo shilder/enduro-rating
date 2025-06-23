@@ -276,7 +276,7 @@
 (defn render-index []
   (println "Generating data")
   (io/delete-file (io/file "generated") true)
-  (let [f (io/file "generated" "result.html")]
+  (let [f (io/file "generated" "index.html")]
     (io/make-parents f)
     (with-open [w (io/writer f)]
       (spit w
