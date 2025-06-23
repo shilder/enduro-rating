@@ -5,7 +5,7 @@
     min-width: fit-content;
 }
 
-.event-card.highlight {
+.event-card.highlight, .classification-card.highlight {
     background-color: #C0C0C010;
 }
 

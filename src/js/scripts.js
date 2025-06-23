@@ -16,3 +16,4 @@ function onNavigateHandler(event) {
 }
 
 window.addEventListener("popstate", onNavigateHandler);
+onNavigateHandler(null);
