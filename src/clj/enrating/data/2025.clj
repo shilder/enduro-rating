@@ -1,6 +1,6 @@
 (ns enrating.data.2025
   (:require [enrating.data.riders :refer [find-rider-id]]
-            [enrating.data.ids :refer [result-id classification-id]]
+            [enrating.data.ids :refer [result-id classification-id event-id]]
             [enrating.data.checks :as checks]
             [enrating.points :as points]))
 
@@ -1080,6 +1080,232 @@
      {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 9 :plate-number "232" :rider-id (find-rider-id "Андрей" "Кудин")}
      ]))
 
+;; Вызов - Еманжелинск
+(def emanzhelinsk1
+  (let [event-id "EBord8g"]
+    (concat
+      [{:type         :event
+        :name         "Гонка Вызов"
+        :date         "2025-06-14"
+        :event-url    "https://marshalone.ru/card/73419310-c012-4500-8567-3ee9f5b3a4ad"
+        :telegram-url "https://t.me/MOTOSPORT74"
+        :event-id     event-id
+        }]
+
+      (let [classification-id "CQ575942x5Rg"]
+        [{:type              :classification
+          :classification-id classification-id
+          :event-id          event-id
+          :order             1
+          :name              "Золото"
+          :equivalent        :gold
+          :laps              3
+          ;; Тут сложно - круг не сказать чтобы сильно легкий, но довольно короткий
+          :lap-difficulty    60
+          :started-count     20}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "15" :rider-id (find-rider-id "Станислав" "Максимов") :start "12:02:30" :finish "14:07:37" :penalty "00:00:00" :total "02:05:07" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "6" :rider-id (find-rider-id "Никита" "Поляков") :start "12:01:00" :finish "14:06:21" :penalty "00:00:00" :total "02:05:21" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "1" :rider-id (find-rider-id "Евгений" "Цицимушкин") :start "12:01:00" :finish "14:08:16" :penalty "00:00:00" :total "02:07:16" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "11" :rider-id (find-rider-id "Артём" "Иванов") :start "12:01:00" :finish "14:16:17" :penalty "00:00:00" :total "02:15:17" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "10" :rider-id (find-rider-id "Артем" "Калинин") :start "12:01:00" :finish "14:22:30" :penalty "00:00:00" :total "02:21:30" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "3" :rider-id (find-rider-id "Михаил" "Ушаков") :start "12:01:00" :finish "14:25:54" :penalty "00:00:00" :total "02:24:54" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "18" :rider-id (find-rider-id "Егор" "Емельянов") :start "12:02:30" :finish "14:31:25" :penalty "00:40:00" :total "03:08:55" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 8 :plate-number "9" :rider-id (find-rider-id "Константин" "Калмыков") :start "12:01:00" :finish "14:53:05" :penalty "00:40:00" :total "03:32:05" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 9 :plate-number "20" :rider-id (find-rider-id "Александр" "Антипин") :start "12:02:30" :finish "14:01:01" :penalty "04:00:00" :total "05:58:31" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 10 :plate-number "12" :rider-id (find-rider-id "Павел" "Хисамутдинов") :start "12:02:30" :finish "15:30:07" :penalty "02:40:00" :total "06:07:37" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 11 :plate-number "8" :rider-id (find-rider-id "Константин" "Майбуров") :start "12:01:00" :finish "16:16:22" :penalty "02:40:00" :total "06:55:22" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 12 :plate-number "7" :rider-id (find-rider-id "Денис" "Медведюк") :start "12:01:00" :finish "16:19:07" :penalty "02:40:00" :total "06:58:07" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 13 :plate-number "2" :rider-id (find-rider-id "Егор" "Харитонов") :start "12:02:30" :finish "16:10:00" :penalty "03:20:00" :total "07:27:30" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 14 :plate-number "16" :rider-id (find-rider-id "Владимир" "Килунин") :start "12:02:30" :finish "14:57:17" :penalty "04:40:00" :total "07:34:47" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 15 :plate-number "19" :rider-id (find-rider-id "Алексей" "Мамашев") :start "12:02:30" :finish "16:07:00" :penalty "06:00:00" :total "10:04:30" :laps 2]
+         ;; TODO: Два раза 19 номер в протоколе - проверить
+         [:type :result :event-id event-id :classification-id classification-id :position 16 :plate-number "19*" :rider-id (find-rider-id "Андрей" "Бадьин") :start "12:02:30" :finish "14:52:22" :penalty "07:20:00" :total "10:09:52" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 17 :plate-number "5" :rider-id (find-rider-id "Дмитрий" "Резницкий") :start "12:01:00" :finish "16:20:08" :penalty "08:40:00" :total "12:59:08" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 18 :plate-number "17" :rider-id (find-rider-id "Антон" "Зырянов") :start "12:02:30" :finish "16:16:51" :penalty "10:00:00" :total "14:14:21" :laps 2]
+         ;; TODO: Эти по идее без финиша должны быть
+         [:type :result :event-id event-id :classification-id classification-id :position 19 :plate-number "4" :rider-id (find-rider-id "Кирилл" "Синченко") :start "12:01:00" :finish "13:38:38" :penalty "11:20:00" :total "12:57:38" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 20 :plate-number "13" :rider-id (find-rider-id "Евгений" "Осадчий") :start "12:02:30" :finish "14:04:36" :penalty "11:20:00" :total "13:22:06" :laps 1]
+
+         ])
+
+      (let [classification-id "CO1fgit5GOqE"]
+        [
+         {:type              :classification
+          :classification-id classification-id
+          :event-id          event-id
+          :order             2
+          :name              "Серебро"
+          :equivalent        :silver
+          :laps              2
+          ;; Та же сложность что и в золоте - трасса одинаковая
+          :lap-difficulty    60
+          :started-count     76}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "146" :rider-id (find-rider-id "Владимир" "Иванов") :start "12:10:00" :finish "13:51:01" :penalty "00:00:00" :total "01:41:01" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "101" :rider-id (find-rider-id "Константин" "Романов") :start "12:04:00" :finish "13:46:48" :penalty "00:00:00" :total "01:42:48" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "153" :rider-id (find-rider-id "Денис" "Шилов") :start "12:11:30" :finish "13:55:57" :penalty "00:00:00" :total "01:44:27" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "154" :rider-id (find-rider-id "Александр" "Удачин") :start "12:11:30" :finish "13:56:18" :penalty "00:00:00" :total "01:44:48" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "163" :rider-id (find-rider-id "Алексей" "Кошелев") :start "12:13:00" :finish "14:06:30" :penalty "00:00:00" :total "01:53:30" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "102" :rider-id (find-rider-id "Дмитрий" "Аверин") :start "12:04:00" :finish "14:02:07" :penalty "00:00:00" :total "01:58:07" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "152" :rider-id (find-rider-id "Владимир" "Бодрин") :start "12:11:30" :finish "14:19:46" :penalty "00:00:00" :total "02:08:16" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 8 :plate-number "160" :rider-id (find-rider-id "Александр" "Любченко") :start "12:13:00" :finish "14:23:21" :penalty "00:00:00" :total "02:10:21" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 9 :plate-number "122" :rider-id (find-rider-id "Владислав" "Пашнин") :start "12:07:00" :finish "14:18:50" :penalty "00:00:00" :total "02:11:50" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 10 :plate-number "164" :rider-id (find-rider-id "Артем" "Копытов") :start "12:13:00" :finish "14:26:40" :penalty "00:00:00" :total "02:13:40" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 11 :plate-number "108" :rider-id (find-rider-id "Денис" "Зараменских") :start "12:04:00" :finish "14:18:14" :penalty "00:00:00" :total "02:14:14" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 12 :plate-number "106" :rider-id (find-rider-id "Владимир" "Пономарчук") :start "12:04:00" :finish "14:21:08" :penalty "00:00:00" :total "02:17:08" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 13 :plate-number "107" :rider-id (find-rider-id "Илья" "Кузнецов") :start "12:04:00" :finish "14:21:51" :penalty "00:00:00" :total "02:17:51" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 14 :plate-number "172" :rider-id (find-rider-id "Виталий" "Голов") :start "12:14:30" :finish "13:56:55" :penalty "00:40:00" :total "02:22:25" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 15 :plate-number "120" :rider-id (find-rider-id "Дмитрий" "Иванов") :start "12:07:00" :finish "14:04:12" :penalty "00:40:00" :total "02:37:12" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 16 :plate-number "157" :rider-id (find-rider-id "Артём" "Ремесленников") :start "12:11:30" :finish "14:16:42" :penalty "00:40:00" :total "02:45:12" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 17 :plate-number "121" :rider-id (find-rider-id "Константин" "Маркелов") :start "12:07:00" :finish "14:53:51" :penalty "00:00:00" :total "02:46:51" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 18 :plate-number "119" :rider-id (find-rider-id "Артем" "Свяжин") :start "12:05:30" :finish "14:13:42" :penalty "00:40:00" :total "02:48:12" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 19 :plate-number "161" :rider-id (find-rider-id "Александр" "Лабутин") :start "12:13:00" :finish "13:43:02" :penalty "01:20:00" :total "02:50:02" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 20 :plate-number "118" :rider-id (find-rider-id "Антон" "Тырыкин") :start "12:05:30" :finish "15:08:55" :penalty "00:00:00" :total "03:03:25" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 21 :plate-number "103" :rider-id (find-rider-id "Алексей" "Кокорин") :start "12:04:00" :finish "14:00:28" :penalty "01:20:00" :total "03:16:28" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 22 :plate-number "100" :rider-id (find-rider-id "Евгений" "Журавский") :start "12:04:00" :finish "14:00:41" :penalty "01:20:00" :total "03:16:41" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 23 :plate-number "167" :rider-id (find-rider-id "Константин" "Захаров") :start "12:13:00" :finish "14:15:04" :penalty "01:20:00" :total "03:22:04" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 24 :plate-number "166" :rider-id (find-rider-id "Павел" "Иванов") :start "12:13:00" :finish "14:44:45" :penalty "01:20:00" :total "03:51:45" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 25 :plate-number "104" :rider-id (find-rider-id "Александр" "Выгодский") :start "12:04:00" :finish "15:30:00" :penalty "00:40:00" :total "04:06:00" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 26 :plate-number "115" :rider-id (find-rider-id "Андрей" "Склюев") :start "12:05:30" :finish "15:11:30" :penalty "01:20:00" :total "04:26:00" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 27 :plate-number "159" :rider-id (find-rider-id "Дмитрий" "Никитин") :start "12:11:30" :finish "14:41:22" :penalty "02:00:00" :total "04:29:52" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 28 :plate-number "114" :rider-id (find-rider-id "Юрий" "Бороздин") :start "12:05:30" :finish "15:30:00" :penalty "01:20:00" :total "04:44:30" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 29 :plate-number "105" :rider-id (find-rider-id "Алексей" "Семилетов") :start "12:04:00" :finish "15:30:00" :penalty "01:20:00" :total "04:46:00" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 30 :plate-number "175" :rider-id (find-rider-id "Максим" "Бормотов") :start "12:14:30" :finish "15:42:22" :penalty "01:20:00" :total "04:47:52" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 31 :plate-number "137" :rider-id (find-rider-id "Антон" "Галюк") :start "12:08:30" :finish "15:00:00" :penalty "02:00:00" :total "04:51:30" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 32 :plate-number "131" :rider-id (find-rider-id "Владимир" "Киселёв") :start "12:08:30" :finish "15:30:00" :penalty "02:00:00" :total "05:21:30" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 33 :plate-number "110" :rider-id (find-rider-id "Владислав" "Чибаков") :start "12:05:30" :finish "16:05:00" :penalty "02:00:00" :total "05:59:30" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 34 :plate-number "111" :rider-id (find-rider-id "Вадим" "Лугаськов") :start "12:05:30" :finish "15:41:13" :penalty "02:40:00" :total "06:15:43" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 35 :plate-number "168" :rider-id (find-rider-id "Иван" "Заполоцкий") :start "12:13:00" :finish "16:52:08" :penalty "02:00:00" :total "06:39:08" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 36 :plate-number "156" :rider-id (find-rider-id "Михаил" "Соловьев") :start "12:11:30" :finish "15:35:00" :penalty "03:20:00" :total "06:43:30" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 37 :plate-number "162" :rider-id (find-rider-id "Артем" "Кремлев") :start "12:13:00" :finish "15:03:28" :penalty "04:00:00" :total "06:50:28" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 38 :plate-number "135" :rider-id (find-rider-id "Александр" "Мугулов") :start "12:08:30" :finish "16:34:14" :penalty "02:40:00" :total "07:05:44" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 39 :plate-number "130" :rider-id (find-rider-id "Дмитрий" "Мокиенко") :start "12:08:30" :finish "16:16:01" :penalty "03:20:00" :total "07:27:31" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 40 :plate-number "123" :rider-id (find-rider-id "Александр" "Савонин") :start "12:07:00" :finish "17:07:49" :penalty "02:40:00" :total "07:40:49" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 41 :plate-number "138" :rider-id (find-rider-id "Анатолий" "Ванчинов") :start "12:08:30" :finish "16:34:27" :penalty "03:20:00" :total "07:45:57" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 42 :plate-number "155" :rider-id (find-rider-id "Ильдус" "Сулейманов") :start "12:11:30" :finish "16:47:12" :penalty "03:20:00" :total "07:55:42" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 43 :plate-number "116" :rider-id (find-rider-id "Иван" "Филиппов") :start "12:05:30" :finish "17:07:31" :penalty "03:20:00" :total "08:22:01" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 44 :plate-number "109" :rider-id (find-rider-id "Виктор" "Калинин") :start "12:04:00" :finish "18:35:00" :penalty "03:20:00" :total "09:51:00" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 45 :plate-number "142" :rider-id (find-rider-id "Руслан" "Сафин") :start "12:10:00" :finish "14:34:07" :penalty "05:20:00" :total "07:44:07" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 46 :plate-number "140" :rider-id (find-rider-id "Никита" "Баранов") :start "12:10:00" :finish "14:34:25" :penalty "05:20:00" :total "07:44:25" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 47 :plate-number "144" :rider-id (find-rider-id "Вадим" "Мезенцев") :start "12:10:00" :finish "14:40:10" :penalty "06:00:00" :total "08:30:10" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 48 :plate-number "170" :rider-id (find-rider-id "Василий" "Дудников") :start "12:14:30" :finish "14:50:16" :penalty "06:00:00" :total "08:35:46" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 49 :plate-number "126" :rider-id (find-rider-id "Евгений" "Ярославцев") :start "12:07:00" :finish "14:05:00" :penalty "06:40:00" :total "08:38:00" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 50 :plate-number "117" :rider-id (find-rider-id "Сергей" "Дубровин") :start "12:05:30" :finish "16:20:28" :penalty "04:40:00" :total "08:54:58" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 51 :plate-number "113" :rider-id (find-rider-id "Вадим" "Ахтямов") :start "12:05:30" :finish "16:28:29" :penalty "04:40:00" :total "09:02:59" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 52 :plate-number "134" :rider-id (find-rider-id "Николай" "Обожин") :start "12:08:30" :finish "14:04:24" :penalty "07:20:00" :total "09:15:54" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 53 :plate-number "128" :rider-id (find-rider-id "Амир" "Сарваритдинов") :start "12:07:00" :finish "15:30:00" :penalty "06:00:00" :total "09:23:00" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 54 :plate-number "145" :rider-id (find-rider-id "Ален" "Кокшаров") :start "12:10:00" :finish "14:20:09" :penalty "07:20:00" :total "09:30:09" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 55 :plate-number "125" :rider-id (find-rider-id "Илья" "Юзеев") :start "12:07:00" :finish "15:28:37" :penalty "06:40:00" :total "10:01:37" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 56 :plate-number "136" :rider-id (find-rider-id "Егор" "Коноплев") :start "12:08:30" :finish "15:30:00" :penalty "07:20:00" :total "10:41:30" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 57 :plate-number "147" :rider-id (find-rider-id "Сергей" "Баранов") :start "12:10:00" :finish "15:30:00" :penalty "08:00:00" :total "10:50:00" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 58 :plate-number "148" :rider-id (find-rider-id "Руслан" "Салыев") :start "12:10:00" :finish "15:00:07" :penalty "08:00:00" :total "10:50:07" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 59 :plate-number "139" :rider-id (find-rider-id "Сергей" "Вакушин") :start "12:08:30" :finish "15:30:00" :penalty "08:00:00" :total "11:21:30" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 60 :plate-number "169" :rider-id (find-rider-id "Рустам" "Еникеев") :start "12:13:00" :finish "15:42:35" :penalty "08:00:00" :total "11:29:35" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 61 :plate-number "129" :rider-id (find-rider-id "Артур" "Поздеев") :start "12:07:00" :finish "15:48:49" :penalty "08:00:00" :total "11:41:49" :laps 1]
+
+         ;; TODO: сходы
+
+         ])
+
+      (let [classification-id "CspvRi8oaQs"]
+        [{:type              :classification
+          :classification-id classification-id
+          :event-id          event-id
+          :order             3
+          :name              "Бронза"
+          :equivalent        :bronze
+          :laps              3
+          ;; Ощутимо проще чем золото/серебро
+          :lap-difficulty    40
+          :started-count     89}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "223" :rider-id (find-rider-id "Савелий" "Кунакбаев") :start "12:19:00" :finish "13:48:48" :penalty "00:00:00" :total "01:29:48" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "231" :rider-id (find-rider-id "Матвей" "Тиунов") :start "12:20:30" :finish "13:55:38" :penalty "00:00:00" :total "01:35:08" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "267" :rider-id (find-rider-id "Сергей" "Кузнецов") :start "12:25:00" :finish "14:01:30" :penalty "00:00:00" :total "01:36:30" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "201" :rider-id (find-rider-id "Александр" "Бескровный") :start "12:16:00" :finish "13:58:59" :penalty "00:00:00" :total "01:42:59" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "291" :rider-id (find-rider-id "Александр" "Зверев") :start "12:28:00" :finish "14:14:44" :penalty "00:00:00" :total "01:46:44" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "226" :rider-id (find-rider-id "Леонид" "Асташов") :start "12:19:00" :finish "14:07:13" :penalty "00:00:00" :total "01:48:13" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "243" :rider-id (find-rider-id "Михаил" "Попов") :start "12:22:00" :finish "14:10:32" :penalty "00:00:00" :total "01:48:32" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 8 :plate-number "206" :rider-id (find-rider-id "Денис" "Воробьёв") :start "12:16:00" :finish "14:07:08" :penalty "00:00:00" :total "01:51:08" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 9 :plate-number "203" :rider-id (find-rider-id "Алексей" "Слабочков") :start "12:16:00" :finish "14:07:36" :penalty "00:00:00" :total "01:51:36" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 10 :plate-number "229" :rider-id (find-rider-id "Владимир" "Тясин") :start "12:19:00" :finish "14:11:26" :penalty "00:00:00" :total "01:52:26" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 11 :plate-number "224" :rider-id (find-rider-id "Андрей" "Ломакин") :start "12:19:00" :finish "14:11:32" :penalty "00:00:00" :total "01:52:32" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 12 :plate-number "257" :rider-id (find-rider-id "Денис" "Меньшиков") :start "12:23:30" :finish "14:17:11" :penalty "00:00:00" :total "01:53:41" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 13 :plate-number "239" :rider-id (find-rider-id "Ярослав" "Саломатин") :start "12:20:30" :finish "14:14:36" :penalty "00:00:00" :total "01:54:06" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 14 :plate-number "266" :rider-id (find-rider-id "Кирилл" "Кузнецов") :start "12:25:00" :finish "14:19:07" :penalty "00:00:00" :total "01:54:07" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 15 :plate-number "200" :rider-id (find-rider-id "Александр" "Новопашин") :start "12:16:00" :finish "14:11:31" :penalty "00:00:00" :total "01:55:31" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 16 :plate-number "265" :rider-id (find-rider-id "Иван" "Чедаев") :start "12:25:00" :finish "14:20:36" :penalty "00:00:00" :total "01:55:36" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 17 :plate-number "238" :rider-id (find-rider-id "Фёдор" "Сборошенко") :start "12:20:30" :finish "14:16:34" :penalty "00:00:00" :total "01:56:04" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 18 :plate-number "205" :rider-id (find-rider-id "Артём" "Котельников") :start "12:16:00" :finish "14:18:35" :penalty "00:00:00" :total "02:02:35" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 19 :plate-number "246" :rider-id (find-rider-id "Вадим" "Плеханов") :start "12:22:00" :finish "14:25:52" :penalty "00:00:00" :total "02:03:52" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 20 :plate-number "232" :rider-id (find-rider-id "Константин" "Табанин") :start "12:20:30" :finish "14:27:05" :penalty "00:00:00" :total "02:06:35" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 21 :plate-number "202" :rider-id (find-rider-id "Сергей" "Борисов") :start "12:16:00" :finish "14:24:55" :penalty "00:00:00" :total "02:08:55" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 22 :plate-number "215" :rider-id (find-rider-id "Константин" "Одиноков") :start "12:17:30" :finish "14:37:44" :penalty "00:00:00" :total "02:20:14" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 23 :plate-number "292" :rider-id (find-rider-id "Арсен" "Байрамуков") :start "12:28:00" :finish "14:57:33" :penalty "00:00:00" :total "02:29:33" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 24 :plate-number "234" :rider-id (find-rider-id "Виталий" "Стаценков") :start "12:20:30" :finish "14:50:41" :penalty "00:00:00" :total "02:30:11" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 25 :plate-number "241" :rider-id (find-rider-id "Александр" "Рахмеев") :start "12:22:00" :finish "14:40:33" :penalty "00:40:00" :total "02:58:33" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 26 :plate-number "280" :rider-id (find-rider-id "Арсений" "Вшивков") :start "12:28:00" :finish "14:56:59" :penalty "00:40:00" :total "03:08:59" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 27 :plate-number "204" :rider-id (find-rider-id "Валерий" "Варгасов") :start "12:16:00" :finish "14:51:35" :penalty "00:40:00" :total "03:15:35" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 28 :plate-number "225" :rider-id (find-rider-id "Владимир" "Носков") :start "12:19:00" :finish "15:07:52" :penalty "00:40:00" :total "03:28:52" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 29 :plate-number "288" :rider-id (find-rider-id "Дмитрий" "Абдрахманов") :start "12:28:00" :finish "14:57:11" :penalty "01:20:00" :total "03:49:11" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 30 :plate-number "285" :rider-id (find-rider-id "Роман" "Белоногов") :start "12:28:00" :finish "15:00:00" :penalty "01:20:00" :total "03:52:00" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 31 :plate-number "289" :rider-id (find-rider-id "Дмитрий" "Холкин") :start "12:28:00" :finish "15:09:00" :penalty "01:20:00" :total "04:01:00" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 32 :plate-number "227" :rider-id (find-rider-id "Сергей" "Уфимцев") :start "12:19:00" :finish "15:13:43" :penalty "01:20:00" :total "04:14:43" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 33 :plate-number "283" :rider-id (find-rider-id "Евгений" "Чурин") :start "12:28:00" :finish "15:41:18" :penalty "01:20:00" :total "04:33:18" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 34 :plate-number "209" :rider-id (find-rider-id "Максим" "Тимошевский") :start "12:16:00" :finish "15:46:00" :penalty "01:20:00" :total "04:50:00" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 35 :plate-number "274" :rider-id (find-rider-id "Станислав" "Зеленских") :start "12:26:30" :finish "16:35:14" :penalty "01:20:00" :total "05:28:44" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 36 :plate-number "236" :rider-id (find-rider-id "Евгений" "Соловьев") :start "12:20:30" :finish "16:32:45" :penalty "01:20:00" :total "05:32:15" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 37 :plate-number "245" :rider-id (find-rider-id "Олег" "Поленков") :start "12:22:00" :finish "15:58:05" :penalty "02:00:00" :total "05:36:05" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 38 :plate-number "252" :rider-id (find-rider-id "Ринат" "Нохов") :start "12:23:30" :finish "16:44:54" :penalty "01:20:00" :total "05:41:24" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 39 :plate-number "249" :rider-id (find-rider-id "Максим" "Паршаков") :start "12:22:00" :finish "16:45:40" :penalty "01:20:00" :total "05:43:40" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 40 :plate-number "242" :rider-id (find-rider-id "Дмитрий" "Прикин") :start "12:22:00" :finish "17:25:44" :penalty "01:20:00" :total "06:23:44" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 41 :plate-number "253" :rider-id (find-rider-id "Александр" "Храмцов") :start "12:23:30" :finish "17:40:00" :penalty "01:20:00" :total "06:36:30" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 42 :plate-number "221" :rider-id (find-rider-id "Артем" "Денисов") :start "12:19:00" :finish "18:18:58" :penalty "01:20:00" :total "07:19:58" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 43 :plate-number "259" :rider-id (find-rider-id "Алексей" "Любимов") :start "12:23:30" :finish "14:26:38" :penalty "02:00:00" :total "04:03:08" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 44 :plate-number "228" :rider-id (find-rider-id "Алексей" "Угрюмов") :start "12:19:00" :finish "15:00:00" :penalty "02:00:00" :total "04:41:00" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 45 :plate-number "270" :rider-id (find-rider-id "Алексей" "Калашников") :start "12:26:30" :finish "14:30:00" :penalty "04:00:00" :total "06:03:30" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 46 :plate-number "213" :rider-id (find-rider-id "Денис" "Деренченко") :start "12:17:30" :finish "14:30:00" :penalty "04:00:00" :total "06:12:30" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 47 :plate-number "277" :rider-id (find-rider-id "Владимир" "Гусев") :start "12:26:30" :finish "16:44:21" :penalty "02:00:00" :total "06:17:51" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 48 :plate-number "237" :rider-id (find-rider-id "Денис" "Скоров") :start "12:20:30" :finish "16:08:00" :penalty "02:40:00" :total "06:27:30" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 49 :plate-number "261" :rider-id (find-rider-id "Илья" "Луценко") :start "12:25:00" :finish "15:30:30" :penalty "04:00:00" :total "07:05:30" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 50 :plate-number "284" :rider-id (find-rider-id "Александр" "Беспалов") :start "12:28:00" :finish "15:00:00" :penalty "04:40:00" :total "07:12:00" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 51 :plate-number "208" :rider-id (find-rider-id "Александр" "Сумин") :start "12:16:00" :finish "15:00:00" :penalty "04:40:00" :total "07:24:00" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 52 :plate-number "271" :rider-id (find-rider-id "Александр" "Ишонин") :start "12:26:30" :finish "15:52:12" :penalty "04:00:00" :total "07:25:42" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 53 :plate-number "255" :rider-id (find-rider-id "Владимир" "Мыкалов") :start "12:23:30" :finish "16:50:06" :penalty "04:00:00" :total "08:26:36" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 54 :plate-number "272" :rider-id (find-rider-id "Станислав" "Зубков") :start "12:26:30" :finish "16:58:14" :penalty "04:40:00" :total "09:11:44" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 55 :plate-number "286" :rider-id (find-rider-id "Марк" "Хашковский") :start "12:28:00" :finish "13:33:44" :penalty "05:20:00" :total "06:25:44" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 56 :plate-number "211" :rider-id (find-rider-id "Андрей" "Созыкин") :start "12:17:30" :finish "13:37:50" :penalty "05:20:00" :total "06:40:20" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 57 :plate-number "222" :rider-id (find-rider-id "Андрей" "Богомолов") :start "12:19:00" :finish "13:43:55" :penalty "05:20:00" :total "06:44:55" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 58 :plate-number "273" :rider-id (find-rider-id "Алексей" "Злобин") :start "12:26:30" :finish "14:17:52" :penalty "05:20:00" :total "07:11:22" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 59 :plate-number "264" :rider-id (find-rider-id "Олег" "Лазарев") :start "12:25:00" :finish "14:27:18" :penalty "05:20:00" :total "07:22:18" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 60 :plate-number "262" :rider-id (find-rider-id "Вячеслав" "Лопатин") :start "12:25:00" :finish "15:30:00" :penalty "04:40:00" :total "07:45:00" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 61 :plate-number "275" :rider-id (find-rider-id "Линар" "Яруллин") :start "12:26:30" :finish "15:00:00" :penalty "05:20:00" :total "07:53:30" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 62 :plate-number "251" :rider-id (find-rider-id "Александр" "Обухов") :start "12:23:30" :finish "15:00:00" :penalty "05:20:00" :total "07:56:30" :laps 1]
+         [:type :result :event-id event-id :classification-id classification-id :position 63 :plate-number "230" :rider-id (find-rider-id "Дмитрий" "Тренин") :start "12:20:30" :finish "17:55:00" :penalty "04:40:00" :total "10:14:30" :laps 1]
+         ])
+
+      (let [classification-id "CWahDysvCMM"]
+        [{:type              :classification
+          :classification-id classification-id
+          :event-id          event-id
+          :order             3
+          :name              "Леди"
+          :equivalent        :lady
+          :laps              3
+          ;; Еще проще чем бронза
+          :lap-difficulty    25
+          :started-count     10}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "304" :rider-id (find-rider-id "Анна" "Шилова") :start "12:29:30" :finish "13:50:58" :penalty "00:00:00" :total "01:21:28" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "305" :rider-id (find-rider-id "Анна" "Медведева") :start "12:29:30" :finish "14:11:50" :penalty "00:00:00" :total "01:42:20" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "300" :rider-id (find-rider-id "Марина" "Аверина") :start "12:29:30" :finish "14:29:17" :penalty "00:00:00" :total "01:59:47" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "309" :rider-id (find-rider-id "Юлия" "Березинских") :start "12:29:30" :finish "14:01:19" :penalty "00:40:00" :total "02:11:49" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "302" :rider-id (find-rider-id "Ульяна" "Храмцова") :start "12:29:30" :finish "14:03:42" :penalty "00:40:00" :total "02:14:12" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "307" :rider-id (find-rider-id "Ксения" "Потапович") :start "12:29:30" :finish "14:10:27" :penalty "00:40:00" :total "02:20:57" :laps 2]
+         [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "308" :rider-id (find-rider-id "Наталья" "Дроздова") :start "12:29:30" :finish "15:04:39" :penalty "00:40:00" :total "03:15:09" :laps 2]
+         ]))))
+
 ;; TODO: перенести
 (defn process-data
   [row]
@@ -1107,4 +1333,5 @@
                               (concat slg1
                                       stalker1
                                       lesnik1
-                                      bogdanovich1))))
+                                      bogdanovich1
+                                      emanzhelinsk1))))

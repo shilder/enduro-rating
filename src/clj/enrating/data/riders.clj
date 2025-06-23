@@ -16,7 +16,7 @@
    {:type :rider-info :name "Константин" :surname "Майбуров" :city "-" :rider-id "R0MafCGQ"}
    {:type :rider-info :name "Эрик" :surname "Ишмаков" :city "Уфа" :rider-id "RrXTCPdg"}
    {:type :rider-info :name "Роман" :surname "Кузнецов" :city "Ижевск" :rider-id "R9c7oqWc"}
-   {:type :rider-info :name "Артём" :surname "Калинин" :city "Магнитогорск" :rider-id "R9uAyYY"}
+   {:type :rider-info :name "Артём" :surname "Калинин" :patronymic "Сергеевич" :city "Челябинск" :rider-id "R9uAyYY"}
    {:type :rider-info :name "Денис" :surname "Шилов" :patronymic "Владимирович" :city "Екатеринбург" :rider-id "Rx0m1M0g"}
    {:type :rider-info :name "Денис" :surname "Медведюк" :city "Тюмень" :rider-id "RhKqKX6M"}
    {:type :rider-info :name "Михаил" :surname "Ушаков" :city "Тюмень" :rider-id "RMBw4DLE"}
@@ -64,7 +64,7 @@
    {:type :rider-info :name "Михаил" :surname "Жилин" :city "Курган" :rider-id "Rfx9GOZI"}
    {:type :rider-info :name "Евгений" :surname "Данилов" :patronymic "Николаевич" :city "Пермь" :rider-id "RgIVoEf0"}
    {:type :rider-info :name "Антон" :surname "Толкачев" :city "Талица" :rider-id "RERjfbfc"}
-   {:type :rider-info :name "Денис" :surname "Козлов" :city "Челябинск" :rider-id "RUrUNbCg"}
+   {:type :rider-info :name "Денис" :surname "Козлов" :city "Челябинск" :rider-id "RUrUNbCg" :patronymic "Сергеевич"}
    {:type :rider-info :name "Виктор" :surname "Калинин" :city "Магнитогорск" :rider-id "RQeHv4FY"}
    {:type :rider-info :name "Влад" :surname "Чибаков" :city "-" :rider-id "R0FDicNc"}
    {:type :rider-info :name "Вадим" :surname "Лугаськов" :city "Ревда" :rider-id "RePKnBNY"}
@@ -563,6 +563,64 @@
    {:type :rider-info :name "Александр" :surname "Капустин" :patronymic "Владимирович" :city "Богданович" :rider-id "RKc2o85M"}
    {:type :rider-info :name "Андрей" :surname "Тужилов" :patronymic "Анатольевич" :city "Екатеринбург" :rider-id "RkvTD2Uo"}
    {:type :rider-info :name "Андрей" :surname "Кудин" :patronymic "Анатольевич" :city "Талица" :rider-id "RUhaQxnM"}
+
+   {:city "Касли" :name "Юлия" :surname "Сирбаева" :patronymic "Радиковна" :rider-id "RsB6iL8Q"}
+   {:city "Екатеринбург" :name "Алиса" :surname "Белоногова" :patronymic "Антоновна" :rider-id "ReQeG7tA"}
+   {:city "Екатеринбург" :name "Мария" :surname "Бессонова" :patronymic "Александровна" :rider-id "RnTKEIbc"}
+   {:city "Сургут" :name "Наталья" :surname "Дроздова" :patronymic "Владимировна" :rider-id "RlkocRA8"}
+   {:city "Коркино" :name "Анжелика" :surname "Гареева" :patronymic "Геннадьевна" :rider-id "RHWynxnw"}
+   {:city "Тюмень" :name "Роман" :surname "Алёхин" :patronymic "Андреевич" :rider-id "RCY9qSVo"}
+   {:city "Коркино" :name "Алексей" :surname "Угрюмов" :patronymic "Владимирович" :rider-id "RCSd4AkM"}
+   {:city "Челябинск" :name "Валерий" :surname "Варгасов" :patronymic "Викторович" :rider-id "RsHke85o"}
+   {:city "Каменск-Уральский" :name "Андрей" :surname "Строшков" :patronymic "Сергеевич" :rider-id "RZSmBDLw"}
+   {:city "Губкинский" :name "Роман" :surname "Данилевский" :patronymic "Романович" :rider-id "RPOFca5Y"}
+   {:city "Екатеринбург" :name "Евгений" :surname "Ганичев" :patronymic "Александрович" :rider-id "RwfO6nqY"}
+   {:city "Челябинск" :name "Александр" :surname "Мальков" :rider-id "RN6tnqw"}
+   {:city "Челябинск" :name "Евгений" :surname "Полунин" :patronymic "Михайлович" :rider-id "R4TPVxKU"}
+   {:city "Тюмень" :name "Денис" :surname "Саликов" :patronymic "Сафаевич" :rider-id "RSE1Wbr0"}
+   {:city "Горнозаводск" :name "Денис" :surname "Копытов" :patronymic "Алексеевич" :rider-id "RoD3S0Vg"}
+   {:city "Екатеринбург" :name "Илья" :surname "Луценко" :patronymic "Сергеевич" :rider-id "RtiLXImk"}
+   {:city "Челябинск" :name "Дмитрий" :surname "Абдрахманов" :patronymic "Гауситдинович" :rider-id "REa5mJKo"}
+   {:city "Екатеринбург" :name "Евгений" :surname "Папулов" :patronymic "Александрович" :rider-id "RKuaEM3w"}
+   {:city "Озёрск" :name "Dmitrii" :surname "Prikin" :patronymic "Аleksandrovich" :rider-id "R5pwNdWg"}
+   {:city "Митино" :name "Вадим" :surname "Плеханов" :patronymic "Сергеевич" :rider-id "RuMf6qc"}
+   {:city "Златоуст" :name "Кирилл" :surname "Кузнецов" :patronymic "Константинович" :rider-id "RFQDkfBQ"}
+   {:city "Ревда" :name "Евгений" :surname "Соловьев" :rider-id "RILfOFnI"}
+   {:city "Екатеринбург" :name "Александр" :surname "Обухов" :patronymic "Алексеевич" :rider-id "RuCVk0Pg"}
+   {:city "Красногорский" :name "Илья" :surname "Чебыкин" :patronymic "Евгеньевич" :rider-id "RUEqRFnE"}
+   {:city "Екатеринбург" :name "Николай" :surname "Мишунин" :patronymic "Сергеевич" :rider-id "RNGhE530"}
+   {:city "Екатеринбург" :name "Иван" :surname "Першин" :patronymic "Алексеевич" :rider-id "RLAjXprU"}
+   {:city "Сысерть" :name "Эдуард" :surname "Лысцов" :rider-id "RnYBKbw"}
+   {:city "Екатеринбург" :name "Олег" :surname "Лазарев" :rider-id "RkhuJ6oU"}
+   {:city "Еманжелинск" :name "Арсений" :surname "Вшивков" :patronymic "Вадимович" :rider-id "RWRsXuVU"}
+   {:city "Полевской" :name "Иван" :surname "Вострецов" :patronymic "Сергеевич" :rider-id "RmLK3CU4"}
+   {:city "Нягань" :name "Владислав" :surname "Николаев" :patronymic "Алексеевич" :rider-id "RApMDEIA"}
+   {:city "Казань" :name "Линар" :surname "Яруллин" :rider-id "RF45YTtc"}
+   {:city "Миасс" :name "Денис" :surname "Деренченко" :patronymic "Александрович" :rider-id "RkfVl2E"}
+   {:city "Челябинск" :name "Марк" :surname "Хашковский" :patronymic "Андреевич" :rider-id "RbYXgyrg"}
+   {:city "Тюмень" :name "Иван" :surname "Чедаев" :patronymic "Михайлович" :rider-id "RuLctGp8"}
+   {:city "Новый Уренгой" :name "Евгений" :surname "Осадчий" :patronymic "Александрович" :rider-id "RfQILJAw"}
+   {:city "Магнитогорск" :name "Андрей" :surname "Бадьин" :patronymic "Николаевич" :rider-id "RjroNjDY"}
+   {:city "Озёрск" :name "Егор" :surname "Харитонов" :patronymic "Владимирович" :rider-id "RrnOKmU"}
+   {:city "Петропавловск" :name "Дмитрий" :surname "Резницкий" :patronymic "Владимирович" :rider-id "RcYeOj4w"}
+   {:city "Екатеринбург" :name "Илья" :surname "Садовой" :patronymic "Александрович" :rider-id "R5SOvLQA"}
+   {:city "Усть-Катав" :name "Александр" :surname "Ремесленников" :patronymic "Анатольевич" :rider-id "RJatDMI"}
+   {:city "Усть-Катав" :name "Артём" :surname "Ремесленников" :patronymic "Александрович" :rider-id "RU3iOrTk"}
+   {:city "Челябинск" :name "Анатолий" :surname "Горбачев" :patronymic "Анатольевич" :rider-id "RRjFfjE0"}
+   {:city "Златоуст" :name "Артем" :surname "Кремлев" :patronymic "Сергеевич" :rider-id "RczQc2kA"}
+   {:city "Губкинский" :name "Виталий" :surname "Голов" :patronymic "Витальевич" :rider-id "R1gySRMQ"}
+   {:city "Миасс" :name "Илья" :surname "Юдин" :patronymic "Алексеевич" :rider-id "Rz2s4kQ0"}
+   {:city "Новый Уренгой" :name "Рустам" :surname "Еникеев" :patronymic "Вилюрович" :rider-id "RNGObAvo"}
+   {:city "Новый Уренгой" :name "Павел" :surname "Водовозов" :patronymic "Андреевич" :rider-id "R0mlkw5E"}
+   {:city "Челябинск" :name "Павел" :surname "Иванов" :patronymic "Евгеньевич" :rider-id "ROMw2JU8"}
+   {:city "Озёрск" :name "Александр" :surname "Лабутин" :patronymic "Евгеньевич" :rider-id "RimfdCS0"}
+   {:city "Уфа" :name "Александр" :surname "Любченко" :patronymic "Валерьевич" :rider-id "RmsIUMkM"}
+   {:city "Южноуральск" :name "Михаил" :surname "Соловьев" :patronymic "Сергеевич" :rider-id "RrVmG4Wc"}
+   {:city "Челябинск" :name "Арсений" :surname "Исмагилов" :patronymic "Алексеевич" :rider-id "RkUtMM0s"}
+   {:city "Учалы" :name "Ильдус" :surname "Сулейманов" :rider-id "R4RqSnNs"}
+   {:city "Екатеринбург" :name "Дмитрий" :surname "Дьяков" :rider-id "RvPRMJeg"}
+   {:city "Нижний Тагил" :name "Александр" :surname "Антипин" :rider-id "RN3YvdG8"}
+   {:city "Озёрск" :name "Дмитрий" :surname "Прикин" :rider-id "Rvd0qqhI"}
    ])
 
 (defn- normalize-string
