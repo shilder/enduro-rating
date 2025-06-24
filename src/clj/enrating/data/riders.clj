@@ -125,6 +125,7 @@
    {:type :rider-info :name "Алексей" :surname "Залесов" :city "Екатеринбург" :rider-id "RLfVfHw"}
    {:type :rider-info :name "Сергей" :surname "Вакушин" :city "Миасс" :rider-id "R25LPFcs"}
    {:type :rider-info :name "Станислав" :surname "Тарасов" :city "Тюмень" :rider-id "Ru3atqx8"}
+   {:type :rider-info :name "Станислав" :surname "Тарасов (дубль)" :city "Тюмень" :rider-id "Rdupu3atqx8"}
    {:type :rider-info :name "Никита" :surname "Баранов" :city "Челябинск" :rider-id "RwsA3ak"}
    {:type :rider-info :name "Данила" :surname "Фролов" :city "Тюмень" :rider-id "R29z8qQ"}
    {:type :rider-info :name "Иван" :surname "Адам" :city "Тюмень" :rider-id "Ra6PzAPc"}
@@ -245,6 +246,7 @@
    {:type :rider-info, :name "Алексей", :surname "Слабочков" :city "Миасс", :rider-id "REJKjxI"}
    {:type :rider-info, :name "Василий", :surname "Дудников" :city "0", :rider-id "RcrLsGw0"}
    {:type :rider-info, :name "Евгений", :surname "Исупов" :city "Пермь", :rider-id "R6dbZJro"}
+   {:type :rider-info, :name "Евгений", :surname "Исупов (дубль)" :city "Пермь", :rider-id "Rdup6dbZJro"}
    {:type :rider-info, :name "Валера", :surname "Варгасов" :city "Челябинск", :rider-id "RZ0pHsk"}
    {:type :rider-info, :name "Артём", :surname "Котельников" :city "Челябинск", :rider-id "RrUd0HBA"}
    {:type :rider-info, :name "Алексей", :surname "Фадеев" :city "Миасс", :rider-id "RLPj40"}

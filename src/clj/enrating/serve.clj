@@ -19,7 +19,7 @@
   (let [port 8151]
     (server/run-server
       (fn [request]
-        (let [resfile (io/file "generated/result.html")
+        (let [resfile (io/file "generated/index.html")
               page (slurp resfile)]
           {:status  200
            :body    page
