@@ -180,7 +180,8 @@
      [:thead
       (-> [:tr
            [:th {:width "50px"} "#"]
-           [:th {:width "150px"} "Гонщик"]]
+           [:th {:width "150px"} "Гонщик"]
+           [:th {:width "100px"} "Город"]]
           (into (map
                   (fn [event]
                     [:th {:width "80px"}
@@ -193,7 +194,9 @@
            (map (fn [[idx {:keys [total rider results]}]]
                   (-> [:tr
                        [:td.number (inc idx)]
-                       [:td (str/join " " [(:surname rider) (:name rider)])]]
+                       [:td (str/join " " [(:surname rider) (:name rider)])]
+                       ;; Город из протоколов ?
+                       [:td (:city rider)]]
                       (into
                         (map (fn [{:keys [event-id]}]
                                (let [results (filter #(= (:event-id %) event-id) results)
