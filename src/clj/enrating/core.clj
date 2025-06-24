@@ -49,8 +49,15 @@
 
 (rum/defc classification-card [all-data {:keys [name first-place-points cutoff-point classification-id
                                                 started-count laps lap-difficulty equivalent points-multiplier] :as classification-data}]
-  (let [results (sort-by :position (filter #(= (:classification-id %) classification-id)
-                                           (:results all-data)))
+  (let [results (sort-by :position
+                         (fn [a b]
+                           (if (or (= a nil)
+                                   (= b nil))
+                             ;; NULLS last
+                             1
+                             (compare a b)))
+                         (filter #(= (:classification-id %) classification-id)
+                                 (:results all-data)))
         finished-count (count (filter #(some? (:position %)) results))]
     [:div.classification-card {:id classification-id}
      [:div.fields-section
@@ -72,8 +79,7 @@
         (event-field "Дополнительный коэффициент" points-multiplier))
       (when points-multiplier
         (event-field "Пояснение к коэффициенту" (:multiplier-description classification-data)))
-      (event-field "Очки за первое место (Кол-во кругов * сложность круга * коэффициент условной сложности * коэффициент)" first-place-points)
-      (event-field "Точка отсечения подсчета очков" cutoff-point)]
+      (event-field "Очки за первое место (Кол-во кругов * сложность круга * коэффициент условной сложности * коэффициент)" first-place-points)]
      [:table.results-table
       [:thead
        [:tr
@@ -84,19 +90,26 @@
         [:th "Очков начислено"]
         [:th "Город"]
         [:th "Команда"]
-        [:th "Мотоцикл"]]]
+        [:th "Мотоцикл"]
+        [:th "Штраф"]
+        [:th "Время (со штрафами)"]]]
       [:tbody
        (for [result results
              :let [rider (get-in all-data [:riders (:rider-id result)])]]
          [:tr {:id (:result-id result)}
-          [:td.number (:position result)]
+          [:td.number
+           (if (:dnf? result)
+             "сход"
+             (:position result))]
           [:td (:surname rider)]
           [:td (:name rider)]
           [:td.number (:plate-number result)]
           [:td.number (:points result)]
           [:td (:city rider)]
           [:td (:team result)]
-          [:td (:motorcycle result)]])]]]))
+          [:td (:motorcycle result)]
+          [:td (:penalty result)]
+          [:td (:total result)]])]]]))
 
 (rum/defc event-card
   [all-data {:keys [event-id name date event-url telegram-url] :as event-data}]
@@ -144,10 +157,13 @@
             (mapv
               (fn [result]
                 (let [classification (get-in all-data [:classifications (:classification-id result)])]
-                  (assoc result :points (points/position-points-log
-                                          (:first-place-points classification)
-                                          (:position result)
-                                          (:cutoff-point classification)))))
+                  (assoc result :points
+                                (if (:dnf? result)
+                                  0M
+                                  (points/position-points-log
+                                    (:first-place-points classification)
+                                    (:position result)
+                                    (:cutoff-point classification))))))
               results))))
 
 (def data2025-map

@@ -219,18 +219,28 @@
     (catch Exception e
       nil)))
 
+(defn- try-parse-int
+  [s]
+  (when s
+    (try
+      (Integer/parseInt s)
+      (catch Exception e
+        nil))))
+
 (defn parse-proto-line
   [data]
   (doseq [r (str/split data #"\n")
           :when (not (str/blank? r))
           :let [[number surname+name city+region start-time finish-time result1 penalty result2 laps place] (str/split r #"\t")
                 [surname name] (str/split surname+name #"\s")]]
-    (when-not (= "—" place))
-    (prn
-      `[:type :result :event-id event-id :classification-id classification-id
-        :position ~(Integer/parseInt place) :plate-number ~(str/trim number) :rider-id (find-rider-id ~name ~surname)
-        :start ~start-time :finish ~finish-time :penalty ~penalty :total ~result2 :laps ~(Integer/parseInt laps)])
-    ))
+    (let [dnf? (= "сошел" result2)]
+      (prn
+        (cond->
+          `[:type :result :event-id event-id :classification-id classification-id
+            :position ~(try-parse-int place) :plate-number ~(str/trim number) :rider-id (find-rider-id ~name ~surname)
+            :start ~start-time :finish ~finish-time :penalty ~penalty :total ~result2 :laps ~(try-parse-int laps)]
+
+          dnf? (conj :dnf? true))))))
 
 (comment
   (parse-proto-line gold-raw))
