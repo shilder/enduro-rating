@@ -48,7 +48,8 @@
    [:div.field-value value]])
 
 (rum/defc classification-card [all-data {:keys [name first-place-points cutoff-point classification-id
-                                                started-count laps lap-difficulty equivalent points-multiplier] :as classification-data}]
+                                                started-count laps lap-difficulty equivalent points-multiplier
+                                                laps-info?] :as classification-data}]
   (let [results (sort-by :position
                          (fn [a b]
                            (if (or (= a nil)
@@ -58,7 +59,8 @@
                              (compare a b)))
                          (filter #(= (:classification-id %) classification-id)
                                  (:results all-data)))
-        finished-count (count (filter #(some? (:position %)) results))]
+        finished-count (count (filter #(and (some? (:position %))
+                                            (not (:dnf? %))) results))]
     [:div.classification-card {:id classification-id}
      [:div.fields-section
       (event-field "Название класса" name)
@@ -68,8 +70,8 @@
        (when finished-count
          (event-field "Количество финишировавших" finished-count))
        #_(when (and started-count finished-count)
-         (event-field "Процент финишировавших"
-                      (str (Math/round (double (* 100.0 (/ (double finished-count) (double started-count))))) "%")))]
+           (event-field "Процент финишировавших"
+                        (str (Math/round (double (* 100.0 (/ (double finished-count) (double started-count))))) "%")))]
       [:div.fields-row
        (event-field "Кол-во кругов" laps)
        (event-field "Сложность круга (условная)" lap-difficulty)]
@@ -92,7 +94,9 @@
         [:th "Команда"]
         [:th "Мотоцикл"]
         [:th "Штраф"]
-        [:th "Время (со штрафами)"]]]
+        [:th "Время (со штрафами)"]
+        (when laps-info?
+          [:th "Кругов зачтено"])]]
       [:tbody
        (for [result results
              :let [rider (get-in all-data [:riders (:rider-id result)])]]
@@ -109,7 +113,9 @@
           [:td (:team result)]
           [:td (:motorcycle result)]
           [:td (:penalty result)]
-          [:td (:total result)]])]]]))
+          [:td (:total result)]
+          (when laps-info?
+            [:td (:laps result)])])]]]))
 
 (rum/defc event-card
   [all-data {:keys [event-id name date event-url telegram-url] :as event-data}]
@@ -159,7 +165,8 @@
                 (let [classification (get-in all-data [:classifications (:classification-id result)])]
                   (assoc result :points
                                 (if (:dnf? result)
-                                  0M
+                                  ;; 1 балл за участие
+                                  1.00M
                                   (points/position-points-log
                                     (:first-place-points classification)
                                     (:position result)
@@ -210,7 +217,10 @@
            (map (fn [[idx {:keys [total rider results]}]]
                   (-> [:tr
                        [:td.number (inc idx)]
-                       [:td (str/join " " [(:surname rider) (:name rider)])]
+                       [:td (str/join " " [(:surname rider) (:name rider)
+                                           ;; Для тех у кого есть совпадение по фамилии имени выводить еще и отчество
+                                           (when (:name-surname-dupes? rider)
+                                             (:patronymic rider))])]
                        ;; Город из протоколов ?
                        [:td (:city rider)]]
                       (into
@@ -220,7 +230,7 @@
                                      result (first results)
                                      classification (get-in all-data [:classifications (:classification-id result)])]
                                  [:td.number
-                                  {:class   (:equivalent classification)}
+                                  {:class (:equivalent classification)}
                                   ;; Бывает такой бардак в протоколах
                                   (if (> (count results) 1)
                                     [:ul.multiple-results

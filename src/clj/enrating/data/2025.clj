@@ -259,7 +259,7 @@
       })
    ;; Страница 1
    [:type :result :event-id "EALkbw" :classification-id "CQuv6rI64Fg" :position 1 :plate-number "320" :rider-id (find-rider-id "Владимир" "Пономарчук") :start "12:26:30" :finish "15:43:56" :penalty "0:00:00" :total "3:17:26"]
-   [:type :result :event-id "EALkbw" :classification-id "CQuv6rI64Fg" :position 2 :plate-number "325" :rider-id (find-rider-id "Сергей" "Кузнецов") :start "12:28:00" :finish "15:23:05" :penalty "0:40:00" :total "3:35:05"]
+   [:type :result :event-id "EALkbw" :classification-id "CQuv6rI64Fg" :position 2 :plate-number "325" :rider-id (find-rider-id "Сергей" "Кузнецов" "Владимирович" nil) :start "12:28:00" :finish "15:23:05" :penalty "0:40:00" :total "3:35:05"]
    [:type :result :event-id "EALkbw" :classification-id "CQuv6rI64Fg" :position 3 :plate-number "311" :rider-id (find-rider-id "Александр" "Полянин") :start "12:24:30" :finish "15:24:30" :penalty "0:40:00" :total "3:40:00"]
    [:type :result :event-id "EALkbw" :classification-id "CQuv6rI64Fg" :position 4 :plate-number "303" :rider-id (find-rider-id "Виктор" "Шабуров") :start "12:22:30" :finish "15:26:45" :penalty "0:40:00" :total "3:44:15"]
    [:type :result :event-id "EALkbw" :classification-id "CQuv6rI64Fg" :position 5 :plate-number "327" :rider-id (find-rider-id "Антон" "Стелюк") :start "12:28:30" :finish "15:38:50" :penalty "0:40:00" :total "3:50:20"]
@@ -1075,7 +1075,7 @@
         })
 
      {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 1 :plate-number "235" :rider-id (find-rider-id "Александр" "Некрасов")}
-     {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 2 :plate-number "237" :rider-id (find-rider-id "Сергей" "Кузнецов") :team "KATAYENDURO"}
+     {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 2 :plate-number "237" :rider-id (find-rider-id "Сергей" "Кузнецов" "Владимирович" nil) :team "KATAYENDURO"}
      {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 3 :plate-number "236" :rider-id (find-rider-id "Андрей" "Щипунов")}
      {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 4 :plate-number "234" :rider-id (find-rider-id "Константин" "Одиноков")}
      {:type :result :event-id event-id :classification-id "C1gLPX9AUjc" :position 5 :plate-number "231" :rider-id (find-rider-id "Владимир" "Боровских") :team "Камышлов"}
@@ -1107,7 +1107,8 @@
           :laps              3
           ;; Тут сложно - круг не сказать чтобы сильно легкий, но довольно короткий
           :lap-difficulty    60
-          :started-count     20}
+          :started-count     20
+          :laps-info?        true}
 
          [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "15" :rider-id (find-rider-id "Станислав" "Максимов") :start "12:02:30" :finish "14:07:37" :penalty "00:00:00" :total "02:05:07" :laps 3]
          [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "6" :rider-id (find-rider-id "Никита" "Поляков") :start "12:01:00" :finish "14:06:21" :penalty "00:00:00" :total "02:05:21" :laps 3]
@@ -1146,7 +1147,8 @@
           :laps              2
           ;; Та же сложность что и в золоте - трасса одинаковая
           :lap-difficulty    60
-          :started-count     76}
+          :started-count     76
+          :laps-info?        true}
 
          [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "146" :rider-id (find-rider-id "Владимир" "Иванов") :start "12:10:00" :finish "13:51:01" :penalty "00:00:00" :total "01:41:01" :laps 2]
          [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "101" :rider-id (find-rider-id "Константин" "Романов") :start "12:04:00" :finish "13:46:48" :penalty "00:00:00" :total "01:42:48" :laps 2]
@@ -1237,11 +1239,12 @@
           :laps              3
           ;; Ощутимо проще чем золото/серебро
           :lap-difficulty    40
-          :started-count     89}
+          :started-count     89
+          :laps-info?        true}
 
          [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "223" :rider-id (find-rider-id "Савелий" "Кунакбаев") :start "12:19:00" :finish "13:48:48" :penalty "00:00:00" :total "01:29:48" :laps 3]
          [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "231" :rider-id (find-rider-id "Матвей" "Тиунов") :start "12:20:30" :finish "13:55:38" :penalty "00:00:00" :total "01:35:08" :laps 3]
-         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "267" :rider-id (find-rider-id "Сергей" "Кузнецов") :start "12:25:00" :finish "14:01:30" :penalty "00:00:00" :total "01:36:30" :laps 3]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "267" :rider-id (find-rider-id "Сергей" "Кузнецов" "Владимирович" nil) :start "12:25:00" :finish "14:01:30" :penalty "00:00:00" :total "01:36:30" :laps 3]
          [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "201" :rider-id (find-rider-id "Александр" "Бескровный") :start "12:16:00" :finish "13:58:59" :penalty "00:00:00" :total "01:42:59" :laps 3]
          [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "291" :rider-id (find-rider-id "Александр" "Зверев") :start "12:28:00" :finish "14:14:44" :penalty "00:00:00" :total "01:46:44" :laps 3]
          [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "226" :rider-id (find-rider-id "Леонид" "Асташов") :start "12:19:00" :finish "14:07:13" :penalty "00:00:00" :total "01:48:13" :laps 3]
@@ -1340,7 +1343,8 @@
           :laps              3
           ;; Еще проще чем бронза
           :lap-difficulty    25
-          :started-count     10}
+          :started-count     10
+          :laps-info?        true}
 
          [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "304" :rider-id (find-rider-id "Анна" "Шилова") :start "12:29:30" :finish "13:50:58" :penalty "00:00:00" :total "01:21:28" :laps 3]
          [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "305" :rider-id (find-rider-id "Анна" "Медведева") :start "12:29:30" :finish "14:11:50" :penalty "00:00:00" :total "01:42:20" :laps 3]
@@ -1349,6 +1353,328 @@
          [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "302" :rider-id (find-rider-id "Ульяна" "Храмцова") :start "12:29:30" :finish "14:03:42" :penalty "00:40:00" :total "02:14:12" :laps 2]
          [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "307" :rider-id (find-rider-id "Ксения" "Потапович") :start "12:29:30" :finish "14:10:27" :penalty "00:40:00" :total "02:20:57" :laps 2]
          [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "308" :rider-id (find-rider-id "Наталья" "Дроздова") :start "12:29:30" :finish "15:04:39" :penalty "00:40:00" :total "03:15:09" :laps 2]
+         ]))))
+
+(def kyshtim1
+  (let [event-id "EjXVRYQ"
+        ;; Круг был один для всех
+        ;; Круг был непростой, но в основном из за погоды, по сухому было бы
+        ;; примерно как самая легкая гонка уровень 6
+        lap-difficulty 70
+        laps 2
+        points-multiplier 1.2
+        multiplier-description "Было сыро и в Кыштыме это сразу делает все значительно сложнее"]
+    (concat
+      [{:type         :event
+        :name         "Демидовские Тропы - день 1"
+        :location     "Кыштым, Челябинская область"
+        :date         "2025-06-21"
+        :event-url    "https://marshalone.ru/card/09b586e1-5848-4a4a-ba4c-bfad7b175395"
+        :telegram-url "https://t.me/enduro_kyshtym"
+        :event-id     event-id}]
+
+      (let [classification-id "CJX97h7vAEDg"]
+        [
+         {:type              :classification
+          :classification-id classification-id
+          :event-id          event-id
+          :order             1
+          :name              "EXTREME"
+          :equivalent        :gold
+          :laps              laps
+          :lap-difficulty    lap-difficulty
+          :points-multiplier points-multiplier
+          :multiplier-description multiplier-description
+          :started-count     26
+          :laps-info?        true}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "37" :rider-id (find-rider-id "Артем" "Калинин") :motorcycle "Husqvarna" :city "Челябинск" :team "Extremal club" :start "10:58:00" :finish "14:19:03" :total "03:21:02" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "34" :rider-id (find-rider-id "Артем" "Цуркан") :motorcycle "KTM" :city "Екатеринбург" :start "10:57:00" :finish "14:18:25" :total "03:21:24" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "19" :rider-id (find-rider-id "Станислав" "Максимов") :motorcycle "Beta xt" :city "Кыштым" :start "10:52:00" :finish "14:14:03" :total "03:22:03" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "21" :rider-id (find-rider-id "Максим" "Золотов") :motorcycle "Ktm 300 exc" :city "Челябинск" :team "Южный Урал мотоспорт" :start "10:53:00" :finish "14:21:28" :total "03:28:28" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "24" :rider-id (find-rider-id "Николай" "Кокорин") :motorcycle "Хускварна" :city "Ижевск" :start "10:53:30" :finish "14:28:59" :total "03:35:28" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "26" :rider-id (find-rider-id "Евгений" "Захаров") :motorcycle "Те 250" :city "Березовский" :start "10:54:31" :finish "14:35:48" :total "03:41:17" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "30" :rider-id (find-rider-id "Денис" "Шилов") :motorcycle "KTM 300 EXC" :city "Екатеринбург" :start "10:56:30" :finish "14:40:48" :total "03:44:17" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 8 :plate-number "11" :rider-id (find-rider-id "Султан" "Хабибрахманов") :motorcycle "Exc300" :city "Екатеринбург" :team "CoronaMechanics" :start "10:49:00" :finish "14:33:19" :total "03:44:19" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 9 :plate-number "8" :rider-id (find-rider-id "Петр" "Адрианов") :motorcycle "KTM 300 2 T" :city "Челябинск" :team "ЮжныйУрал Мотоспорт" :start "10:47:31" :finish "14:41:42" :total "03:54:11" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 10 :plate-number "12" :rider-id (find-rider-id "Алексей" "Санаров") :motorcycle "ктм" :city "Березовский" :start "10:49:30" :finish "14:46:01" :total "03:56:30" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 11 :plate-number "14" :rider-id (find-rider-id "Константин" "Майбуров") :motorcycle "Husqvarna 300" :city "Екатеринбург" :team "Enduro Ekaterinburg" :start "10:50:30" :finish "14:09:29" :total "03:18:58" :laps "1.909"]
+         [:type :result :event-id event-id :classification-id classification-id :position 12 :plate-number "3" :rider-id (find-rider-id "Сергей" "Чигвинцев") :motorcycle "husqvarna" :city "Екатеринбург" :team "Rival Powersports" :start "10:45:29" :finish "14:06:49" :total "03:21:19" :laps "1.909"]
+         [:type :result :event-id event-id :classification-id classification-id :position 13 :plate-number "16" :rider-id (find-rider-id "Павел" "Иванов") :motorcycle "ТЕ 300" :city "Челябинск" :team "Южный Урал мотоспорт" :start "10:51:00" :finish "14:30:04" :total "03:39:04" :laps "1.909"]
+         [:type :result :event-id event-id :classification-id classification-id :position 14 :plate-number "36" :rider-id (find-rider-id "Павел" "Хисамутдинов") :motorcycle "KTM300" :city "Лосиный" :start "10:57:30" :finish "14:42:28" :total "03:44:58" :laps "1.909"]
+         [:type :result :event-id event-id :classification-id classification-id :position 15 :plate-number "9" :rider-id (find-rider-id "Константин" "Романов") :motorcycle "KTM" :city "Челябинск" :team "Южный Урал" :start "10:48:00" :finish "14:33:34" :total "03:45:34" :laps "1.909"]
+         [:type :result :event-id event-id :classification-id classification-id :position 16 :plate-number "17" :rider-id (find-rider-id "Антон" "Толкачев") :motorcycle "Ктм" :city "Талица" :start "10:51:30" :finish "14:43:33" :total "03:52:02" :laps "1.909"]
+         [:type :result :event-id event-id :classification-id classification-id :position 17 :plate-number "5" :rider-id (find-rider-id "Дмитрий" "Резницкий") :motorcycle "Husqvarna TE300" :city "150000 Петропавловск" :team "Fa-Fa Racing" :start "10:46:30" :finish "14:44:58" :total "03:58:27" :laps "1.909"]
+         [:type :result :event-id event-id :classification-id classification-id :position 18 :plate-number "29" :rider-id (find-rider-id "Александр" "Ремесленников") :motorcycle "KTM EXC 300" :city "Усть-Катав" :team "sUKenduro" :start "10:56:00" :finish "14:46:56" :total "03:50:55" :laps "1.727"]
+         [:type :result :event-id event-id :classification-id classification-id :position 19 :plate-number "28" :rider-id (find-rider-id "Артём" "Ремесленников") :motorcycle "KTM EXC 300" :city "Усть-Катав" :team "sUKenduro" :start "10:55:30" :finish "14:46:59" :total "03:51:29" :laps "1.727"]
+         [:type :result :event-id event-id :classification-id classification-id :position 20 :plate-number "4" :rider-id (find-rider-id "Владимир" "Николаев") :motorcycle "Beta" :city "Тюмень" :start "10:46:01" :finish "14:45:12" :total "03:59:11" :laps "1.727"]
+         [:type :result :event-id event-id :classification-id classification-id :position 21 :plate-number "7" :rider-id (find-rider-id "Алексей" "Мамашев") :motorcycle "Ктм300" :city "Среднеуральск" :start "10:47:00" :finish "13:13:35" :total "02:26:34" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 22 :plate-number "13" :rider-id (find-rider-id "Владимир" "Тясин") :motorcycle "Ктм" :city "Екатеринбург" :start "10:50:00" :finish "13:37:20" :total "02:47:20" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 23 :plate-number "20" :rider-id (find-rider-id "Денис" "Пономарев") :motorcycle "KTM EXC 300" :city "Богданович" :start "10:52:30" :finish "13:52:59" :total "03:00:29" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 24 :plate-number "1" :rider-id (find-rider-id "Михаил" "Ушаков") :motorcycle "Ктм" :city "Тюмень" :start "10:45:04" :finish "14:09:06" :total "03:24:02" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 25 :plate-number "18" :rider-id (find-rider-id "Александр" "Беляков") :motorcycle "Hengjian z300" :city "Ревда" :start "10:55:00" :finish "14:50:17" :total "03:55:16" :laps ".909 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 26 :plate-number "25" :rider-id (find-rider-id "Роман" "Кузнецов") :motorcycle "Gr8" :city "Ижевск" :start "10:54:00" :finish "12:52:40" :total "01:58:39" :laps ".818 (1)"]
+
+         ])
+
+      (let [classification-id "CGIgmrpoK7yg"]
+        [{:type                   :classification
+          :classification-id      classification-id
+          :event-id               event-id
+          :order                  2
+          :name                   "HOBBY"
+          :equivalent             :silver
+          :laps                   laps
+          :lap-difficulty         lap-difficulty
+          :points-multiplier      points-multiplier
+          :multiplier-description multiplier-description
+          :started-count          78
+          :laps-info?             true}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "47" :rider-id (find-rider-id "Алексей" "Кокорин") :motorcycle "KTM EXC300" :city "Курган" :start "11:00:31" :finish "14:47:13" :total "03:46:42" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "46" :rider-id (find-rider-id "Алексей" "Семилетов") :motorcycle "Ктм тби  300" :city "Курган" :start "11:00:00" :finish "14:23:44" :total "03:23:44" :laps "1.9"]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "81" :rider-id (find-rider-id "Сергей" "Кузнецов" "Владимирович" nil) :motorcycle "ktm350" :city "Катайск" :team "KATAYENDURO" :start "11:14:00" :finish "14:49:09" :total "03:35:09" :laps "1.9"]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "55" :rider-id (find-rider-id "Денис" "Козлов") :motorcycle "300 te" :city "Челябинск" :team "Моховичковские псы" :start "11:03:00" :finish "14:40:18" :total "03:37:18" :laps "1.9"]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "130" :rider-id (find-rider-id "Александр" "Сиренко") :motorcycle "KТМ" :city "Курган" :start "11:28:29" :finish "15:07:12" :total "03:38:43" :laps "1.9"]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "62" :rider-id (find-rider-id "Василий" "Решетков") :motorcycle "Хаска" :city "Еманжелинск" :start "11:06:00" :finish "14:46:13" :total "03:40:13" :laps "1.9"]
+         [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "72" :rider-id (find-rider-id "Александр" "Бескровный") :motorcycle "Gas gas ec300" :city "Челябинск" :start "11:09:30" :finish "14:49:49" :total "03:40:19" :laps "1.9"]
+         [:type :result :event-id event-id :classification-id classification-id :position 8 :plate-number "45" :rider-id (find-rider-id "Артем" "Кремлев") :motorcycle "GRrr" :city "Златоуст" :team "Эндуро Златоуст" :start "10:59:30" :finish "14:41:52" :total "03:42:21" :laps "1.9"]
+         [:type :result :event-id event-id :classification-id classification-id :position 9 :plate-number "147" :rider-id (find-rider-id "Владислав" "Лептягин") :motorcycle "GR8" :city "Ижевск" :team "МОТОГРЯЗЬ" :start "11:34:29" :finish "15:18:32" :total "03:44:02" :laps "1.9"]
+         [:type :result :event-id event-id :classification-id classification-id :position 10 :plate-number "52" :rider-id (find-rider-id "Владимир" "Киселёв") :motorcycle "Ктм" :city "Челябинск" :team "Моховичковские псы" :start "11:01:59" :finish "14:49:13" :total "03:47:13" :laps "1.9"]
+         [:type :result :event-id event-id :classification-id classification-id :position 11 :plate-number "82" :rider-id (find-rider-id "Денис" "Меньшиков") :motorcycle "Кайо 250 2т" :city "Катайск" :team "KATAYENDURO" :start "11:14:30" :finish "15:02:17" :total "03:47:47" :laps "1.9"]
+         [:type :result :event-id event-id :classification-id classification-id :position 12 :plate-number "68" :rider-id (find-rider-id "Дмитрий" "Тимошевский") :motorcycle "GR8 300 2T" :city "Челябинск" :start "11:07:59" :finish "15:04:42" :total "03:56:42" :laps "1.9"]
+         [:type :result :event-id event-id :classification-id classification-id :position 13 :plate-number "54" :rider-id (find-rider-id "Виталий" "Горбачев") :motorcycle "KTM EXC 302T" :city "Екатеринбург" :team "Группа эндуро произвола" :start "11:02:29" :finish "14:50:34" :total "03:48:04" :laps "1.8"]
+         [:type :result :event-id event-id :classification-id classification-id :position 14 :plate-number "76" :rider-id (find-rider-id "Игорь" "Павленко") :motorcycle "GR-8 2t" :city "Кыштым" :team "СТК. РАДОН" :start "11:11:30" :finish "15:09:33" :total "03:58:03" :laps "1.8"]
+         [:type :result :event-id event-id :classification-id classification-id :position 15 :plate-number "133" :rider-id (find-rider-id "Сергей" "Шайбаков") :motorcycle "Гр8" :city "Екатеринбург" :start "11:29:30" :finish "15:29:12" :total "03:59:41" :laps "1.8"]
+         [:type :result :event-id event-id :classification-id classification-id :position 16 :plate-number "60" :rider-id (find-rider-id "Вадим" "Ахтямов") :motorcycle "Hendjian Z300" :city "Миасс" :team "Enduro Miass 74" :start "11:05:00" :finish "14:54:50" :total "03:49:49" :laps "1.7"]
+         [:type :result :event-id event-id :classification-id classification-id :position 17 :plate-number "65" :rider-id (find-rider-id "Дмитрий" "Иванов") :motorcycle "Koshine 320" :city "Каменск-Уральский" :start "11:07:30" :finish "15:00:38" :total "03:53:08" :laps "1.7"]
+         [:type :result :event-id event-id :classification-id classification-id :position 18 :plate-number "56" :rider-id (find-rider-id "Константин" "Маркелов") :motorcycle "KTM EXC 300" :city "Челябинск" :team "Моховичковские псы" :start "11:03:30" :finish "14:22:19" :total "03:18:48" :laps "1.5"]
+         [:type :result :event-id event-id :classification-id classification-id :position 19 :plate-number "108" :rider-id (find-rider-id "Анатолий" "Ванчинов") :motorcycle "Beta 300rr" :city "Екатеринбург" :team "Corona" :start "11:22:00" :finish "15:13:05" :total "03:51:04" :laps "1.5"]
+         [:type :result :event-id event-id :classification-id classification-id :position 20 :plate-number "58" :rider-id (find-rider-id "Сергей" "Дубровин") :motorcycle "Kews nb300" :city "Миасс" :team "Enduro Miass 74" :start "11:03:59" :finish "14:55:19" :total "03:51:20" :laps "1.5"]
+         [:type :result :event-id event-id :classification-id classification-id :position 21 :plate-number "63" :rider-id (find-rider-id "Алексей" "Слабочков") :motorcycle "Beta xt" :city "Миасс" :start "11:06:17" :finish "14:58:08" :total "03:51:51" :laps "1.5"]
+         [:type :result :event-id event-id :classification-id classification-id :position 22 :plate-number "61" :rider-id (find-rider-id "Вадим" "Мезенцев") :motorcycle "Rieju" :city "Карабаш" :start "11:05:30" :finish "14:58:10" :total "03:52:40" :laps "1.5"]
+         [:type :result :event-id event-id :classification-id classification-id :position 23 :plate-number "87" :rider-id (find-rider-id "Денис" "Воробьёв") :motorcycle "Gr8" :city "Челябинск" :start "11:16:30" :finish "15:06:28" :total "03:49:58" :laps "1.4"]
+         [:type :result :event-id event-id :classification-id classification-id :position 24 :plate-number "50" :rider-id (find-rider-id "Евгений" "Моисеев") :motorcycle "Procida nb300" :city "Челябинск" :team "MotoExtrem74" :start "11:01:30" :finish "14:54:16" :total "03:52:46" :laps "1.3"]
+         [:type :result :event-id event-id :classification-id classification-id :position 25 :plate-number "73" :rider-id (find-rider-id "Иван" "Тихонов") :motorcycle "Ktm exc 250" :city "Екатеринбург" :start "11:10:00" :finish "15:02:03" :total "03:52:02" :laps "1.2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 26 :plate-number "93" :rider-id (find-rider-id "Сергей" "Кузнецов" "Николаевич" nil) :motorcycle "Hengjain Z300" :city "Сургут" :start "11:18:00" :finish "15:13:26" :total "03:55:25" :laps "1.2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 27 :plate-number "101" :rider-id (find-rider-id "Михаил" "Ялунин") :motorcycle "GR 8" :city "Богданович" :start "11:19:30" :finish "15:14:44" :total "03:55:14" :laps "1.1"]
+         [:type :result :event-id event-id :classification-id classification-id :position 28 :plate-number "10" :rider-id (find-rider-id "Александр" "Кабаев") :motorcycle "Suzuki RMzilla 250" :city "Челябинск" :start "10:48:30" :finish "13:02:50" :total "02:14:19" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 29 :plate-number "42" :rider-id (find-rider-id "Максим" "Ивощук") :motorcycle "KTM 300" :city "Богданович" :team "ENDURO Bogdanovich" :start "10:58:30" :finish "13:26:39" :total "02:28:09" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 30 :plate-number "110" :rider-id (find-rider-id "Артём" "Душин") :motorcycle "Husqvarna te 300" :city "Ижевск" :team "HardEnduroUdm" :start "11:23:00" :finish "14:10:46" :total "02:47:45" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 31 :plate-number "129" :rider-id (find-rider-id "Андрей" "Волков") :motorcycle "STN NB300" :city "Каменск-Уральский" :start "11:28:00" :finish "14:16:26" :total "02:48:25" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 32 :plate-number "126" :rider-id (find-rider-id "Артём" "Тараненко") :motorcycle "Ktm exc 300" :city "Екатеринбург" :start "11:27:00" :finish "14:17:48" :total "02:50:47" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 33 :plate-number "86" :rider-id (find-rider-id "Валерий" "Варгасов") :motorcycle "Beta x tender 300 2t" :city "Челябинск" :team "Моховичковкие псы" :start "11:16:00" :finish "14:10:27" :total "02:54:26" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 34 :plate-number "128" :rider-id (find-rider-id "Евгений" "Константинов") :motorcycle "KTM EXC 300" :city "Екатеринбург" :start "11:27:30" :finish "14:23:59" :total "02:56:28" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 35 :plate-number "64" :rider-id (find-rider-id "Михаил" "Тясин") :motorcycle "henjian 300" :city "Екатеринбург" :team "Азимут 66" :start "11:07:00" :finish "14:04:36" :total "02:57:36" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 36 :plate-number "83" :rider-id (find-rider-id "Роман" "Белоногов") :motorcycle "BSE Z10" :city "Каменск-Уральский" :team "Enduro MOTO LIFE" :start "11:15:00" :finish "14:24:44" :total "03:09:44" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 37 :plate-number "48" :rider-id (find-rider-id "Максим" "Мишуков") :motorcycle "Lanza 250 2t" :city "Магнитогорск" :start "11:01:00" :finish "14:15:16" :total "03:14:15" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 38 :plate-number "103" :rider-id (find-rider-id "Алексей" "Кузнецов") :motorcycle "KAYO" :city "Богданович" :start "11:20:30" :finish "14:39:36" :total "03:19:06" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 39 :plate-number "105" :rider-id (find-rider-id "Евгений" "Камаев") :motorcycle "GR8 2т" :city "Сухой Лог" :start "11:21:00" :finish "14:40:37" :total "03:19:37" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 40 :plate-number "59" :rider-id (find-rider-id "Артём" "Сухов") :motorcycle "GR8 300" :city "Далматово" :start "11:04:30" :finish "14:24:10" :total "03:19:40" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 41 :plate-number "97" :rider-id (find-rider-id "Максим" "Тимошевский") :motorcycle "Хускварна 300 2 т" :city "Челябинск" :start "11:18:30" :finish "14:49:39" :total "03:31:09" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 42 :plate-number "91" :rider-id (find-rider-id "Виталий" "Бесперстов") :motorcycle "Ержан 3002Т" :city "Сургут" :start "11:17:00" :finish "14:56:13" :total "03:39:13" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 43 :plate-number "142" :rider-id (find-rider-id "Ильфар" "Сарваров") :motorcycle "ГАЗель" :city "Сургут" :team "Enduro86" :start "11:33:00" :finish "15:28:49" :total "03:55:48" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 44 :plate-number "123" :rider-id (find-rider-id "Константин" "Сыров") :motorcycle "Gr8 3002t" :city "Екатеринбург" :start "11:26:31" :finish "15:22:45" :total "03:56:14" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 45 :plate-number "121" :rider-id (find-rider-id "Павел" "Митрофанов") :motorcycle "ктм300" :city "Екатеринбург" :team "Эндуроклуб" :start "11:26:00" :finish "15:23:36" :total "03:57:35" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 46 :plate-number "43" :rider-id (find-rider-id "Василий" "Тараторин") :motorcycle "Авантис" :city "Кременкуль" :team "Моховичковские псы" :start "10:59:00" :finish "14:58:04" :total "03:59:03" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 47 :plate-number "149" :rider-id (find-rider-id "Денис" "Зайнитдинов") :motorcycle "ZM Tracer" :city "Учалы" :start "11:35:30" :finish "13:28:39" :total "01:53:09" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 48 :plate-number "69" :rider-id (find-rider-id "Ильдус" "Сулейманов") :motorcycle "Ктм" :city "Учалы" :start "11:08:30" :finish "13:16:50" :total "02:08:19" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 49 :plate-number "74" :rider-id (find-rider-id "Александр" "Беспалов") :motorcycle "Gr8 2T" :city "Челябинск" :start "11:10:30" :finish "13:22:23" :total "02:11:52" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 50 :plate-number "78" :rider-id (find-rider-id "Олег" "Хвостенко") :motorcycle "Progasi RACE 300" :city "Екатеринбург" :start "11:12:30" :finish "13:33:50" :total "02:21:19" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 51 :plate-number "151" :rider-id (find-rider-id "Александр" "Жмаков") :motorcycle "-" :city "Учалы" :start "11:36:30" :finish "14:03:09" :total "02:26:38" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 52 :plate-number "137" :rider-id (find-rider-id "Сергей" "Лазукин") :motorcycle "Gr8 300 2t" :city "Snezhinsk" :start "11:31:29" :finish "14:12:21" :total "02:40:51" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 53 :plate-number "75" :rider-id (find-rider-id "Алексей" "Коротков") :motorcycle "KTM 250" :city "Екатеринбург" :start "11:11:00" :finish "13:57:01" :total "02:46:01" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 54 :plate-number "80" :rider-id (find-rider-id "Дамир" "Хабибрахманов") :motorcycle "КТМ 300exc" :city "Екатеринбург" :start "11:13:29" :finish "14:03:35" :total "02:50:05" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 55 :plate-number "77" :rider-id (find-rider-id "Алексей" "Донских") :motorcycle "GR8 300 2t" :city "Березовский" :team "Эндуро произвол" :start "11:12:00" :finish "14:09:46" :total "02:57:45" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 56 :plate-number "119" :rider-id (find-rider-id "Игорь" "Римшев") :motorcycle "Jhl tlx 250" :city "Пермь" :team "EC Molotov" :start "11:25:00" :finish "14:37:17" :total "03:12:17" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 57 :plate-number "71" :rider-id (find-rider-id "Артур" "Бузыкаев") :motorcycle "Кошайн 300 2 т" :city "Учалы" :start "11:09:00" :finish "14:28:43" :total "03:19:43" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 58 :plate-number "102" :rider-id (find-rider-id "Евгений" "Бекетов") :motorcycle "GR8 300 2T" :city "Богданович" :start "11:20:00" :finish "14:49:36" :total "03:29:35" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 59 :plate-number "115" :rider-id (find-rider-id "Иван" "Попов") :motorcycle "302" :city "Екатеринбург" :start "11:24:00" :finish "13:36:33" :total "02:12:33" :laps ".8 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 60 :plate-number "107" :rider-id (find-rider-id "Данил" "Порошин") :motorcycle "Yamaha wr250f" :city "Екатеринбург" :start "11:21:29" :finish "13:54:08" :total "02:32:38" :laps ".8 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 61 :plate-number "79" :rider-id (find-rider-id "Виталий" "Баглай") :motorcycle "Rieju mr 300" :city "Курган" :start "11:12:59" :finish "14:35:52" :total "03:22:53" :laps ".8 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 62 :plate-number "143" :rider-id (find-rider-id "Владимир" "Баландин") :motorcycle "BRZ X6 cbs (174FMM-NB)" :city "Каменск-Уральский" :start "11:33:29" :finish "15:19:51" :total "03:46:21" :laps ".8 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 63 :plate-number "117" :rider-id (find-rider-id "Олег" "Сухарев") :motorcycle "Zm tracer" :city "Екатеринбург" :start "11:24:30" :finish "15:22:19" :total "03:57:49" :laps ".8 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 64 :plate-number "112" :rider-id (find-rider-id "Максим" "Килин") :motorcycle "Beta300rr" :city "Березовский" :start "11:23:30" :finish "15:22:23" :total "03:58:53" :laps ".8 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 65 :plate-number "99" :rider-id (find-rider-id "Иван" "Губин") :motorcycle "Хускварна 300" :city "Екатеринбург" :start "11:19:01" :finish "13:55:03" :total "02:36:01" :laps ".6 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 66 :plate-number "132" :rider-id (find-rider-id "Антон" "Аристархов") :motorcycle "KTM EXC-F 250" :city "Челябинск" :start "11:29:00" :finish "12:25:43" :total "00:56:42" :laps ".4 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 67 :plate-number "146" :rider-id (find-rider-id "Дарья" "Шабловская") :motorcycle "Kayo k1" :city "Екатеринбург" :team "Partizan" :start "11:34:01" :finish "12:01:22" :total "00:27:21" :laps ".2 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 68 :plate-number "141" :rider-id (find-rider-id "Руслан" "Сафин") :motorcycle "Ktm exc 250" :city "Учалы" :start "11:32:30" :finish "12:00:18" :total "00:27:48" :laps ".2 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 69 :plate-number "120" :rider-id (find-rider-id "Александр" "Ярков") :motorcycle "Bse z5" :city "Дегтярск" :team "ATLAS TEAM" :start "11:25:30" :finish "11:55:56" :total "00:30:25" :laps ".2 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 70 :plate-number "134" :rider-id (find-rider-id "Андрей" "Демченко") :motorcycle "250 PVR REISING" :city "Касли" :start "11:30:00" :finish "12:02:30" :total "00:32:30" :laps ".2 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 71 :plate-number "140" :rider-id (find-rider-id "Никита" "Бездомов") :motorcycle "Promax daikon" :city "Сухой Лог" :start "11:31:59" :finish "12:56:42" :total "01:24:42" :laps ".2 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 72 :plate-number "136" :rider-id (find-rider-id "Сергей" "Гуланян") :motorcycle "Kayo k2 pro" :city "Сухой Лог" :start "11:31:00" :finish "12:56:29" :total "01:25:28" :laps ".2 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 73 :plate-number "135" :rider-id (find-rider-id "Дмитрий" "Холкин") :motorcycle "Regulmoto" :city "Богданович" :start "11:30:29" :finish "12:56:35" :total "01:26:05" :laps ".2 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 74 :plate-number "92" :rider-id (find-rider-id "Иван" "Кравчук") :motorcycle "GR-8 Lanza-2T" :city "Сургут" :start "11:17:30" :finish "14:42:34" :total "03:25:04" :laps ".2 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 75 :plate-number "109" :rider-id (find-rider-id "Иван" "Порсев") :motorcycle "Gas gas" :city "Ижевск" :team "None" :start "11:22:29" :finish "13:15:26" :total "01:52:56" :laps "0 (2)" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position 76 :plate-number "148" :rider-id (find-rider-id "Александр" "Перевозчиков") :motorcycle "KTM" :city "Екатеринбург" :start "11:35:00" :finish "14:04:44" :total "02:29:44" :laps "0 (2)" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position 77 :plate-number "85" :rider-id (find-rider-id "Владислав" "Светлаков") :motorcycle "Kews 23" :city "Ревда" :start "11:15:30" :finish "14:39:30" :total "03:23:59" :laps "0 (2)" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position 78 :plate-number "150" :rider-id (find-rider-id "Ильшат" "Нигматуллин") :motorcycle "-" :city "Учалы" :start "11:35:59" :finish "15:04:38" :total "03:28:38" :laps "0 (2)" :dnf? true]
+         ])
+
+      (let [classification-id "CrTKJtzoMtQ0"]
+        [{:type                   :classification
+          :classification-id      classification-id
+          :event-id               event-id
+          :order                  3
+          :name                   "LITE"
+          :equivalent             :bronze
+          :laps                   laps
+          :lap-difficulty         lap-difficulty
+          :points-multiplier      points-multiplier
+          :multiplier-description multiplier-description
+          :started-count          21
+          :laps-info?             true}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "158" :rider-id (find-rider-id "Александр" "Полянин") :motorcycle "ATAKI EF300" :city "Златоуст" :start "11:38:30" :finish "15:35:59" :total "03:57:28" :laps "1.7"]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "154" :rider-id (find-rider-id "Евгений" "Кузенков") :motorcycle "ГР" :city "Челябинск" :team "Мотоспорт Южный Урал" :start "11:37:30" :finish "15:36:29" :total "03:58:59" :laps "1.6"]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "156" :rider-id (find-rider-id "Константин" "Одиноков") :motorcycle "Гр8" :city "Златоуст" :start "11:38:00" :finish "14:53:24" :total "03:15:24" :laps "1.1"]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "179" :rider-id (find-rider-id "Лев" "Кислицын") :motorcycle "GR2" :city "Кыштым" :team "СТК Радон" :start "11:44:30" :finish "14:37:36" :total "02:53:05" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "177" :rider-id (find-rider-id "Александр" "Мальков") :motorcycle "Gr7" :city "Челябинск" :start "11:43:29" :finish "14:03:38" :total "02:20:09" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "180" :rider-id (find-rider-id "Олег" "Мальков") :motorcycle "Sport 003" :city "Челябинск" :start "11:45:00" :finish "14:26:02" :total "02:41:02" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "159" :rider-id (find-rider-id "Арсентий" "Кругленков") :motorcycle "Gr 2" :city "Челябинск" :team "774 team" :start "11:39:00" :finish "14:20:17" :total "02:41:17" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 8 :plate-number "178" :rider-id (find-rider-id "Александр" "Копытов") :motorcycle "GR7,4т" :city "Челябинск" :start "11:44:00" :finish "14:34:04" :total "02:50:03" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 9 :plate-number "170" :rider-id (find-rider-id "Павел" "Федоровых") :motorcycle "Regulmoto sport  003" :city "Богданович" :start "11:41:30" :finish "14:55:25" :total "03:13:54" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 10 :plate-number "163" :rider-id (find-rider-id "Евгений" "Максимов") :motorcycle "Kayo T2-G" :city "Челябинск" :team "URALFOX TEAM" :start "11:40:00" :finish "15:04:18" :total "03:24:18" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 11 :plate-number "176" :rider-id (find-rider-id "Анна" "Шилова") :motorcycle "Хаска ТЕ 150" :city "Екатеринбург" :start "11:43:01" :finish "13:55:29" :total "02:12:28" :laps ".8 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 12 :plate-number "173" :rider-id (find-rider-id "Андрей" "Муравьёв") :motorcycle "Sharmax 300" :city "Екатеринбург" :start "11:42:30" :finish "14:30:02" :total "02:47:31" :laps ".8 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 13 :plate-number "172" :rider-id (find-rider-id "Андрей" "Посохин") :motorcycle "Jhl lx5" :city "Пермь" :start "11:42:00" :finish "15:12:56" :total "03:30:56" :laps ".8 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 14 :plate-number "161" :rider-id (find-rider-id "Александр" "Капустин") :motorcycle "H250" :city "Богданович" :start "11:39:30" :finish "15:26:15" :total "03:46:44" :laps ".8 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 15 :plate-number "168" :rider-id (find-rider-id "Раиль" "Газизов") :motorcycle "Franken 250 stein" :city "Курган" :team "МЕДЛЕННЫЙ КРОТ" :start "11:40:59" :finish "15:39:05" :total "03:58:05" :laps ".8 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 16 :plate-number "185" :rider-id (find-rider-id "Егор" "Красько") :motorcycle "Zuumav K6R" :city "Челябинск" :start "11:46:00" :finish "15:36:40" :total "03:50:39" :laps ".6 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 17 :plate-number "186" :rider-id (find-rider-id "Алим" "Батыршин") :motorcycle "-" :city "Учалы" :start "11:46:30" :finish "14:19:53" :total "02:33:23" :laps ".5 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 18 :plate-number "187" :rider-id (find-rider-id "Булат" "Юлмухаметов") :motorcycle "-" :city "Учалы" :start "11:47:00" :finish "15:08:50" :total "03:21:50" :laps ".5 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 19 :plate-number "153" :rider-id (find-rider-id "Артем" "Комаров") :motorcycle "Motolend xt250hs" :city "Каменск-Уральский" :team "Respect enduro" :start "11:37:01" :finish "12:17:03" :total "00:40:02" :laps ".2 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 20 :plate-number "165" :rider-id (find-rider-id "Владимир" "Степанов") :motorcycle "BSE Z5" :city "Екатеринбург" :start "11:40:30" :finish "12:24:17" :total "00:43:46" :laps ".2 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 21 :plate-number "184" :rider-id (find-rider-id "Андрей" "Строшков") :motorcycle "Атаки еф 250" :city "Каменск-Уральский" :start "11:45:30" :finish "12:30:14" :total "00:44:43" :laps ".2 (1)"]
+         ])
+      )))
+
+(def kyshtim2
+  (let [event-id "E7yAKpg"
+        ;; Тот же трек, но в обратную сторону
+        ;; Он был немного полегче, но ночью шел дождь и стало еще грязнее и супер скользко
+        lap-difficulty 60
+        laps 2
+        points-multiplier 1.3
+        multiplier-description "Было еще грязнее и еще более скользко, сам круг был немного полегче, но с учетом погоды все плюс минус также"]
+    (concat
+      [{:type         :event
+        :name         "Демидовские Тропы - день 2"
+        :location     "Кыштым, Челябинская область"
+        :date         "2025-06-22"
+        :event-url    "https://marshalone.ru/card/23bc28f3-c0a9-4a18-aa58-f7f7176aacc8"
+        :telegram-url "https://t.me/enduro_kyshtym"
+        :event-id     event-id}]
+
+      (let [classification-id "CEnVhqQeSYfk"]
+        [
+         {:type              :classification
+          :classification-id classification-id
+          :event-id          event-id
+          :order             1
+          :name              "EXTREME"
+          :equivalent        :gold
+          :laps              laps
+          :lap-difficulty    lap-difficulty
+          :points-multiplier points-multiplier
+          :multiplier-description multiplier-description
+          :started-count     15
+          :laps-info?        true}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "21" :rider-id (find-rider-id "Максим" "Золотов") :motorcycle "Ktm 300 exc" :city "Челябинск" :team "Южный Урал мотоспорт" :start "10:16:00" :finish "13:44:07" :total "03:28:06.385" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "1" :rider-id (find-rider-id "Михаил" "Ушаков") :motorcycle "Ктм" :city "Тюмень" :start "10:21:30" :finish "13:53:03" :total "03:31:33.274" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "19" :rider-id (find-rider-id "Станислав" "Максимов") :motorcycle "Beta xt" :city "Кыштым" :start "10:15:29" :finish "13:47:03" :total "03:31:33.977" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "34" :rider-id (find-rider-id "Артем" "Цуркан") :motorcycle "KTM" :city "Екатеринбург" :start "10:15:00" :finish "13:47:01" :total "03:32:01.640" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "26" :rider-id (find-rider-id "Евгений" "Захаров") :motorcycle "Те 250" :city "Березовский" :start "10:16:30" :finish "13:57:57" :total "03:41:27.338" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "3" :rider-id (find-rider-id "Сергей" "Чигвинцев") :motorcycle "husqvarna" :city "Екатеринбург" :team "Rival Powersports" :start "10:17:59" :finish "14:09:13" :total "03:51:13.449" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "9" :rider-id (find-rider-id "Константин" "Романов") :motorcycle "KTM" :city "Челябинск" :team "Южный Урал" :start "10:18:59" :finish "14:11:03" :total "03:52:03.794" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 8 :plate-number "30" :rider-id (find-rider-id "Денис" "Шилов") :motorcycle "KTM 300 EXC" :city "Екатеринбург" :start "10:16:59" :finish "14:10:26" :total "03:53:26.847" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 9 :plate-number "16" :rider-id (find-rider-id "Павел" "Иванов") :motorcycle "ТЕ 300" :city "Челябинск" :team "Южный Урал мотоспорт" :start "10:18:29" :finish "14:17:00" :total "03:58:30.431" :laps "1.909"]
+         [:type :result :event-id event-id :classification-id classification-id :position 10 :plate-number "8" :rider-id (find-rider-id "Петр" "Адрианов") :motorcycle "KTM 300 2 T" :city "Челябинск" :team "ЮжныйУрал Мотоспорт" :start "10:17:29" :finish "14:11:11" :total "03:53:41.895" :laps "1.818"]
+         [:type :result :event-id event-id :classification-id classification-id :position 11 :plate-number "5" :rider-id (find-rider-id "Дмитрий" "Резницкий") :motorcycle "Husqvarna TE300" :city "150000 Петропавловск" :team "Fa-Fa Racing" :start "10:19:30" :finish "14:08:33" :total "03:49:03.513" :laps "1.727"]
+         [:type :result :event-id event-id :classification-id classification-id :position 12 :plate-number "4" :rider-id (find-rider-id "Владимир" "Николаев") :motorcycle "Beta" :city "Тюмень" :start "10:19:59" :finish "14:14:56" :total "03:54:56.815" :laps "1.727"]
+         [:type :result :event-id event-id :classification-id classification-id :position 13 :plate-number "17" :rider-id (find-rider-id "Антон" "Толкачев") :motorcycle "Ктм" :city "Талица" :start "10:22:00" :finish "12:58:19" :total "02:36:19.054" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 14 :plate-number "20" :rider-id (find-rider-id "Денис" "Пономарев") :motorcycle "KTM EXC 300" :city "Богданович" :start "10:20:59" :finish "13:07:25" :total "02:46:25.228" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 15 :plate-number "13" :rider-id (find-rider-id "Владимир" "Тясин") :motorcycle "Ктм" :city "Екатеринбург" :start "10:20:30" :finish "13:18:38" :total "02:58:08.035" :laps "1 (1)"]])
+
+      (let [classification-id "CaA1OiEeUEI"]
+        [{:type              :classification
+          :classification-id classification-id
+          :event-id          event-id
+          :order             1
+          :name              "HOBBY"
+          :equivalent        :silver
+          :laps              laps
+          :lap-difficulty    lap-difficulty
+          :points-multiplier points-multiplier
+          :multiplier-description multiplier-description
+          :started-count     38
+          :laps-info?        true}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "62" :rider-id (find-rider-id "Василий" "Решетков") :motorcycle "Хаска" :city "Еманжелинск" :start "10:23:59" :finish "14:22:02" :total "03:58:03.010" :laps "2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "46" :rider-id (find-rider-id "Алексей" "Семилетов") :motorcycle "Ктм тби  300" :city "Курган" :start "10:23:00" :finish "14:15:26" :total "03:52:26.245" :laps "1.9"]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "45" :rider-id (find-rider-id "Артем" "Кремлев") :motorcycle "GRrr" :city "Златоуст" :team "Эндуро Златоуст" :start "10:25:00" :finish "14:18:59" :total "03:53:59.605" :laps "1.9"]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "10" :rider-id (find-rider-id "Александр" "Кабаев") :motorcycle "Suzuki RMzilla 250" :city "Челябинск" :start "10:33:30" :finish "14:24:30" :total "03:51:00.405" :laps "1.8"]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "52" :rider-id (find-rider-id "Владимир" "Киселёв") :motorcycle "Ктм" :city "Челябинск" :team "Моховичковские псы" :start "10:25:59" :finish "14:18:28" :total "03:52:29.420" :laps "1.8"]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "63" :rider-id (find-rider-id "Алексей" "Слабочков") :motorcycle "Beta xt" :city "Миасс" :start "10:30:15" :finish "14:23:49" :total "03:53:33.761" :laps "1.7"]
+         [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "60" :rider-id (find-rider-id "Вадим" "Ахтямов") :motorcycle "Hendjian Z300" :city "Миасс" :team "Enduro Miass 74" :start "10:27:59" :finish "14:23:31" :total "03:55:31.602" :laps "1.7"]
+         [:type :result :event-id event-id :classification-id classification-id :position 8 :plate-number "82" :rider-id (find-rider-id "Денис" "Меньшиков") :motorcycle "Кайо 250 2т" :city "Катайск" :team "KATAYENDURO" :start "10:26:29" :finish "14:15:30" :total "03:49:00.572" :laps "1.5"]
+         [:type :result :event-id event-id :classification-id classification-id :position 9 :plate-number "54" :rider-id (find-rider-id "Виталий" "Горбачев") :motorcycle "KTM EXC 302T" :city "Екатеринбург" :team "Группа эндуро произвола" :start "10:27:30" :finish "14:12:59" :total "03:45:29.244" :laps "1.4"]
+         [:type :result :event-id event-id :classification-id classification-id :position 10 :plate-number "65" :rider-id (find-rider-id "Дмитрий" "Иванов") :motorcycle "Koshine 320" :city "Каменск-Уральский" :start "10:28:29" :finish "14:17:59" :total "03:49:29.735" :laps "1.4"]
+         [:type :result :event-id event-id :classification-id classification-id :position 11 :plate-number "108" :rider-id (find-rider-id "Анатолий" "Ванчинов") :motorcycle "Beta 300rr" :city "Екатеринбург" :team "Corona" :start "10:29:29" :finish "14:29:29" :total "03:59:59.256" :laps "1.3"]
+         [:type :result :event-id event-id :classification-id classification-id :position 12 :plate-number "56" :rider-id (find-rider-id "Константин" "Маркелов") :motorcycle "KTM EXC 300" :city "Челябинск" :team "Моховичковские псы" :start "10:29:00" :finish "13:05:15" :total "02:36:15.715" :laps "1.2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 13 :plate-number "72" :rider-id (find-rider-id "Александр" "Бескровный") :motorcycle "Gas gas ec300" :city "Челябинск" :start "10:24:30" :finish "13:22:56" :total "02:58:25.396" :laps "1.2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 14 :plate-number "87" :rider-id (find-rider-id "Денис" "Воробьёв") :motorcycle "Gr8" :city "Челябинск" :start "10:30:59" :finish "14:26:21" :total "03:55:21.198" :laps "1.2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 15 :plate-number "188" :rider-id (find-rider-id "Рамзис" "Газизов") :motorcycle "-" :city "Заречный" :start "10:46:00" :finish "14:41:26" :total "03:55:26.819" :laps "1.2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 16 :plate-number "47" :rider-id (find-rider-id "Алексей" "Кокорин") :motorcycle "KTM EXC300" :city "Курган" :start "10:22:30" :finish "12:45:29" :total "02:22:59.191" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 17 :plate-number "142" :rider-id (find-rider-id "Ильфар" "Сарваров") :motorcycle "ГАЗель" :city "Сургут" :team "Enduro86" :start "10:38:00" :finish "13:20:44" :total "02:42:44.062" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 18 :plate-number "48" :rider-id (find-rider-id "Максим" "Мишуков") :motorcycle "Lanza 250 2t" :city "Магнитогорск" :start "10:36:00" :finish "13:28:04" :total "02:52:04.025" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 19 :plate-number "128" :rider-id (find-rider-id "Евгений" "Константинов") :motorcycle "KTM EXC 300" :city "Екатеринбург" :start "10:34:59" :finish "13:27:37" :total "02:52:37.932" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 20 :plate-number "101" :rider-id (find-rider-id "Михаил" "Ялунин") :motorcycle "GR 8" :city "Богданович" :start "10:32:59" :finish "13:32:16" :total "02:59:16.203" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 21 :plate-number "64" :rider-id (find-rider-id "Михаил" "Тясин") :motorcycle "henjian 300" :city "Екатеринбург" :team "Азимут 66" :start "10:35:28" :finish "13:50:03" :total "03:14:34.821" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 22 :plate-number "59" :rider-id (find-rider-id "Артём" "Сухов") :motorcycle "GR8 300" :city "Далматово" :start "10:36:30" :finish "13:58:28" :total "03:21:57.750" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 23 :plate-number "77" :rider-id (find-rider-id "Алексей" "Донских") :motorcycle "GR8 300 2t" :city "Березовский" :team "Эндуро произвол" :start "10:38:29" :finish "14:01:32" :total "03:23:03.036" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 24 :plate-number "97" :rider-id (find-rider-id "Максим" "Тимошевский") :motorcycle "Хускварна 300 2 т" :city "Челябинск" :start "10:36:59" :finish "14:00:56" :total "03:23:56.900" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 25 :plate-number "50" :rider-id (find-rider-id "Евгений" "Моисеев") :motorcycle "Procida nb300" :city "Челябинск" :team "MotoExtrem74" :start "10:31:30" :finish "14:00:16" :total "03:28:46.245" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 26 :plate-number "91" :rider-id (find-rider-id "Виталий" "Бесперстов") :motorcycle "Ержан 3002Т" :city "Сургут" :start "10:37:29" :finish "14:13:09" :total "03:35:40.226" :laps "1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 27 :plate-number "68" :rider-id (find-rider-id "Дмитрий" "Тимошевский") :motorcycle "GR8 300 2T" :city "Челябинск" :start "10:26:59" :finish "12:19:39" :total "01:52:39.969" :laps ".8 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 28 :plate-number "73" :rider-id (find-rider-id "Иван" "Тихонов") :motorcycle "Ktm exc 250" :city "Екатеринбург" :start "10:31:59" :finish "13:31:50" :total "02:59:51.516" :laps ".8 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 29 :plate-number "86" :rider-id (find-rider-id "Валерий" "Варгасов") :motorcycle "Beta x tender 300 2t" :city "Челябинск" :team "Моховичковкие псы" :start "10:34:29" :finish "12:29:47" :total "01:55:17.269" :laps ".6 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 30 :plate-number "42" :rider-id (find-rider-id "Максим" "Ивощук") :motorcycle "KTM 300" :city "Богданович" :team "ENDURO Bogdanovich" :start "10:34:00" :finish "12:01:31" :total "01:27:31.078" :laps ".4 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 31 :plate-number "55" :rider-id (find-rider-id "Денис" "Козлов") :motorcycle "300 te" :city "Челябинск" :team "Моховичковские псы" :start "10:25:30" :finish "11:01:50" :total "00:36:20.978" :laps ".2 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 32 :plate-number "81" :rider-id (find-rider-id "Сергей" "Кузнецов" "Владимирович" nil) :motorcycle "ktm350" :city "Катайск" :team "KATAYENDURO" :start "10:23:30" :finish "11:02:23" :total "00:38:53.130" :laps ".2 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 33 :plate-number "92" :rider-id (find-rider-id "Иван" "Кравчук") :motorcycle "GR-8 Lanza-2T" :city "Сургут" :start "10:40:00" :finish "11:34:28" :total "00:54:27.282" :laps ".1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 34 :plate-number "120" :rider-id (find-rider-id "Александр" "Ярков") :motorcycle "Bse z5" :city "Дегтярск" :team "ATLAS TEAM" :start "10:39:00" :finish "13:13:24" :total "02:34:24.268" :laps ".1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 35 :plate-number "152" :rider-id (find-rider-id "Дмитрий" "Тренин") :motorcycle "-" :city "Мартюш" :start "10:42:00" :finish "13:20:48" :total "02:38:48.598" :laps ".1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 36 :plate-number "134" :rider-id (find-rider-id "Андрей" "Демченко") :motorcycle "250 PVR REISING" :city "Касли" :start "10:39:30" :finish "10:39:30" :total "-" :laps "0 (2)" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position 37 :plate-number "58" :rider-id (find-rider-id "Сергей" "Дубровин") :motorcycle "Kews nb300" :city "Миасс" :team "Enduro Miass 74" :start "10:30:00" :finish "10:30:00" :total "-" :laps "0 (1)" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position 38 :plate-number "93" :rider-id (find-rider-id "Сергей" "Кузнецов" "Николаевич" nil) :motorcycle "Hengjain Z300" :city "Сургут" :start "10:32:29" :finish "10:32:29" :total "-" :laps "0 (2)" :dnf? true]
+         ])
+
+      (let [classification-id "CI4BYMP4yROM"]
+        [{:type              :classification
+          :classification-id classification-id
+          :event-id          event-id
+          :order             1
+          :name              "LITE"
+          :equivalent        :bronze
+          :laps              laps
+          :lap-difficulty    lap-difficulty
+          :points-multiplier points-multiplier
+          :multiplier-description multiplier-description
+          :started-count     10
+          :laps-info?        true}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "158" :rider-id (find-rider-id "Александр" "Полянин") :motorcycle "ATAKI EF300" :city "Златоуст" :start "10:40:29" :finish "14:36:34" :total "03:56:04.846" :laps "1.5"]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "154" :rider-id (find-rider-id "Евгений" "Кузенков") :motorcycle "ГР" :city "Челябинск" :team "Мотоспорт Южный Урал" :start "10:41:00" :finish "14:26:28" :total "03:45:28.550" :laps "1.4"]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "179" :rider-id (find-rider-id "Лев" "Кислицын") :motorcycle "GR2" :city "Кыштым" :team "СТК Радон" :start "10:42:29" :finish "14:36:36" :total "03:54:06.217" :laps "1.4"]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "156" :rider-id (find-rider-id "Константин" "Одиноков") :motorcycle "Гр8" :city "Златоуст" :start "10:41:29" :finish "14:37:14" :total "03:55:45.154" :laps "1.2"]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "185" :rider-id (find-rider-id "Егор" "Красько") :motorcycle "Zuumav K6R" :city "Челябинск" :start "10:44:30" :finish "14:21:05" :total "03:36:35.349" :laps ".9 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "163" :rider-id (find-rider-id "Евгений" "Максимов") :motorcycle "Kayo T2-G" :city "Челябинск" :team "URALFOX TEAM" :start "10:43:29" :finish "14:43:16" :total "03:59:46.341" :laps ".8 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "176" :rider-id (find-rider-id "Анна" "Шилова") :motorcycle "Хаска ТЕ 150" :city "Екатеринбург" :start "10:44:59" :finish "14:19:25" :total "03:34:25.643" :laps ".4 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 8 :plate-number "159" :rider-id (find-rider-id "Арсентий" "Кругленков") :motorcycle "Gr 2" :city "Челябинск" :team "774 team" :start "10:42:59" :finish "11:50:16" :total "01:07:16.262" :laps ".1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 9 :plate-number "173" :rider-id (find-rider-id "Андрей" "Муравьёв") :motorcycle "Sharmax 300" :city "Екатеринбург" :start "10:45:29" :finish "12:58:13" :total "02:12:43.518" :laps ".1 (1)"]
+         [:type :result :event-id event-id :classification-id classification-id :position 10 :plate-number "161" :rider-id (find-rider-id "Александр" "Капустин") :motorcycle "H250" :city "Богданович" :start "10:44:00" :finish "10:44:00" :total "-" :laps "0 (2)" :dnf? true]
          ]))))
 
 ;; TODO: перенести
@@ -1375,8 +1701,12 @@
 
 (def data
   (checks/sanity-checks! (map process-data
-                              (concat slg1
-                                      stalker1
-                                      lesnik1
-                                      bogdanovich1
-                                      emanzhelinsk1))))
+                              (concat
+                                slg1
+                                stalker1
+                                lesnik1
+                                bogdanovich1
+                                emanzhelinsk1
+                                kyshtim1
+                                kyshtim2
+                                ))))

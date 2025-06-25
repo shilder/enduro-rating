@@ -189,7 +189,7 @@
    {:type :rider-info :name "Иван" :surname "Попов" :city "Екатеринбург" :rider-id "RgWWfGSA"}
    {:type :rider-info :name "Максим" :surname "Антонов" :city "Тюмень" :rider-id "RC1h5WK4"}
    {:type :rider-info, :name "Владимир", :surname "Пономарчук", :city "Челябинск", :rider-id "RsP6Hx8c"}
-   {:type :rider-info, :name "Сергей", :surname "Кузнецов", :city "Катайск", :rider-id "RxQjoe4c"}
+   {:type :rider-info, :name "Сергей", :surname "Кузнецов", :patronymic "Владимирович" :city "Катайск", :name-surname-dupes? true, :rider-id "RxQjoe4c"}
    {:type :rider-info, :name "Александр", :surname "Полянин", :city "Златоуст", :rider-id "RKsC864o"}
    {:type :rider-info, :name "Виктор", :surname "Шабуров", :city "Екатеринбург", :rider-id "RcSKpL8s"}
    {:type :rider-info, :name "Антон", :surname "Стелюк", :city "Тюмень", :rider-id "RVIcqE"}
@@ -623,6 +623,46 @@
    {:city "Екатеринбург" :name "Дмитрий" :surname "Дьяков" :rider-id "RvPRMJeg"}
    {:city "Нижний Тагил" :name "Александр" :surname "Антипин" :rider-id "RN3YvdG8"}
    {:city "Озёрск" :name "Дмитрий" :surname "Прикин" :rider-id "Rvd0qqhI"}
+   {:city "Верхний Уфалей" :name "Максим" :surname "Золотов" :patronymic "Сергеевич" :rider-id "RAIB4HE"}
+   {:city "Ижевск" :name "Николай" :surname "Кокорин" :patronymic "Сергеевич" :rider-id "RMobDhyU"}
+   {:city "Богданович" :name "Денис" :surname "Пономарев" :patronymic "Вадимович" :rider-id "RsYUO1Cs"}
+   {:city "Курган" :name "Александр" :surname "Сиренко" :patronymic "Валерьевич" :rider-id "RmqoJ05w"}
+   {:city "Еманжелинск" :name "Василий" :surname "Решетков" :patronymic "Германович" :rider-id "RCqw6Mj4"}
+   {:city "Ижевск" :name "Владислав" :surname "Лептягин" :patronymic "Андреевич" :rider-id "RW2VBD0"}
+   {:city "Кыштым" :name "Игорь" :surname "Павленко" :patronymic "Викторович" :rider-id "RBo50DI"}
+   {:city "Богданович" :name "Максим" :surname "Ивощук" :rider-id "RCNMNddA"}
+   {:city "Магнитогорск" :name "Максим" :surname "Мишуков" :rider-id "R0Yvi9ys"}
+   {:city "Далматово" :name "Артём" :surname "Сухов" :patronymic "Павлович" :rider-id "RcIzGlEc"}
+   {:city "Сургут" :name "Виталий" :surname "Бесперстов" :patronymic "Викторович" :rider-id "Rc8BNijw"}
+   {:city "Учалы" :name "Денис" :surname "Зайнитдинов" :patronymic "Данилевич" :rider-id "RTnmpgEo"}
+   {:city "Екатеринбург" :name "Алексей" :surname "Коротков" :patronymic "Валерьевич" :rider-id "RUVzY3vo"}
+   {:city "Пермь" :name "Игорь" :surname "Римшев" :patronymic "Александрович" :rider-id "RdY8GMes"}
+   {:city "Учалы" :name "Артур" :surname "Бузыкаев" :patronymic "Ахметович" :rider-id "Rff0L0j4"}
+   {:city "Екатеринбург" :name "Данил" :surname "Порошин" :patronymic "Александрович" :rider-id "RSdELcLs"}
+   {:city "Курган" :name "Виталий" :surname "Баглай" :rider-id "RSQG7byk"}
+   {:city "Каменск-Уральский" :name "Владимир" :surname "Баландин" :patronymic "Николаевич" :rider-id "RcTu3Ww"}
+   {:city "Екатеринбург" :name "Иван" :surname "Губин" :patronymic "Николаевич" :rider-id "RHa982mc"}
+   {:city "Челябинск" :name "Антон" :surname "Аристархов" :patronymic "Андреевич" :rider-id "RyrHD2rc"}
+   {:city "Дегтярск" :name "Александр" :surname "Ярков" :rider-id "RirxAp7g"}
+   {:city "Касли" :name "Андрей" :surname "Демченко" :patronymic "Геннадьевич" :rider-id "Rnsssc38"}
+   {:city "Сухой Лог" :name "Никита" :surname "Бездомов" :patronymic "Эдуардович" :rider-id "Rnn6Or6w"}
+   {:city "Сухой Лог" :name "Сергей" :surname "Гуланян" :patronymic "Гарникович" :rider-id "RFX8toTY"}
+   {:city "Сургут" :name "Иван" :surname "Кравчук" :patronymic "Сергеевич" :rider-id "ReVx1Aa0"}
+   {:city "Ижевск" :name "Иван" :surname "Порсев" :rider-id "R69MFI4A"}
+   {:city "Сургут" :name "Сергей" :surname "Кузнецов" :patronymic "Николаевич" :name-surname-dupes? true :rider-id "RbdcxNrc"}
+   {:city "Челябинск" :name "Евгений" :surname "Кузенков" :patronymic "Федорович" :rider-id "RqLIhZ1Y"}
+   {:city "Кыштым" :name "Лев" :surname "Кислицын" :patronymic "Станиславович" :rider-id "RJ7kGn4M"}
+   {:city "Челябинск" :name "Олег" :surname "Мальков" :patronymic "Александрович" :rider-id "RVRgDXRI"}
+   {:city "Челябинск" :name "Арсентий" :surname "Кругленков" :patronymic "Николаевич" :rider-id "R8dhJAM"}
+   {:city "Челябинск" :name "Александр" :surname "Копытов" :patronymic "Юрьевич" :rider-id "Re1fPk74"}
+   {:city "Пермь" :name "Андрей" :surname "Посохин" :patronymic "Олегович" :rider-id "RdRhhrW4"}
+   {:city "Курган" :name "Раиль" :surname "Газизов" :patronymic "Рушанович" :rider-id "RBD8NYp4"}
+   {:city "Челябинск" :name "Егор" :surname "Красько" :patronymic "Денисович" :rider-id "R1Nltfys"}
+   {:city "Учалы" :name "Алим" :surname "Батыршин" :patronymic "Мухаметович" :rider-id "RzYqF5sE"}
+   {:city "Учалы" :name "Булат" :surname "Юлмухаметов" :patronymic "Зиннатович" :rider-id "RQUxVXX8"}
+   {:city "Каменск-Уральский" :name "Артем" :surname "Комаров" :patronymic "Сергеевич" :rider-id "RZtpZKnY"}
+   {:city "Екатеринбург" :name "Владимир" :surname "Степанов" :patronymic "Игоревич" :rider-id "RXPWwR8"}
+   {:city "Заречный", :name "Рамзис", :surname "Газизов", :rider-id "Rd3RuJCY"}
    ])
 
 (defn- normalize-string
@@ -651,28 +691,54 @@
         (conj acc v)))
     #{}
     (map (juxt (normalized-string-getter :name)
-               (normalized-string-getter :surname))
+               (normalized-string-getter :surname)
+               (normalized-string-getter :patronymic))
          riders-data)))
 
 ;; Проверить на дублирование при загрузке
 (check-duplicates!)
 
-(defn find-rider-id
-  "Возвращает `rider-id` для гонщика с указанными именем и фамилией.
+(defn find-rider
+  "Возвращает гонщика с указанными именем и фамилией.
   Выбрасывает ошибку если ничего не найдено или если найдено больше одного гонщика"
-  [name surname]
-  (let [matches (filter #(and (= (normalize-string (:name %)) (normalize-string name))
-                              (= (normalize-string (:surname %)) (normalize-string surname))) riders-data)
-        cnt (count matches)]
-    (cond
-      (zero? cnt)
-      (throw (ex-info (format "Не найден гонщик с такими данными: %s %s" name surname) {}))
+  ([name surname]
+   (find-rider name surname nil nil))
+  ([name surname patronymic city]
+   (let [matches (filter (fn [rider]
+                           (let [r-name (normalize-string (:name rider))
+                                 r-surname (normalize-string (:surname rider))
+                                 r-patronymic (normalize-string (:patronymic rider))
+                                 r-city (normalize-string (:city rider))]
+                             (and (= r-name (normalize-string name))
+                                  (= r-surname (normalize-string surname))
 
-      (= 1 cnt)
-      (:rider-id (first matches))
+                                  ;; Дополнительные (опциональные) критерии поиска
+                                  (cond
+                                    (and (some? r-patronymic) (some? patronymic))
+                                    (= r-patronymic (normalize-string patronymic))
 
-      :else
-      (throw (ex-info (format "Больше чем один гонщик с такими данными: %s %s" name surname) {})))))
+                                    (and (some? r-city) (some? city))
+                                    (= r-city (normalize-string city))
+
+                                    :else
+                                    true))))
+                         riders-data)
+         cnt (count matches)]
+     (cond
+       (zero? cnt)
+       (throw (ex-info (format "Не найден гонщик с такими данными: %s %s" name surname) {}))
+
+       (= 1 cnt)
+       (first matches)
+
+       :else
+       (throw (ex-info (format "Больше чем один гонщик с такими данными: %s %s" name surname) {}))))))
+
+(defn find-rider-id
+  ([name surname]
+   (find-rider-id name surname nil nil))
+  ([name surname patronymic city]
+   (:rider-id (find-rider name surname patronymic city))))
 
 (def riders-map
   (reduce
