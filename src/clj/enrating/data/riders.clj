@@ -663,6 +663,29 @@
    {:city "Каменск-Уральский" :name "Артем" :surname "Комаров" :patronymic "Сергеевич" :rider-id "RZtpZKnY"}
    {:city "Екатеринбург" :name "Владимир" :surname "Степанов" :patronymic "Игоревич" :rider-id "RXPWwR8"}
    {:city "Заречный", :name "Рамзис", :surname "Газизов", :rider-id "Rd3RuJCY"}
+
+   {:city "Екатеринбург", :name "Александр", :surname "Лунченко", :rider-id "RXLQD21U"}
+   {:city "Нижневартовск", :name "Андрей", :surname "Азегов", :patronymic nil, :rider-id "RJ5FX8Es"}
+   {:city "Челябинск", :name "Иван", :surname "Мышенков", :patronymic nil, :rider-id "RELXXyys"}
+   {:city "Нижневартовск", :name "Владимир", :surname "Воронин", :patronymic nil, :rider-id "RX8pfKKI"}
+   {:city "Сургут", :name "Максим", :surname "Кузнецов", :patronymic nil, :rider-id "RGSnI8gQ"}
+   {:city "Екатеринбург", :name "Роман", :surname "Афанасьев", :patronymic nil, :rider-id "RNjZCSck"}
+   {:city "Сургут", :name "Олег", :surname "Галкин", :patronymic nil, :rider-id "RTcgCqHs"}
+   {:city "Челябинск", :name "Виктор", :surname "Семенов", :patronymic nil, :rider-id "RFnXC8HY"}
+   {:city "Златоуст", :name "Алексей", :surname "Гаврилов", :patronymic nil, :rider-id "Rkg0670o"}
+   {:city "Нижневартовск", :name "Артем", :surname "Богданов", :patronymic nil, :rider-id "RgeGRpwY"}
+   {:city "Челябинск", :name "Леонид", :surname "Наговский", :patronymic nil, :rider-id "RVFQ3xbM"}
+   {:city "Каменск-Уральский", :name "Дмитрий", :surname "Некрасов", :patronymic nil, :rider-id "R4hhGXU"}
+   {:city "Нижневартовск", :name "Дмитрий", :surname "Смаль", :patronymic nil, :rider-id "RfjetyKI"}
+   {:city "Новая Ляля", :name "Сергей", :surname "Поздеев", :patronymic nil, :rider-id "RYfrgLco"}
+   {:city "Нижневартовск", :name "Сергей", :surname "Горбенко", :patronymic nil, :rider-id "R0sYTqk"}
+   {:city "Златоуст", :name "Иван", :surname "Шестеров", :patronymic nil, :rider-id "RTj8se8"}
+   {:city "Кыштым", :name "Степан", :surname "Мысляев", :patronymic nil, :rider-id "RCeJzzwA"}
+   {:city "Екатеринбург", :name "Игорь", :surname "Пятышин", :patronymic nil, :rider-id "RoulcsS4"}
+   {:city "Екатеринбург", :name "Михаил", :surname "Пятышин", :patronymic nil, :rider-id "RDXtZ2Tk"}
+   {:city "Новый Уренгой", :name "Павел", :surname "Папазов", :patronymic nil, :rider-id "R4rkOWxs"}
+   {:city "Кыштым", :name "Роман", :surname "Дайбов", :patronymic nil, :rider-id "RdCTsF20"}
+   {:city "Сатка", :name "Евгений", :surname "Филиппов", :patronymic nil, :rider-id "RWTvFGOQ"}
    ])
 
 (defn- normalize-string

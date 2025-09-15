@@ -1677,6 +1677,343 @@
          [:type :result :event-id event-id :classification-id classification-id :position 10 :plate-number "161" :rider-id (find-rider-id "Александр" "Капустин") :motorcycle "H250" :city "Богданович" :start "10:44:00" :finish "10:44:00" :total "-" :laps "0 (2)" :dnf? true]
          ]))))
 
+;; Космост
+(def kosmost1
+  (let [event-id "EMJKm6w"
+        laps 1
+        points-multiplier 1.5
+        multiplier-description "Было сыро и ехать было очень тяжко"]
+    (concat
+      [{:type         :event
+        :name         "КосМост - день 1"
+        :location     "п. Косой мост, Челябинская область"
+        :date         "2025-07-26"
+        :event-url    "https://marshalone.ru/card/2cd87e73-a487-4d68-86f6-7c3837771de2"
+        :telegram-url "https://t.me/ChjAj3AVo3YTRi"
+        :event-id     event-id}]
+
+      (let [classification-id "C0lgokNbkOlA"]
+        [
+         {:type              :classification
+          :classification-id classification-id
+          :event-id          event-id
+          :order             1
+          :name              "ЗОЛОТО"
+          :equivalent        :gold
+          :laps              laps
+          ;; Трек золота был явно сложнее самой легкой гонки
+          :lap-difficulty    150
+          :points-multiplier points-multiplier
+          :multiplier-description multiplier-description
+          :started-count     14
+          :laps-info?        false}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "2" :rider-id (find-rider-id "Евгений" "Цицимушкин") :start "11:01:00" :finish "16:55:52" :total "5:54:52" :total-no-penalty "5:54:52" :penalty "0:00:00" :checkpoints-count 13 :city "Кыштым"]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "11" :rider-id (find-rider-id "Вячеслав" "Ярулин") :start "11:04:00" :finish "17:36:06" :total "6:32:06" :total-no-penalty "6:32:06" :penalty "0:00:00" :checkpoints-count 13 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "8" :rider-id (find-rider-id "Павел" "Лядецкий") :start "11:01:00" :finish "17:38:12" :total "6:37:12" :total-no-penalty "6:37:12" :penalty "0:00:00" :checkpoints-count 13 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "1" :rider-id (find-rider-id "Станислав" "Максимов") :start "11:01:00" :finish "17:38:43" :total "6:37:43" :total-no-penalty "6:37:43" :penalty "0:00:00" :checkpoints-count 13 :city "Кыштым"]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "3" :rider-id (find-rider-id "Артем" "Калинин") :start "11:01:00" :finish "18:23:06" :total "7:22:06" :total-no-penalty "7:22:06" :penalty "0:00:00" :checkpoints-count 13 :city "Челябинск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "9" :rider-id (find-rider-id "Николай" "Швед") :start "11:01:00" :finish "18:26:36" :total "7:25:36" :total-no-penalty "7:25:36" :penalty "0:00:00" :checkpoints-count 13 :city "Магнитогорск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "7" :rider-id (find-rider-id "Денис" "Медведюк") :start "11:01:00" :finish "18:51:35" :total "8:20:35" :total-no-penalty "7:50:35" :penalty "0:30:00" :checkpoints-count 12 :city "Тюмень" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "4" :rider-id (find-rider-id "Михаил" "Ушаков") :start "11:01:00" :finish "18:51:52" :total "8:20:52" :total-no-penalty "7:50:52" :penalty "0:30:00" :checkpoints-count 12 :city "Тюмень" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "14" :rider-id (find-rider-id "Александр" "Миронов") :start "11:04:00" :finish "19:01:02" :total "8:57:02" :total-no-penalty "7:57:02" :penalty "1:00:00" :checkpoints-count 11 :city "Сургут" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "16" :rider-id (find-rider-id "Павел" "Хисамутдинов") :start "11:04:00" :finish "18:34:57" :total "9:00:57" :total-no-penalty "7:30:57" :penalty "1:30:00" :checkpoints-count 10 :city "Лосиный" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "5" :rider-id (find-rider-id "Егор" "Емельянов") :start "11:01:00" :finish "17:16:17" :total "дискв." :total-no-penalty "6:15:17" :penalty "—" :checkpoints-count nil :city "Полевской" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "6" :rider-id (find-rider-id "Константин" "Майбуров") :start "11:01:00" :finish "17:34:32" :total "дискв." :total-no-penalty "6:33:32" :penalty "—" :checkpoints-count nil :city "Екатеринбург" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "10" :rider-id (find-rider-id "Денис" "Шилов") :start "11:01:00" :finish "12:27:00" :total "сошел" :total-no-penalty "1:26:00" :penalty "—" :checkpoints-count nil :city "Екатеринбург" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "15" :rider-id (find-rider-id "Александр" "Лунченко") :start "11:04:00" :finish "15:05:19" :total "сошел" :total-no-penalty "4:01:19" :penalty "—" :checkpoints-count nil :city "Екатеринбург" :dnf? true]
+
+
+         ])
+
+      (let [classification-id "CvYJUgUTm8CI"]
+        [
+         {:type              :classification
+          :classification-id classification-id
+          :event-id          event-id
+          :order             2
+          :name              "СЕРЕБРО"
+          :equivalent        :silver
+          :laps              laps
+          ;; Серебро слегка проще золота было, но тоже не сахар
+          :lap-difficulty    120
+          :points-multiplier points-multiplier
+          :multiplier-description multiplier-description
+          :started-count     46
+          :laps-info?        false}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "134" :rider-id (find-rider-id "Егор" "Харитонов") :start "11:16:00" :finish "16:42:51" :total "5:26:51" :total-no-penalty "5:26:51" :penalty "0:00:00" :checkpoints-count 13 :city "Озерск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "138" :rider-id (find-rider-id "Виктор" "Цыбулин") :start "11:16:00" :finish "16:46:48" :total "5:30:48" :total-no-penalty "5:30:48" :penalty "0:00:00" :checkpoints-count 13 :city "Тюмень"]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "114" :rider-id (find-rider-id "Евгений" "Журавский") :start "11:10:00" :finish "17:29:42" :total "6:19:42" :total-no-penalty "6:19:42" :penalty "0:00:00" :checkpoints-count 13 :city "Пермь"]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "104" :rider-id (find-rider-id "Дмитрий" "Аверин") :start "11:07:00" :finish "17:05:38" :total "6:28:38" :total-no-penalty "5:58:38" :penalty "0:30:00" :checkpoints-count 13 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "131" :rider-id (find-rider-id "Кирилл" "Азаров") :start "11:16:00" :finish "17:23:56" :total "6:37:56" :total-no-penalty "6:07:56" :penalty "0:30:00" :checkpoints-count 13 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "116" :rider-id (find-rider-id "Юрий" "Бороздин") :start "11:10:00" :finish "17:21:01" :total "6:41:01" :total-no-penalty "6:11:01" :penalty "0:30:00" :checkpoints-count 13 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "111" :rider-id (find-rider-id "Артем" "Свяжин") :start "11:10:00" :finish "17:21:36" :total "6:41:36" :total-no-penalty "6:11:36" :penalty "0:30:00" :checkpoints-count 13 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 8 :plate-number "113" :rider-id (find-rider-id "Алексей" "Кокорин") :start "11:10:00" :finish "17:23:39" :total "6:43:39" :total-no-penalty "6:13:39" :penalty "0:30:00" :checkpoints-count 13 :city "Курган"]
+         [:type :result :event-id event-id :classification-id classification-id :position 9 :plate-number "102" :rider-id (find-rider-id "Константин" "Романов") :start "11:07:00" :finish "17:24:29" :total "6:47:29" :total-no-penalty "6:17:29" :penalty "0:30:00" :checkpoints-count 13 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 10 :plate-number "106" :rider-id (find-rider-id "Денис" "Зараменских") :start "11:07:00" :finish "17:24:51" :total "6:47:51" :total-no-penalty "6:17:51" :penalty "0:30:00" :checkpoints-count 13 :city "Коркино"]
+         [:type :result :event-id event-id :classification-id classification-id :position 11 :plate-number "121" :rider-id (find-rider-id "Вадим" "Лугаськов") :start "11:13:00" :finish "17:35:54" :total "6:52:54" :total-no-penalty "6:22:54" :penalty "0:30:00" :checkpoints-count 13 :city "Ревда"]
+         [:type :result :event-id event-id :classification-id classification-id :position 12 :plate-number "103" :rider-id (find-rider-id "Александр" "Удачин") :start "11:07:00" :finish "17:32:58" :total "6:55:58" :total-no-penalty "6:25:58" :penalty "0:30:00" :checkpoints-count 13 :city "Катайск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 13 :plate-number "108" :rider-id (find-rider-id "Илья" "Кузнецов") :start "11:07:00" :finish "17:36:01" :total "6:59:01" :total-no-penalty "6:29:01" :penalty "0:30:00" :checkpoints-count 13 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 14 :plate-number "105" :rider-id (find-rider-id "Владимир" "Бодрин") :start "11:07:00" :finish "17:42:25" :total "7:05:25" :total-no-penalty "6:35:25" :penalty "0:30:00" :checkpoints-count 13 :city "Магнитогорск"]
+
+         [:type :result :event-id event-id :classification-id classification-id :position 15 :plate-number "146" :rider-id (find-rider-id "Андрей" "Шафигулин") :start "11:19:00" :finish "17:54:57" :total "7:05:57" :total-no-penalty "6:35:57" :penalty "0:30:00" :checkpoints-count 13 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 16 :plate-number "127" :rider-id (find-rider-id "Петр" "Адрианов") :start "11:13:00" :finish "17:21:21" :total "6:38:21" :total-no-penalty "6:08:21" :penalty "0:30:00" :checkpoints-count 12 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 17 :plate-number "101" :rider-id (find-rider-id "Владимир" "Иванов") :start "11:07:00" :finish "17:59:02" :total "7:22:02" :total-no-penalty "6:52:02" :penalty "0:30:00" :checkpoints-count 13 :city "Копейск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 18 :plate-number "147" :rider-id (find-rider-id "Андрей" "Ломакин") :start "11:19:00" :finish "17:33:04" :total "7:14:04" :total-no-penalty "6:14:04" :penalty "1:00:00" :checkpoints-count 11 :city "Трехгорный"]
+         [:type :result :event-id event-id :classification-id classification-id :position 19 :plate-number "139" :rider-id (find-rider-id "Артём" "Тараненко") :start "11:16:00" :finish "17:14:45" :total "8:28:45" :total-no-penalty "5:58:45" :penalty "2:30:00" :checkpoints-count 8 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 20 :plate-number "120" :rider-id (find-rider-id "Владислав" "Чибаков") :start "11:10:00" :finish "17:12:47" :total "8:32:47" :total-no-penalty "6:02:47" :penalty "2:30:00" :checkpoints-count 8 :city "Сысерть"]
+         [:type :result :event-id event-id :classification-id classification-id :position 21 :plate-number "132" :rider-id (find-rider-id "Ильфар" "Сарваров") :start "11:16:00" :finish "17:24:23" :total "8:38:23" :total-no-penalty "6:08:23" :penalty "2:30:00" :checkpoints-count 8 :city "Сургут"]
+         [:type :result :event-id event-id :classification-id classification-id :position 22 :plate-number "148" :rider-id (find-rider-id "Алексей" "Коротаев") :start "11:19:00" :finish "17:48:23" :total "8:59:23" :total-no-penalty "6:29:23" :penalty "2:30:00" :checkpoints-count 8 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 23 :plate-number "144" :rider-id (find-rider-id "Андрей" "Азегов") :start "11:19:00" :finish "17:54:38" :total "9:05:38" :total-no-penalty "6:35:38" :penalty "2:30:00" :checkpoints-count 8 :city "Нижневартовск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 24 :plate-number "130" :rider-id (find-rider-id "Леонид" "Леонтьев") :start "11:13:00" :finish "17:58:25" :total "9:15:25" :total-no-penalty "6:45:25" :penalty "2:30:00" :checkpoints-count 8 :city "Тюмень"]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "117" :rider-id (find-rider-id "Алексей" "Семилетов") :start "11:10:00" :finish "18:18:15" :total "7:08:15" :total-no-penalty "7:08:15" :penalty "0:00:00" :checkpoints-count 13 :city "Курган" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "109" :rider-id (find-rider-id "Дмитрий" "Иванов") :start "11:07:00" :finish "18:17:16" :total "7:10:16" :total-no-penalty "7:10:16" :penalty "0:00:00" :checkpoints-count 13 :city "Каменск-Уральский" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "119" :rider-id (find-rider-id "Владимир" "Киселёв") :start "11:10:00" :finish "18:22:53" :total "7:12:53" :total-no-penalty "7:12:53" :penalty "0:00:00" :checkpoints-count 13 :city "Челябинск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "115" :rider-id (find-rider-id "Андрей" "Склюев") :start "11:10:00" :finish "18:23:36" :total "7:13:36" :total-no-penalty "7:13:36" :penalty "0:00:00" :checkpoints-count 13 :city "Тюмень" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "118" :rider-id (find-rider-id "Антон" "Галюк") :start "11:10:00" :finish "18:36:15" :total "7:26:15" :total-no-penalty "7:26:15" :penalty "0:00:00" :checkpoints-count 13 :city "Тюмень" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "112" :rider-id (find-rider-id "Антон" "Тырыкин") :start "11:10:00" :finish "18:45:26" :total "7:35:26" :total-no-penalty "7:35:26" :penalty "0:00:00" :checkpoints-count 13 :city "Челябинск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "107" :rider-id (find-rider-id "Владимир" "Пономарчук") :start "11:07:00" :finish "18:45:49" :total "7:38:49" :total-no-penalty "7:38:49" :penalty "0:00:00" :checkpoints-count 13 :city "Челябинск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "149" :rider-id (find-rider-id "Александр" "Перевозчиков") :start "11:19:00" :finish "18:13:52" :total "7:24:52" :total-no-penalty "6:54:52" :penalty "0:30:00" :checkpoints-count 12 :city "Екатеринбург" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "142" :rider-id (find-rider-id "Андрей" "Бадьин") :start "11:19:00" :finish "18:37:43" :total "7:48:43" :total-no-penalty "7:18:43" :penalty "0:30:00" :checkpoints-count 12 :city "Магнитогорск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "133" :rider-id (find-rider-id "Иван" "Мышенков") :start "11:16:00" :finish "19:02:53" :total "8:16:53" :total-no-penalty "7:46:53" :penalty "0:30:00" :checkpoints-count 12 :city "Челябинск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "140" :rider-id (find-rider-id "Антон" "Зырянов") :start "11:16:00" :finish "19:30:18" :total "9:14:18" :total-no-penalty "8:14:18" :penalty "1:00:00" :checkpoints-count 11 :city "Магнитогорск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "137" :rider-id (find-rider-id "Владимир" "Воронин") :start "11:16:00" :finish "18:29:35" :total "8:43:35" :total-no-penalty "7:13:35" :penalty "1:30:00" :checkpoints-count 10 :city "Нижневартовск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "145" :rider-id (find-rider-id "Андрей" "Полномочнов") :start "11:19:00" :finish "18:45:51" :total "8:56:51" :total-no-penalty "7:26:51" :penalty "1:30:00" :checkpoints-count 10 :city "Сургут" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "124" :rider-id (find-rider-id "Ален" "Кокшаров") :start "11:13:00" :finish "18:46:18" :total "9:03:18" :total-no-penalty "7:33:18" :penalty "1:30:00" :checkpoints-count 10 :city "Екатеринбург" :timebar? true :dnf? true]
+
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "129" :rider-id (find-rider-id "Максим" "Кузнецов") :start "11:13:00" :finish "18:16:45" :total "9:33:45" :total-no-penalty "7:03:45" :penalty "2:30:00" :checkpoints-count 8 :city "Сургут" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "135" :rider-id (find-rider-id "Евгений" "Каширин") :start "11:16:00" :finish "18:36:22" :total "9:50:22" :total-no-penalty "7:20:22" :penalty "2:30:00" :checkpoints-count 8 :city "Учалы" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "126" :rider-id (find-rider-id "Роман" "Афанасьев") :start "11:13:00" :finish "18:01:31" :total "10:48:31" :total-no-penalty "6:48:31" :penalty "4:00:00" :checkpoints-count 5 :city "Екатеринбург" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "141" :rider-id (find-rider-id "Антон" "Толкачев") :start "11:19:00" :finish "17:38:08" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Талица" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "128" :rider-id (find-rider-id "Олег" "Галкин") :start "11:13:00" :finish "16:29:46" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Сургут" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "110" :rider-id (find-rider-id "Константин" "Маркелов") :start "11:07:00" :finish "15:03:28" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Челябинск" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "122" :rider-id (find-rider-id "Иван" "Заполоцкий") :start "11:13:00" :finish "15:37:50" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Муо" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "125" :rider-id (find-rider-id "Данила" "Фролов") :start "11:13:00" :finish "15:38:34" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Тюмень" :dnf? true]
+         ])
+
+      (let [classification-id "CSoSfbdhxQ"]
+        [{:type                   :classification
+          :classification-id      classification-id
+          :event-id               event-id
+          :order                  3
+          :name                   "БРОНЗА"
+          :equivalent             :bronze
+          :laps                   laps
+          ;; Бронза еще попроще серебра, но тоже не супер-лайт - весьма сложный трек
+          :lap-difficulty         90
+          :points-multiplier      points-multiplier
+          :multiplier-description multiplier-description
+          :started-count          71
+          :laps-info?             false}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "258" :rider-id (find-rider-id "Дмитрий" "Тимошевский") :start "11:37:00" :finish "16:46:55" :total "5:09:55" :total-no-penalty "5:09:55" :penalty "0:00:00" :checkpoints-count 13 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "267" :rider-id (find-rider-id "Василий" "Решетков") :start "11:40:00" :finish "16:52:09" :total "5:12:09" :total-no-penalty "5:12:09" :penalty "0:00:00" :checkpoints-count 13 :city "Еманжелинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "260" :rider-id (find-rider-id "Денис" "Козлов") :start "11:37:00" :finish "16:52:06" :total "5:15:06" :total-no-penalty "5:15:06" :penalty "0:00:00" :checkpoints-count 13 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "208" :rider-id (find-rider-id "Владимир" "Тясин") :start "11:22:00" :finish "16:44:23" :total "5:22:23" :total-no-penalty "5:22:23" :penalty "0:00:00" :checkpoints-count 13 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "248" :rider-id (find-rider-id "Иван" "Швейкерт") :start "11:34:00" :finish "17:00:22" :total "5:26:22" :total-no-penalty "5:26:22" :penalty "0:00:00" :checkpoints-count 13 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "201" :rider-id (find-rider-id "Савелий" "Кунакбаев") :start "11:22:00" :finish "16:55:13" :total "5:33:13" :total-no-penalty "5:33:13" :penalty "0:00:00" :checkpoints-count 13 :city "Полевской"]
+         [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "242" :rider-id (find-rider-id "Лев" "Кислицын") :start "11:34:00" :finish "17:09:32" :total "5:35:32" :total-no-penalty "5:35:32" :penalty "0:00:00" :checkpoints-count 13 :city "Кыштым"]
+         [:type :result :event-id event-id :classification-id classification-id :position 8 :plate-number "213" :rider-id (find-rider-id "Арсен" "Байрамуков") :start "11:25:00" :finish "17:01:43" :total "5:36:43" :total-no-penalty "5:36:43" :penalty "0:00:00" :checkpoints-count 13 :city "Златоуст"]
+         [:type :result :event-id event-id :classification-id classification-id :position 9 :plate-number "264" :rider-id (find-rider-id "Владислав" "Хонькин") :start "11:40:00" :finish "17:16:58" :total "5:36:58" :total-no-penalty "5:36:58" :penalty "0:00:00" :checkpoints-count 13 :city "Еманжелинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 10 :plate-number "268" :rider-id (find-rider-id "Вадим" "Ахтямов") :start "11:40:00" :finish "17:18:59" :total "5:38:59" :total-no-penalty "5:38:59" :penalty "0:00:00" :checkpoints-count 13 :city "Миасс"]
+         [:type :result :event-id event-id :classification-id classification-id :position 11 :plate-number "204" :rider-id (find-rider-id "Александр" "Бескровный") :start "11:22:00" :finish "17:01:46" :total "5:39:46" :total-no-penalty "5:39:46" :penalty "0:00:00" :checkpoints-count 13 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 12 :plate-number "205" :rider-id (find-rider-id "Александр" "Зверев") :start "11:22:00" :finish "17:07:15" :total "5:45:15" :total-no-penalty "5:45:15" :penalty "0:00:00" :checkpoints-count 13 :city "Златоуст"]
+         [:type :result :event-id event-id :classification-id classification-id :position 13 :plate-number "207" :rider-id (find-rider-id "Алексей" "Слабочков") :start "11:22:00" :finish "17:15:54" :total "5:53:54" :total-no-penalty "5:53:54" :penalty "0:00:00" :checkpoints-count 13 :city "Миасс"]
+         [:type :result :event-id event-id :classification-id classification-id :position 14 :plate-number "216" :rider-id (find-rider-id "Евгений" "Соловьев") :start "11:25:00" :finish "16:58:32" :total "6:03:32" :total-no-penalty "5:33:32" :penalty "0:30:00" :checkpoints-count 13 :city "Ревда"]
+         [:type :result :event-id event-id :classification-id classification-id :position 15 :plate-number "241" :rider-id (find-rider-id "Леонид" "Асташов") :start "11:34:00" :finish "17:45:02" :total "6:11:02" :total-no-penalty "6:11:02" :penalty "0:00:00" :checkpoints-count 13 :city "Половинный"]
+         [:type :result :event-id event-id :classification-id classification-id :position 16 :plate-number "215" :rider-id (find-rider-id "Максим" "Тимошевский") :start "11:25:00" :finish "17:40:05" :total "6:15:05" :total-no-penalty "6:15:05" :penalty "0:00:00" :checkpoints-count 13 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 17 :plate-number "212" :rider-id (find-rider-id "Сергей" "Борисов") :start "11:25:00" :finish "17:42:58" :total "6:17:58" :total-no-penalty "6:17:58" :penalty "0:00:00" :checkpoints-count 13 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 18 :plate-number "202" :rider-id (find-rider-id "Матвей" "Тиунов") :start "11:22:00" :finish "17:40:04" :total "6:18:04" :total-no-penalty "6:18:04" :penalty "0:00:00" :checkpoints-count 13 :city "Сатка"]
+         [:type :result :event-id event-id :classification-id classification-id :position 19 :plate-number "269" :rider-id (find-rider-id "Вадим" "Мезенцев") :start "11:40:00" :finish "17:59:12" :total "6:19:12" :total-no-penalty "6:19:12" :penalty "0:00:00" :checkpoints-count 13 :city "Карабаш"]
+         [:type :result :event-id event-id :classification-id classification-id :position 20 :plate-number "211" :rider-id (find-rider-id "Фёдор" "Сборошенко") :start "11:25:00" :finish "17:45:17" :total "6:20:17" :total-no-penalty "6:20:17" :penalty "0:00:00" :checkpoints-count 13 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 21 :plate-number "266" :rider-id (find-rider-id "Виктор" "Семенов") :start "11:40:00" :finish "16:03:31" :total "6:53:31" :total-no-penalty "4:23:31" :penalty "2:30:00" :checkpoints-count 8 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 22 :plate-number "275" :rider-id (find-rider-id "Александр" "Полянин") :start "11:43:00" :finish "16:12:42" :total "6:59:42" :total-no-penalty "4:29:42" :penalty "2:30:00" :checkpoints-count 8 :city "Златоуст"]
+         [:type :result :event-id event-id :classification-id classification-id :position 23 :plate-number "214" :rider-id (find-rider-id "Виталий" "Стаценков") :start "11:25:00" :finish "17:19:03" :total "8:24:03" :total-no-penalty "5:54:03" :penalty "2:30:00" :checkpoints-count 8 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 24 :plate-number "210" :rider-id (find-rider-id "Александр" "Новопашин") :start "11:22:00" :finish "17:29:14" :total "8:37:14" :total-no-penalty "6:07:14" :penalty "2:30:00" :checkpoints-count 8 :city "Тюмень"]
+         [:type :result :event-id event-id :classification-id classification-id :position 25 :plate-number "224" :rider-id (find-rider-id "Дмитрий" "Долженко") :start "11:28:00" :finish "17:47:22" :total "8:49:22" :total-no-penalty "6:19:22" :penalty "2:30:00" :checkpoints-count 8 :city "Тюмень"]
+         [:type :result :event-id event-id :classification-id classification-id :position 26 :plate-number "263" :rider-id (find-rider-id "Дамир" "Хабибрахманов") :start "11:40:00" :finish "16:45:06" :total "8:05:06" :total-no-penalty "5:05:06" :penalty "3:00:00" :checkpoints-count 7 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 27 :plate-number "231" :rider-id (find-rider-id "Сергей" "Вакушин") :start "11:31:00" :finish "15:33:26" :total "7:32:26" :total-no-penalty "4:02:26" :penalty "3:30:00" :checkpoints-count 6 :city "Миасс"]
+         [:type :result :event-id event-id :classification-id classification-id :position 28 :plate-number "271" :rider-id (find-rider-id "Анатолий" "Ванчинов") :start "11:43:00" :finish "16:23:44" :total "8:10:44" :total-no-penalty "4:40:44" :penalty "3:30:00" :checkpoints-count 6 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 29 :plate-number "249" :rider-id (find-rider-id "Иван" "Тихонов") :start "11:34:00" :finish "16:23:12" :total "8:19:12" :total-no-penalty "4:49:12" :penalty "3:30:00" :checkpoints-count 6 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 30 :plate-number "273" :rider-id (find-rider-id "Алексей" "Гаврилов") :start "11:43:00" :finish "17:59:08" :total "9:46:08" :total-no-penalty "6:16:08" :penalty "3:30:00" :checkpoints-count 6 :city "Златоуст"]
+         [:type :result :event-id event-id :classification-id classification-id :position 31 :plate-number "221" :rider-id (find-rider-id "Александр" "Сумин") :start "11:28:00" :finish "17:28:59" :total "10:00:59" :total-no-penalty "6:00:59" :penalty "4:00:00" :checkpoints-count 5 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 32 :plate-number "226" :rider-id (find-rider-id "Денис" "Саликов") :start "11:28:00" :finish "17:29:31" :total "10:01:31" :total-no-penalty "6:01:31" :penalty "4:00:00" :checkpoints-count 5 :city "Тюмень"]
+         [:type :result :event-id event-id :classification-id classification-id :position 33 :plate-number "217" :rider-id (find-rider-id "Олег" "Поленков") :start "11:25:00" :finish "17:28:37" :total "10:03:37" :total-no-penalty "6:03:37" :penalty "4:00:00" :checkpoints-count 5 :city "Магнитогорск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 34 :plate-number "225" :rider-id (find-rider-id "Сергей" "Лазукин") :start "11:28:00" :finish "17:34:22" :total "10:06:22" :total-no-penalty "6:06:22" :penalty "4:00:00" :checkpoints-count 5 :city "Снежинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "232" :rider-id (find-rider-id "Сергей" "Баранов") :start "11:31:00" :finish "18:37:34" :total "7:06:34" :total-no-penalty "7:06:34" :penalty "0:00:00" :checkpoints-count 13 :city "Нягань" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "270" :rider-id (find-rider-id "Артем" "Богданов") :start "11:40:00" :finish "18:39:04" :total "7:29:04" :total-no-penalty "6:59:04" :penalty "0:30:00" :checkpoints-count 12 :city "Нижневартовск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "259" :rider-id (find-rider-id "Дмитрий" "Шматков") :start "11:37:00" :finish "18:40:04" :total "7:33:04" :total-no-penalty "7:03:04" :penalty "0:30:00" :checkpoints-count 12 :city "Челябинск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "220" :rider-id (find-rider-id "Александр" "Беспалов") :start "11:25:00" :finish "18:38:22" :total "7:43:22" :total-no-penalty "7:13:22" :penalty "0:30:00" :checkpoints-count 12 :city "Челябинск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "233" :rider-id (find-rider-id "Сергей" "Шайбаков") :start "11:31:00" :finish "18:44:50" :total "7:43:50" :total-no-penalty "7:13:50" :penalty "0:30:00" :checkpoints-count 12 :city "Екатеринбург" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "203" :rider-id (find-rider-id "Сергей" "Кузнецов" nil "Сургут") :start "11:22:00" :finish "18:02:42" :total "7:40:42" :total-no-penalty "6:40:42" :penalty "1:00:00" :checkpoints-count 11 :city "Сургут" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "244" :rider-id (find-rider-id "Илья" "Ефимов") :start "11:34:00" :finish "18:38:24" :total "8:04:24" :total-no-penalty "7:04:24" :penalty "1:00:00" :checkpoints-count 11 :city "Каменск-Уральский" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "251" :rider-id (find-rider-id "Егор" "Камалов") :start "11:37:00" :finish "18:55:06" :total "8:18:06" :total-no-penalty "7:18:06" :penalty "1:00:00" :checkpoints-count 11 :city "Златоуст" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "272" :rider-id (find-rider-id "Алексей" "Захаров") :start "11:43:00" :finish "18:22:19" :total "8:09:19" :total-no-penalty "6:39:19" :penalty "1:30:00" :checkpoints-count 10 :city "Екатеринбург" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "243" :rider-id (find-rider-id "Илья" "Юзеев") :start "11:34:00" :finish "18:23:12" :total "8:19:12" :total-no-penalty "6:49:12" :penalty "1:30:00" :checkpoints-count 10 :city "Миасс" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "254" :rider-id (find-rider-id "Евгений" "Константинов") :start "11:37:00" :finish "18:30:09" :total "8:23:09" :total-no-penalty "6:53:09" :penalty "1:30:00" :checkpoints-count 10 :city "Екатеринбург" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "240" :rider-id (find-rider-id "Леонид" "Наговский") :start "11:31:00" :finish "18:34:24" :total "8:33:24" :total-no-penalty "7:03:24" :penalty "1:30:00" :checkpoints-count 10 :city "Челябинск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "222" :rider-id (find-rider-id "Станислав" "Зубков") :start "11:28:00" :finish "18:39:38" :total "8:41:38" :total-no-penalty "7:11:38" :penalty "1:30:00" :checkpoints-count 10 :city "Челябинск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "261" :rider-id (find-rider-id "Денис" "Воробьёв") :start "11:40:00" :finish "18:11:12" :total "8:31:12" :total-no-penalty "6:31:12" :penalty "2:00:00" :checkpoints-count 9 :city "Челябинск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "262" :rider-id (find-rider-id "Данил" "Береговой") :start "11:40:00" :finish "18:02:50" :total "8:52:50" :total-no-penalty "6:22:50" :penalty "2:30:00" :checkpoints-count 8 :city "Миасс" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "218" :rider-id (find-rider-id "Максим" "Паршаков") :start "11:25:00" :finish "18:09:08" :total "9:14:08" :total-no-penalty "6:44:08" :penalty "2:30:00" :checkpoints-count 8 :city "Челябинск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "274" :rider-id (find-rider-id "Александр" "Копытов") :start "11:43:00" :finish "18:00:29" :total "9:17:29" :total-no-penalty "6:17:29" :penalty "3:00:00" :checkpoints-count 7 :city "Челябинск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "219" :rider-id (find-rider-id "Александр" "Мальков") :start "11:25:00" :finish "18:00:50" :total "9:35:50" :total-no-penalty "6:35:50" :penalty "3:00:00" :checkpoints-count 7 :city "Челябинск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "256" :rider-id (find-rider-id "Дмитрий" "Некрасов") :start "11:37:00" :finish "18:06:52" :total "9:59:52" :total-no-penalty "6:29:52" :penalty "3:30:00" :checkpoints-count 6 :city "Каменск-Уральский" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "237" :rider-id (find-rider-id "Пётр" "Хардин") :start "11:31:00" :finish "18:04:36" :total "10:03:36" :total-no-penalty "6:33:36" :penalty "3:30:00" :checkpoints-count 6 :city "Тюмень" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "252" :rider-id (find-rider-id "Егор" "Красько") :start "11:37:00" :finish "18:24:04" :total "11:17:04" :total-no-penalty "6:47:04" :penalty "4:30:00" :checkpoints-count 4 :city "Челябинск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "257" :rider-id (find-rider-id "Дмитрий" "Смаль") :start "11:37:00" :finish "19:02:45" :total "11:55:45" :total-no-penalty "7:25:45" :penalty "4:30:00" :checkpoints-count 4 :city "Нижневартовск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "234" :rider-id (find-rider-id "Сергей" "Поздеев") :start "11:31:00" :finish "19:01:02" :total "12:00:02" :total-no-penalty "7:30:02" :penalty "4:30:00" :checkpoints-count 4 :city "Новая Ляля" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "235" :rider-id (find-rider-id "Сергей" "Горбенко") :start "11:31:00" :finish "19:01:53" :total "12:00:53" :total-no-penalty "7:30:53" :penalty "4:30:00" :checkpoints-count 4 :city "Нижневартовск" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "250" :rider-id (find-rider-id "Иван" "Шестеров") :start "11:34:00" :finish "18:39:48" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Златоуст" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "206" :rider-id (find-rider-id "Михаил" "Попов") :start "11:22:00" :finish "12:55:38" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Каменск-Уральский" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "230" :rider-id (find-rider-id "Степан" "Мысляев") :start "11:28:00" :finish "12:55:55" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Кыштым" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "246" :rider-id (find-rider-id "Игорь" "Пятышин") :start "11:34:00" :finish "13:17:37" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Екатеринбург" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "239" :rider-id (find-rider-id "Михаил" "Пятышин") :start "11:31:00" :finish "13:17:38" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Екатеринбург" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "247" :rider-id (find-rider-id "Иван" "Кравчук") :start "11:34:00" :finish "14:15:07" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Сургут" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "227" :rider-id (find-rider-id "Эдуард" "Лысцов") :start "11:28:00" :finish "14:26:53" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Сысерть" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "223" :rider-id (find-rider-id "Олег" "Лазарев") :start "11:28:00" :finish "14:27:07" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Екатеринбург" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "238" :rider-id (find-rider-id "Павел" "Папазов") :start "11:31:00" :finish "14:41:03" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Новый Уренгой" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "236" :rider-id (find-rider-id "Роман" "Дайбов") :start "11:31:00" :finish "17:14:12" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Кыштым" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "253" :rider-id (find-rider-id "Евгений" "Филиппов") :start "11:37:00" :finish "18:11:56" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Сатка" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "229" :rider-id (find-rider-id "Илья" "Чебыкин") :start "11:28:00" :finish "14:58:41" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Красногорский" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "265" :rider-id (find-rider-id "Виталий" "Бесперстов") :start "11:40:00" :finish "16:06:02" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Сургут" :dnf? true]
+         ]
+        )
+
+      (let [classification-id "ChVNGcIx0v98"]
+        [{:type                   :classification
+          :classification-id      classification-id
+          :event-id               event-id
+          :order                  4
+          :name                   "ЛЕДИ"
+          :equivalent             :lady
+          :laps                   laps
+          ;; Леди ехали сокращенную бронзу
+          :lap-difficulty         60
+          :points-multiplier      points-multiplier
+          :multiplier-description multiplier-description
+          :started-count          5
+          :laps-info?             false}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "401" :rider-id (find-rider-id "Анна" "Шилова") :start "11:49:00" :finish "18:23:04" :total "6:34:04" :total-no-penalty "6:34:04" :penalty "0:00:00" :checkpoints-count 8 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "402" :rider-id (find-rider-id "Анна" "Медведева") :start "11:49:00" :finish "18:25:17" :total "8:06:17" :total-no-penalty "6:36:17" :penalty "1:30:00" :checkpoints-count 5 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "404" :rider-id (find-rider-id "Ульяна" "Храмцова") :start "11:49:00" :finish "18:46:28" :total "8:57:28" :total-no-penalty "6:57:28" :penalty "2:00:00" :checkpoints-count 4 :city "Златоуст"]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "403" :rider-id (find-rider-id "Марина" "Аверина") :start "11:49:00" :finish "21:59:12" :total "11:40:12" :total-no-penalty "10:10:12" :penalty "1:30:00" :checkpoints-count 5 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "405" :rider-id (find-rider-id "Анастасия" "Шилова") :start "11:49:00" :finish "15:31:27" :total "7:42:27" :total-no-penalty "3:42:27" :penalty "4:00:00" :checkpoints-count 0 :city "Челябинск"]]))))
+
+(def kosmost2
+  (let [event-id "E7eaCfw"
+        laps 1
+        points-multiplier 1.5
+        multiplier-description "Ночью шел дождь и трасса стала еще грязнее сырее"]
+    (concat
+      [{:type         :event
+        :name         "КосМост - день 2"
+        :location     "п. Косой мост, Челябинская область"
+        :date         "2025-07-27"
+        :event-url    "https://marshalone.ru/card/2cd87e73-a487-4d68-86f6-7c3837771de2"
+        :telegram-url "https://t.me/ChjAj3AVo3YTRi"
+        :event-id     event-id}]
+
+      (let [classification-id "Cg8QNM888ZM0"]
+        [{:type                   :classification
+          :classification-id      classification-id
+          :event-id               event-id
+          :order                  1
+          :name                   "ЗОЛОТО"
+          :equivalent             :gold
+          :laps                   laps
+          ;; Трек упростили по сравнению с первым днем
+          :lap-difficulty         120
+          :points-multiplier      points-multiplier
+          :multiplier-description multiplier-description
+          :started-count          9
+          :laps-info?             false}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "3" :rider-id (find-rider-id "Станислав" "Максимов") :start "11:18:30" :finish "14:40:05" :total "3:21:35" :total-no-penalty "3:21:35" :penalty "0:00:00" :checkpoints-count 10 :city "Кыштым"]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "1" :rider-id (find-rider-id "Евгений" "Цицимушкин") :start "11:17:58" :finish "14:41:48" :total "3:23:50" :total-no-penalty "3:23:50" :penalty "0:00:00" :checkpoints-count 10 :city "Кыштым"]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "6" :rider-id (find-rider-id "Вячеслав" "Ярулин") :start "11:18:02" :finish "15:07:08" :total "3:49:06" :total-no-penalty "3:49:06" :penalty "0:00:00" :checkpoints-count 10 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "4" :rider-id (find-rider-id "Егор" "Емельянов") :start "11:19:09" :finish "15:41:42" :total "4:22:33" :total-no-penalty "4:22:33" :penalty "0:00:00" :checkpoints-count 10 :city "Полевской"]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "8" :rider-id (find-rider-id "Николай" "Швед") :start "11:19:35" :finish "15:47:23" :total "4:27:48" :total-no-penalty "4:27:48" :penalty "0:00:00" :checkpoints-count 10 :city "Магнитогорск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "10" :rider-id (find-rider-id "Михаил" "Ушаков") :start "11:19:13" :finish "16:58:30" :total "5:39:17" :total-no-penalty "5:39:17" :penalty "0:00:00" :checkpoints-count 10 :city "Тюмень"]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "11" :rider-id (find-rider-id "Александр" "Миронов") :start "11:20:09" :finish "19:21:33" :total "8:01:24" :total-no-penalty "8:01:24" :penalty "0:00:00" :checkpoints-count 10 :city "Сургут" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "9" :rider-id (find-rider-id "Денис" "Медведюк") :start "11:19:37" :finish "15:15:06" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Тюмень" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "2" :rider-id (find-rider-id "Павел" "Лядецкий") :start "11:18:33" :finish "12:06:52" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Челябинск" :dnf? true]])
+
+      (let [classification-id "CJB7l9HT600"]
+        [{:type                   :classification
+          :classification-id      classification-id
+          :event-id               event-id
+          :order                  2
+          :name                   "СЕРЕБРО"
+          :equivalent             :silver
+          :laps                   laps
+          ;; Трек упростили по сравнению с первым днем
+          :lap-difficulty         90
+          :points-multiplier      points-multiplier
+          :multiplier-description multiplier-description
+          :started-count          17
+          :laps-info?             false}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "101" :rider-id (find-rider-id "Егор" "Харитонов") :start "11:20:33" :finish "15:38:33" :total "4:18:00" :total-no-penalty "4:18:00" :penalty "0:00:00" :checkpoints-count 10 :city "Озерск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "108" :rider-id (find-rider-id "Константин" "Романов") :start "11:21:33" :finish "15:46:40" :total "4:25:07" :total-no-penalty "4:25:07" :penalty "0:00:00" :checkpoints-count 10 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "102" :rider-id (find-rider-id "Виктор" "Цыбулин") :start "11:21:02" :finish "15:49:10" :total "4:28:08" :total-no-penalty "4:28:08" :penalty "0:00:00" :checkpoints-count 10 :city "Тюмень"]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "110" :rider-id (find-rider-id "Евгений" "Журавский") :start "11:24:01" :finish "16:02:05" :total "4:38:04" :total-no-penalty "4:38:04" :penalty "0:00:00" :checkpoints-count 10 :city "Пермь"]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "107" :rider-id (find-rider-id "Алексей" "Кокорин") :start "11:21:30" :finish "16:06:48" :total "4:45:18" :total-no-penalty "4:45:18" :penalty "0:00:00" :checkpoints-count 10 :city "Курган"]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "114" :rider-id (find-rider-id "Владимир" "Бодрин") :start "11:22:35" :finish "16:11:46" :total "4:49:11" :total-no-penalty "4:49:11" :penalty "0:00:00" :checkpoints-count 10 :city "Магнитогорск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "109" :rider-id (find-rider-id "Денис" "Зараменских") :start "11:22:01" :finish "16:11:48" :total "4:49:47" :total-no-penalty "4:49:47" :penalty "0:00:00" :checkpoints-count 10 :city "Коркино"]
+         [:type :result :event-id event-id :classification-id classification-id :position 8 :plate-number "106" :rider-id (find-rider-id "Артем" "Свяжин") :start "11:21:04" :finish "15:43:49" :total "4:52:45" :total-no-penalty "4:22:45" :penalty "0:30:00" :checkpoints-count 10 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 9 :plate-number "113" :rider-id (find-rider-id "Илья" "Кузнецов") :start "11:22:03" :finish "16:22:00" :total "4:59:57" :total-no-penalty "4:59:57" :penalty "0:00:00" :checkpoints-count 10 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 10 :plate-number "111" :rider-id (find-rider-id "Вадим" "Лугаськов") :start "11:20:35" :finish "16:22:26" :total "5:01:51" :total-no-penalty "5:01:51" :penalty "0:00:00" :checkpoints-count 10 :city "Ревда"]
+         [:type :result :event-id event-id :classification-id classification-id :position 11 :plate-number "118" :rider-id (find-rider-id "Алексей" "Семилетов") :start "11:22:33" :finish "16:00:39" :total "5:38:06" :total-no-penalty "4:38:06" :penalty "1:00:00" :checkpoints-count 8 :city "Курган"]
+         [:type :result :event-id event-id :classification-id classification-id :position 12 :plate-number "131" :rider-id (find-rider-id "Ильфар" "Сарваров") :start "11:23:34" :finish "17:27:49" :total "6:34:15" :total-no-penalty "6:04:15" :penalty "0:30:00" :checkpoints-count 9 :city "Сургут"]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "133" :rider-id (find-rider-id "Андрей" "Полномочнов") :start "11:23:31" :finish "18:40:04" :total "10:46:33" :total-no-penalty "7:16:33" :penalty "3:30:00" :checkpoints-count 3 :city "Сургут" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "140" :rider-id (find-rider-id "Максим" "Кузнецов") :start "11:24:04" :finish "16:50:20" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Сургут" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "136" :rider-id (find-rider-id "Андрей" "Азегов") :start "11:23:02" :finish "16:50:13" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Нижневартовск" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "132" :rider-id (find-rider-id "Владимир" "Воронин") :start "11:23:06" :finish "14:41:01" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Нижневартовск" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "137" :rider-id (find-rider-id "Антон" "Зырянов") :start "11:14:00" :finish "12:00:00" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Магнитогорск" :dnf? true]])
+
+      (let [classification-id "CGC4L5Een3bY"]
+        [{:type                   :classification
+          :classification-id      classification-id
+          :event-id               event-id
+          :order                  3
+          :name                   "БРОНЗА"
+          :equivalent             :bronze
+          :laps                   laps
+          ;; Трек упростили по сравнению с первым днем
+          :lap-difficulty         60
+          :points-multiplier      points-multiplier
+          :multiplier-description multiplier-description
+          :started-count          24
+          :laps-info?             false}
+
+         [:type :result :event-id event-id :classification-id classification-id :position 1 :plate-number "211" :rider-id (find-rider-id "Александр" "Бескровный") :start "11:26:29" :finish "14:56:56" :total "3:30:27" :total-no-penalty "3:30:27" :penalty "0:00:00" :checkpoints-count 9 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 2 :plate-number "212" :rider-id (find-rider-id "Александр" "Зверев") :start "11:26:31" :finish "15:17:21" :total "3:50:50" :total-no-penalty "3:50:50" :penalty "0:00:00" :checkpoints-count 9 :city "Златоуст"]
+         [:type :result :event-id event-id :classification-id classification-id :position 3 :plate-number "202" :rider-id (find-rider-id "Василий" "Решетков") :start "11:24:34" :finish "14:53:59" :total "3:59:25" :total-no-penalty "3:29:25" :penalty "0:30:00" :checkpoints-count 8 :city "Еманжелинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 4 :plate-number "208" :rider-id (find-rider-id "Арсен" "Байрамуков") :start "11:26:04" :finish "15:41:22" :total "4:15:18" :total-no-penalty "4:15:18" :penalty "0:00:00" :checkpoints-count 9 :city "Златоуст"]
+         [:type :result :event-id event-id :classification-id classification-id :position 5 :plate-number "204" :rider-id (find-rider-id "Владимир" "Тясин") :start "11:25:01" :finish "15:55:20" :total "4:30:19" :total-no-penalty "4:30:19" :penalty "0:00:00" :checkpoints-count 9 :city "Екатеринбург"]
+         [:type :result :event-id event-id :classification-id classification-id :position 6 :plate-number "201" :rider-id (find-rider-id "Дмитрий" "Тимошевский") :start "11:24:31" :finish "16:08:49" :total "4:44:18" :total-no-penalty "4:44:18" :penalty "0:00:00" :checkpoints-count 9 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 7 :plate-number "222" :rider-id (find-rider-id "Александр" "Полянин") :start "11:27:02" :finish "16:33:04" :total "5:06:02" :total-no-penalty "5:06:02" :penalty "0:00:00" :checkpoints-count 9 :city "Златоуст"]
+         [:type :result :event-id event-id :classification-id classification-id :position 8 :plate-number "223" :rider-id (find-rider-id "Сергей" "Баранов") :start "11:26:59" :finish "16:35:43" :total "5:08:44" :total-no-penalty "5:08:44" :penalty "0:00:00" :checkpoints-count 9 :city "Нягань"]
+         [:type :result :event-id event-id :classification-id classification-id :position 9 :plate-number "215" :rider-id (find-rider-id "Леонид" "Асташов") :start "11:25:30" :finish "16:41:17" :total "5:15:47" :total-no-penalty "5:15:47" :penalty "0:00:00" :checkpoints-count 9 :city "Половинный"]
+         [:type :result :event-id event-id :classification-id classification-id :position 10 :plate-number "207" :rider-id (find-rider-id "Лев" "Кислицын") :start "11:26:00" :finish "16:45:21" :total "5:19:21" :total-no-penalty "5:19:21" :penalty "0:00:00" :checkpoints-count 9 :city "Кыштым"]
+         [:type :result :event-id event-id :classification-id classification-id :position 11 :plate-number "219" :rider-id (find-rider-id "Вадим" "Мезенцев") :start "11:28:01" :finish "16:47:57" :total "5:19:56" :total-no-penalty "5:19:56" :penalty "0:00:00" :checkpoints-count 9 :city "Карабаш"]
+         [:type :result :event-id event-id :classification-id classification-id :position 12 :plate-number "248" :rider-id (find-rider-id "Александр" "Мальков") :start "11:28:03" :finish "17:14:07" :total "5:46:04" :total-no-penalty "5:46:04" :penalty "0:00:00" :checkpoints-count 9 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 13 :plate-number "246" :rider-id (find-rider-id "Максим" "Паршаков") :start "11:27:31" :finish "17:29:54" :total "6:02:23" :total-no-penalty "6:02:23" :penalty "0:00:00" :checkpoints-count 9 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 14 :plate-number "247" :rider-id (find-rider-id "Александр" "Копытов") :start "11:27:34" :finish "17:36:07" :total "6:08:33" :total-no-penalty "6:08:33" :penalty "0:00:00" :checkpoints-count 9 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 15 :plate-number "228" :rider-id (find-rider-id "Александр" "Беспалов") :start "11:28:30" :finish "16:58:03" :total "6:29:33" :total-no-penalty "5:29:33" :penalty "1:00:00" :checkpoints-count 7 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position 16 :plate-number "230" :rider-id (find-rider-id "Илья" "Ефимов") :start "11:29:01" :finish "17:48:59" :total "7:49:58" :total-no-penalty "6:19:58" :penalty "1:30:00" :checkpoints-count 6 :city "Каменск-Уральский"]
+         [:type :result :event-id event-id :classification-id classification-id :position 17 :plate-number "257" :rider-id (find-rider-id "Егор" "Красько") :start "11:29:03" :finish "17:33:16" :total "7:34:13" :total-no-penalty "6:04:13" :penalty "1:30:00" :checkpoints-count 6 :city "Челябинск"]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "234" :rider-id (find-rider-id "Егор" "Камалов") :start "11:30:40" :finish "19:03:34" :total "11:02:54" :total-no-penalty "7:32:54" :penalty "3:30:00" :checkpoints-count 2 :city "Златоуст" :timebar? true :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "259" :rider-id (find-rider-id "Сергей" "Поздеев") :start "11:31:44" :finish "15:44:19" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Новая Ляля" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "242" :rider-id (find-rider-id "Станислав" "Зубков") :start "11:28:33" :finish "16:06:19" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Челябинск" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "260" :rider-id (find-rider-id "Сергей" "Горбенко") :start "11:29:34" :finish "15:48:57" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Нижневартовск" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "258" :rider-id (find-rider-id "Дмитрий" "Смаль") :start "11:29:29" :finish "15:45:40" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Нижневартовск" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "206" :rider-id (find-rider-id "Савелий" "Кунакбаев") :start "11:25:04" :finish "15:45:01" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Полевской" :dnf? true]
+         [:type :result :event-id event-id :classification-id classification-id :position nil :plate-number "232" :rider-id (find-rider-id "Алексей" "Захаров") :start "11:25:32" :finish "12:06:33" :total "сошел" :total-no-penalty "сошел" :penalty "—" :checkpoints-count nil :city "Екатеринбург" :dnf? true]]))))
+
 ;; TODO: перенести
 (defn process-data
   [row]
@@ -1709,4 +2046,6 @@
                                 emanzhelinsk1
                                 kyshtim1
                                 kyshtim2
+                                kosmost1
+                                kosmost2
                                 ))))

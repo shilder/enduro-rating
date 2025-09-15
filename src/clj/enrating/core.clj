@@ -102,8 +102,12 @@
              :let [rider (get-in all-data [:riders (:rider-id result)])]]
          [:tr {:id (:result-id result)}
           [:td.number
-           (if (:dnf? result)
+           (cond
+             (:timebar? result)
+             "таймбар"
+             (:dnf? result)
              "сход"
+             :else
              (:position result))]
           [:td (:surname rider)]
           [:td (:name rider)]
