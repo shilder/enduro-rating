@@ -686,7 +686,134 @@
    {:city "Новый Уренгой", :name "Павел", :surname "Папазов", :patronymic nil, :rider-id "R4rkOWxs"}
    {:city "Кыштым", :name "Роман", :surname "Дайбов", :patronymic nil, :rider-id "RdCTsF20"}
    {:city "Сатка", :name "Евгений", :surname "Филиппов", :patronymic nil, :rider-id "RWTvFGOQ"}
-   ])
+
+   {:name "Дмитрий", :surname "Рогожкин", :patronymic nil, :city "Малмыж", :rider-id "RNQJFtpY"}
+   {:name "Виталий", :surname "Клеменков", :patronymic nil, :city "Пермь" :rider-id "R1SgRTs"}
+   {:name "Александр", :surname "Караксин", :patronymic nil, :city "Пермь" :rider-id "RuiuNUBA"}
+   {:name "Максим", :surname "Львов", :patronymic nil, :city "Пермь" :rider-id "RqA1OGNs"}
+   {:name "Кирилл", :surname "Кириллов", :patronymic nil, :city "Уфа" :rider-id "RXSrYuw"}
+   {:name "Дмитрий", :surname "Молчанов", :patronymic nil, :city "Ижевск" :rider-id "Rnar8F3g"}
+   {:name "Григорий", :surname "Альматов", :patronymic nil, :city "Сюмси" :rider-id "RyerYk14"}
+   {:name "Алексей", :surname "Казаков", :patronymic nil, :city "Мелеуз" :rider-id "RrBBexUc"}
+   {:name "Андрей", :surname "Рогожников", :patronymic nil, :city "Пермь" :rider-id "RGWiC0o"}
+   {:name "Игорь", :surname "Дунин", :patronymic nil, :city "Пермь" :rider-id "Rfve8O3Q"}
+   {:name "Владимир", :surname "Федотов", :patronymic nil, :city "Пермь" :rider-id "RptDYguU"}
+   {:name "Александр", :surname "Фёдоров", :patronymic nil, :city "Москва" :rider-id "RQu8oRmY"}
+   {:name "Роберт", :surname "Рахимов", :patronymic nil, :city "Мелеуз" :rider-id "R7ZvIXJw"}
+
+   {:name "Артур", :surname "Хатмуллин", :patronymic nil, :city "Сылва" :rider-id "RuppKhWw"}
+   {:name "Вячеслав", :surname "Макаров", :patronymic nil, :rider-id "RijezS74"}
+   {:name "Илья", :surname "Полежаев", :patronymic nil, :rider-id "R6pkTptY"}
+   {:name "Евгений", :surname "Путов", :patronymic nil, :rider-id "R61v30QA"}
+   {:name "Денис", :surname "Земцов", :patronymic nil, :rider-id "Rj0uDQH8"}
+   {:name "Степан", :surname "Филатов", :patronymic nil, :rider-id "RoFxDvtE"}
+   {:name "Дмитрий", :surname "Колобов", :patronymic nil, :rider-id "RCXDx8Ho"}
+   {:name "Антон", :surname "Швецов", :patronymic nil, :rider-id "Ry2MC8lI"}
+   {:name "Александр", :surname "Попцов", :patronymic nil, :rider-id "RTa95bg"}
+   {:name "Александр", :surname "Вебер", :patronymic nil, :rider-id "Ra78cYxE"}
+   {:name "Александр", :surname "Симачёв", :patronymic nil, :rider-id "RBAvYfnk"}
+   {:name "Александр", :surname "Плаксин", :patronymic nil, :rider-id "RvRxbMZs"}
+   {:name "Сергей", :surname "Кондратьев", :patronymic nil, :rider-id "R1tVKif8"}
+   {:name "Александр", :surname "Мельников", :patronymic nil, :rider-id "R3pU3llU"}
+   {:name "Александр", :surname "Отинов", :patronymic nil, :rider-id "RagD9M4U"}
+   {:name "Евгений", :surname "Киселёв", :patronymic nil, :rider-id "RtHXYs"}
+   {:name "Максим", :surname "Клевцов", :patronymic nil, :rider-id "Rh7O00W8"}
+   {:name "Матвей", :surname "Степанов", :patronymic nil, :rider-id "RD9byick"}
+   {:name "Анатолий", :surname "Харитонов", :patronymic nil, :rider-id "RjRy8RcE"}
+   {:name "Сергей", :surname "Демаков", :patronymic nil, :rider-id "RCnw91mk"}
+   {:name "Максим", :surname "Моторин", :patronymic nil, :rider-id "RcboPfdU"}
+   {:name "Александр", :surname "Петров", :patronymic nil, :rider-id "Rt5Z2Bm0"}
+   {:name "Сергей", :surname "Репин", :patronymic nil, :rider-id "RBfe1wUg"}
+   {:name "Иван", :surname "Абрамов", :patronymic nil, :rider-id "RkMLvo4"}
+   {:name "Евгений", :surname "Беспятых", :patronymic nil, :rider-id "RfJAguTU"}
+   {:name "Артем", :surname "Максимовских", :patronymic nil, :rider-id "RtfRoZU"}
+   {:name "Дмитрий", :surname "Волегов", :patronymic nil, :rider-id "RLZd87aU"}
+   {:name "Виктор", :surname "Юшков", :patronymic nil, :rider-id "RJWFDwg"}
+   {:name "Егор", :surname "Калинин", :patronymic nil, :rider-id "RlwPeVEU"}
+   {:name "Юлий", :surname "Вискунов", :patronymic nil, :rider-id "Ri8q21mc"}
+   {:name "Максим", :surname "Гладких", :patronymic nil, :rider-id "RpSiAHFk"}
+   {:name "Максим", :surname "Макаров", :patronymic nil, :rider-id "RDuHvng"}
+   {:name "Илья", :surname "Баранов", :patronymic nil, :rider-id "RMoYkUvE"}
+   {:name "Сергей", :surname "Киселев", :patronymic nil, :rider-id "RSw18Ii8"}
+   {:name "Игорь", :surname "Солодовник", :patronymic nil, :rider-id "RQyetXE4"}
+   {:name "Юрий", :surname "Варанкин", :patronymic nil, :rider-id "R0UzpinM"}
+   {:name "Антон", :surname "Карелин", :patronymic nil, :rider-id "RLiaeSIc"}
+   {:name "Владимир", :surname "Шестаков", :patronymic nil, :rider-id "RdYENBw"}
+   {:name "Семен", :surname "Отинов", :patronymic nil, :rider-id "RcKskwc"}
+   {:name "Никита", :surname "Овчинников", :patronymic nil, :rider-id "RrDvm3sM"}
+   {:name "Евгений", :surname "Сухоносов", :patronymic nil, :rider-id "RkFLcTkI"}
+   {:name "Никита", :surname "Завьялов", :patronymic nil, :rider-id "RVQLYGc8"}
+   {:name "Егор", :surname "Шаравьёв", :patronymic nil, :rider-id "R0WbpgzA"}
+   {:name "Валерий", :surname "Попов", :patronymic nil, :rider-id "R6zXcwSs"}
+   {:name "Антон", :surname "Титов", :patronymic nil, :rider-id "R23hczxs"}
+   {:name "Денис", :surname "Чистополов", :patronymic nil, :rider-id "RLi0fuTk"}
+   {:name "Денис", :surname "Миков", :patronymic nil, :rider-id "RmyoSnbo"}
+   {:name "Максим", :surname "Суслопаров", :patronymic nil, :rider-id "RMBOYpAY"}
+   {:name "Евгений", :surname "Баштовой", :patronymic nil, :rider-id "RZlV7NX8"}
+   {:name "Даниил", :surname "Саначёв", :patronymic nil, :rider-id "RFvQK6b4"}
+   {:name "Алексей", :surname "Ложкин", :patronymic nil, :rider-id "RZO5zMS0"}
+   {:name "Дмитрий", :surname "Мальцев", :patronymic nil, :rider-id "RH1KYiGE"}
+   {:name "Михаил", :surname "Захаров", :patronymic nil, :rider-id "RK015p6w"}
+   {:name "Андрей", :surname "Мальчиков", :patronymic nil, :rider-id "R5YZCmrY"}
+   {:name "Константин", :surname "Васильев", :patronymic nil, :rider-id "RqrirsCA"}
+   {:name "Артём", :surname "Кислухин", :patronymic nil, :rider-id "R43SRDIA"}
+   {:name "Владимир", :surname "Додонов", :patronymic nil, :rider-id "RSF5hBDc"}
+   {:name "Даниил", :surname "Одинцов", :patronymic nil, :rider-id "RNk0BMO8"}
+   {:name "Иван", :surname "Николаев", :patronymic nil, :rider-id "RTBfPDMI"}
+   {:name "Владимир", :surname "Задровский", :patronymic nil, :rider-id "Rp21xHVk"}
+   {:name "Сергей", :surname "Завьялов", :patronymic nil, :rider-id "RfqCtUIc"}
+   {:name "Денис", :surname "Хунцелиа", :patronymic nil, :rider-id "R6ZqUrCk"}
+   {:name "Вадим", :surname "Лопатин", :patronymic nil, :rider-id "RDygIk1Q"}
+   {:name "Александр", :surname "Чудинов", :patronymic nil, :rider-id "RHhu0Fhc"}
+   {:name "Данил", :surname "Лесников", :patronymic nil, :rider-id "RtVXL9Vc"}
+   {:name "Владимир", :surname "Новиков", :patronymic nil, :rider-id "Rn3QrF5k"}
+   {:name "Иван", :surname "Коновалов", :patronymic nil, :rider-id "RGjF6e60"}
+   {:name "Сергей", :surname "Варанкин", :patronymic nil, :rider-id "RNQa5Zg"}
+   {:name "Андрей", :surname "Шаров", :patronymic nil, :rider-id "Rdorg2jg"}
+   {:name "Константин", :surname "Лямин", :patronymic nil, :rider-id "RQWQqjWc"}
+   {:name "Артем", :surname "Тимаев", :patronymic nil, :rider-id "ResnwrU"}
+   {:name "Даниил", :surname "Жуланов", :patronymic nil, :rider-id "RewgZTA"}
+   {:name "Юрий", :surname "Денисов", :patronymic nil, :rider-id "Rb0Z1Bww"}
+   {:name "Виктор", :surname "Блинов", :patronymic nil, :rider-id "Rel11xS8"}
+   {:name "Кирилл", :surname "Трубников", :patronymic nil, :rider-id "Rn5Ebro"}
+   {:name "Шамиль", :surname "Рашитов", :patronymic nil, :rider-id "R1SH3uQ"}
+   {:name "Илья", :surname "Локаткин", :patronymic nil, :rider-id "R80ziMow"}
+   {:name "Александр", :surname "Рязанов", :patronymic nil, :rider-id "ROLJhaIQ"}
+   {:name "Александр", :surname "Исупов", :patronymic nil, :rider-id "R3XtY1N4"}
+   {:name "Вячеслав", :surname "Хорошев", :patronymic nil, :rider-id "R0hdzB3A"}
+   {:name "Сергей", :surname "Щин", :patronymic nil, :rider-id "ReG2nXcQ"}
+   {:name "Андрей", :surname "Рякин", :patronymic nil, :rider-id "RLxdCg2k"}
+   {:name "Мунир", :surname "Маннапов", :patronymic nil, :rider-id "R7KRO0rY"}
+   {:name "Матвей", :surname "Сидоревич", :patronymic nil, :rider-id "RMZoQEEI"}
+   {:name "Ренат", :surname "Юнеев", :patronymic nil, :rider-id "RF2QLVJI"}
+   {:name "Егор", :surname "Пересада", :patronymic nil, :rider-id "RVriitY"}
+   {:name "Михаил", :surname "Даудрих", :patronymic nil, :rider-id "RabzbUq0"}
+   {:name "Артём", :surname "Лесников", :patronymic nil, :rider-id "RPIw17jw"}
+   {:name "Яков", :surname "Цыганков", :patronymic nil, :rider-id "RD0qnwyo"}
+   {:name "Александр", :surname "Кузнецов", :patronymic nil, :rider-id "RZ11r0zk"}
+   {:name "Константин", :surname "Черанёв", :patronymic nil, :rider-id "RU0VRY8"}
+   {:name "Николай", :surname "Сосунов", :patronymic nil, :rider-id "RQiLaxvU"}
+   {:name "Максим", :surname "Соколов", :patronymic nil, :rider-id "RQZaX5Q"}
+   {:name "Николай", :surname "Ичетовкин", :patronymic nil, :rider-id "RY55NJPI"}
+   {:name "Михаил", :surname "Митяшин", :patronymic nil, :rider-id "RjrZk5D4"}
+   {:name "Сергей", :surname "Корнилков", :patronymic nil, :rider-id "RE6FDk"}
+   {:name "Александр", :surname "Александровский", :patronymic nil, :rider-id "Rta2Maiw"}
+   {:name "Михаил", :surname "Антипин", :patronymic nil, :rider-id "RDChFC9U"}
+   {:name "Антон", :surname "Мохов", :patronymic nil, :rider-id "RY2PxGTE"}
+   {:name "Павел", :surname "Коновалов", :patronymic nil, :rider-id "RhGqDwYU"}
+   {:name "Роман", :surname "Иванов", :patronymic nil, :rider-id "RFQTV2yI"}
+   {:name "Алексей", :surname "Жуков", :patronymic nil, :rider-id "RahCI56w"}
+   {:name "Егор", :surname "Тиунов", :patronymic nil, :rider-id "RlPzVPA"}
+   {:name "Александр", :surname "Дубовой", :patronymic nil, :rider-id "R7xnG84w"}
+   {:name "Вячеслав", :surname "Попков", :patronymic nil, :rider-id "RLcx6Rg"}
+   {:name "Федот", :surname "Леонтьев", :patronymic nil, :rider-id "RRzulMrM"}
+   {:name "Эдуард", :surname "Яхин", :patronymic nil, :rider-id "R7WXRJk"}
+   {:name "Александр", :surname "Коновалов", :patronymic nil, :rider-id "RsLAVn7Q"}
+   {:name "Федор", :surname "Попов", :patronymic nil, :rider-id "RcTjfmAc"}
+   {:name "Андрей", :surname "Чежегов", :patronymic nil, :rider-id "Rs86bBo"}
+   {:name "Леонид", :surname "Зыков", :patronymic nil, :rider-id "RqkyJtF4"}
+   {:name "Антон", :surname "Антонов", :patronymic nil, :rider-id "RqdJP5Jo"}
+   {:name "Артём", :surname "Галкин", :patronymic nil, :rider-id "Rd0s9svo"}])
 
 (defn- normalize-string
   [s]
